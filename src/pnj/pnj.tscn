@@ -20,8 +20,9 @@ position = Vector2(0, 60)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8f081")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("3_k886y")
+state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_ullyf")
