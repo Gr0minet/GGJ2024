@@ -35,4 +35,4 @@ position = Vector2(200, 232)
 position = Vector2(728, 368)
 
 [node name="Flic" parent="." instance=ExtResource("5_7plv2")]
-position = Vector2(600, 96)
+position = Vector2(488, 416)

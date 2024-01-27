@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/utils/line_of_sight_2D.tscn" id="10_n6pnb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
-radius = 60.0
+radius = 28.0
 height = 150.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w45no"]

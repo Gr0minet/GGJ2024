@@ -36,6 +36,8 @@ var _los_points:Array[Vector2] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	print("owner is %s" % owner)
 	LOS_renderer.color = LOS_color
 	
 	# Not needed but kept in case
@@ -109,7 +111,7 @@ func calculate_vision_shape() -> Array[Vector2]:
 		
 		var view_point:Vector2 = destination
 		
-		if collision:
+		if collision and collision["collider"] != owner:
 			view_point = collision["position"]
 		
 		view_point = to_local(view_point)
