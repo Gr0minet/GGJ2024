@@ -1,6 +1,6 @@
 extends PNJState
 
-const DISTANCE_LOST_THRESHOLD:float = 6
+const DISTANCE_LOST_THRESHOLD:float = 10
 
 @export var chase_speed:int = 250
 
@@ -18,8 +18,8 @@ func exit(msg: = {}) -> void:
 
 func physics_process(delta: float) -> void:
 	var player:Player = owner.line_of_sight.get_player_in_sight()
-	owner.line_of_sight.look_at(player.global_position)
-	owner.line_of_sight.rotation += rad_to_deg(90)
+	owner.line_of_sight.look_at(_target_last_position)
+	owner.line_of_sight.rotation -= deg_to_rad(90)
 	if player == null:
 		if owner.position.distance_to(_target_last_position) < DISTANCE_LOST_THRESHOLD:
 			_state_machine.transition_to("LookingAround")
