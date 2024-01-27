@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c14u2wv7ttnvt"]
+
+[ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="1_bkux6"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Pnj" parent="." instance=ExtResource("1_bkux6")]
+position = Vector2(550, 241)

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuwkrkhbps5yh"]
+
+[ext_resource type="Script" path="res://src/pnj/pnj.gd" id="1_j0mti"]
+[ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="2_3lu8u"]
+[ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_k886y"]
+[ext_resource type="Script" path="res://src/pnj/pnj_state.gd" id="4_ullyf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8f081"]
+radius = 20.0
+height = 100.0
+
+[node name="Pnj" type="CharacterBody2D"]
+script = ExtResource("1_j0mti")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3lu8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 60)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8f081")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_k886y")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_ullyf")
+
+[node name="Laughing" type="Node" parent="StateMachine"]
+script = ExtResource("4_ullyf")
+
+[node name="Wandering" type="Node" parent="StateMachine"]
+script = ExtResource("4_ullyf")
+
+[node name="Chatting" type="Node" parent="StateMachine"]
+script = ExtResource("4_ullyf")
