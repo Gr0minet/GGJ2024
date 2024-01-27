@@ -3,18 +3,13 @@ extends PNJState
 @export var min_wait := 3.0
 @export var max_wait := 4.0
 
-var _idling_time := 0.0
-var _idle_timer:float = 0
+var _stun_time := 0.0
+var _stun_timer:float = 0
 	
 func enter(msg: = {}) -> void:
 	owner.modulate = Color.GREEN
 	_idling_time = randf_range(min_wait, max_wait)
 	_idle_timer = 0
-	
-	
-	if Const.MSG_REASON in msg and msg[Const.MSG_REASON] == "poop":
-		owner.modulate = Color.AQUAMARINE
-		
 		
 func physics_process(delta):
 	_idle_timer += delta

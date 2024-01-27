@@ -1,27 +1,19 @@
 [gd_scene load_steps=6 format=3 uid="uid://csrtu3i8lmph"]
 
-[ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/utils/line_of_sight_2D.tscn" id="1_cmiw4"]
+[ext_resource type="Script" path="res://src/main/test_los.gd" id="1_ow1j6"]
+[ext_resource type="PackedScene" uid="uid://b4x8aammec5to" path="res://src/player/poop.tscn" id="2_57ypv"]
 [ext_resource type="PackedScene" uid="uid://27cjxmbjxlyj" path="res://src/props/BaseObstacle.tscn" id="2_srej8"]
-[ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="3_kuwxu"]
 [ext_resource type="PackedScene" uid="uid://bthqcvt6gip76" path="res://src/player/player.tscn" id="4_iuq5u"]
 [ext_resource type="PackedScene" uid="uid://brdc5enmv18y0" path="res://src/pnj/flic.tscn" id="5_7plv2"]
 
-[node name="TestLos" type="Node2D"]
-
-[node name="LineOfSight2D" parent="." instance=ExtResource("1_cmiw4")]
-position = Vector2(280, 56)
-debug_ray = false
-debug_shape = false
-
-[node name="BaseObstacle" parent="." instance=ExtResource("2_srej8")]
-position = Vector2(208, 280)
-scale = Vector2(0.5, 0.5)
-
-[node name="Pnj" parent="." instance=ExtResource("3_kuwxu")]
-position = Vector2(968, 496)
+[node name="TestLos" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_ow1j6")
+player = NodePath("Player")
+poop_scene = ExtResource("2_57ypv")
 
 [node name="Player" parent="." instance=ExtResource("4_iuq5u")]
 position = Vector2(1360, 584)
+move_speed = 800
 
 [node name="Flic" parent="." instance=ExtResource("5_7plv2")]
 position = Vector2(488, 416)
@@ -33,4 +25,16 @@ position = Vector2(736, 248)
 position = Vector2(680, 424)
 
 [node name="BaseObstacle4" parent="." instance=ExtResource("2_srej8")]
-position = Vector2(352, 472)
+position = Vector2(368, 824)
+
+[node name="BaseObstacle5" parent="." instance=ExtResource("2_srej8")]
+position = Vector2(1184, 936)
+
+[node name="BaseObstacle6" parent="." instance=ExtResource("2_srej8")]
+position = Vector2(1144, 392)
+
+[node name="BaseObstacle7" parent="." instance=ExtResource("2_srej8")]
+position = Vector2(1704, 360)
+
+[node name="BaseObstacle8" parent="." instance=ExtResource("2_srej8")]
+position = Vector2(1624, 912)

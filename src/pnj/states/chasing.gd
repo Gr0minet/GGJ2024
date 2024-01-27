@@ -40,8 +40,9 @@ func physics_process(delta: float) -> void:
 	var dist = owner.position.distance_to(_target_last_position)
 	print("Dist to target: %s" % dist)
 	if owner.position.distance_to(_target_last_position) < DISTANCE_LOST_THRESHOLD:
-			_state_machine.transition_to("LookingAround")
-			return
+		print("go lookaround")
+		_state_machine.transition_to("LookingAround")
+		return
 	
 	
 	

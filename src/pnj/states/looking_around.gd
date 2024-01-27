@@ -20,6 +20,7 @@ func enter(msg: = {}) -> void:
 	_target_angle_id = 0
 	
 func physics_process(delta):
+	print("LOOK AROUND")
 	#owner.line_of_sight.look_at(owner.line_of_sight.global_position + _direction)
 	owner.line_of_sight.rotation += _angle_change_direction * delta * look_around_speed
 	var face_direction = cos(owner.line_of_sight.rotation - deg_to_rad(90))

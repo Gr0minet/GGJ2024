@@ -15,7 +15,7 @@ func physics_process(delta: float) -> void:
 		_state_machine.transition_to("Move/Idle")
 
 func enter(msg: = {}) -> void:
-	print("Move/Walk")
+	pass
 	
 func exit(msg: = {}) -> void:
 	pass
