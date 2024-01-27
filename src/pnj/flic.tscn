@@ -92,8 +92,6 @@ script = ExtResource("9_ohw4f")
 
 [node name="Chasing" type="Node" parent="StateMachine"]
 script = ExtResource("10_k7o2q")
-chase_speed = null
-_time_before_stop_chasing = null
 
 [node name="LineOfSight2D" parent="." instance=ExtResource("10_n6pnb")]
 position = Vector2(0, 60)

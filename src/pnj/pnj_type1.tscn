@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://iyse5qnrnyp1"]
+
+[ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="1_buq7w"]
+[ext_resource type="Texture2D" uid="uid://dni0iawhvr2q6" path="res://assets/sprites/objects/pnj/pnj1.png" id="2_2ma5y"]
+
+[node name="Pnj1" instance=ExtResource("1_buq7w")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(3, -111)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_2ma5y")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 51)
+debug_color = Color(0.827451, 0, 0.94902, 0.419608)
+
+[node name="LaughingArea" parent="." index="2"]
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D" parent="LaughingArea" index="0"]
+visible = false
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D" parent="PnjDetector" index="0"]
+visible = false
+position = Vector2(-1, 60)
+
+[node name="RayCast2D" parent="RayCasts" index="0"]
+position = Vector2(0, 73)
+
+[node name="RayCast2D2" parent="RayCasts" index="1"]
+position = Vector2(-36, 52)
+
+[node name="RayCast2D3" parent="RayCasts" index="2"]
+position = Vector2(34, 52)
+
+[node name="RayCast2D4" parent="RayCasts" index="3"]
+position = Vector2(0, 27)
