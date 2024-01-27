@@ -15,7 +15,7 @@ func _ready():
 func enter(msg: = {}) -> void:
 	print(owner.name, " idling")
 	_idling_time = randf_range(min_wait, max_wait)
-	_timer.start(_wandering_time)
+	_timer.start(_idling_time)
 
 func exit(msg: = {}) -> void:
 	if not _timer.is_stopped():

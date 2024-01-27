@@ -62,8 +62,6 @@ state = NodePath("Wandering")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_eccfn")
-min_wait = null
-max_wait = null
 
 [node name="Laughing" type="Node" parent="StateMachine"]
 script = ExtResource("5_3ed7v")
