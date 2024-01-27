@@ -1,15 +1,18 @@
 [gd_scene load_steps=13 format=3 uid="uid://brdc5enmv18y0"]
 
-[ext_resource type="Script" path="res://src/pnj/pnj.gd" id="1_v6fyl"]
+[ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
 [ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="2_cqp5t"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_2u6tn"]
 [ext_resource type="Script" path="res://src/pnj/states/idle.gd" id="4_b63qi"]
-[ext_resource type="Script" path="res://src/pnj/states/laughing.gd" id="5_dyjvg"]
 [ext_resource type="Script" path="res://src/pnj/states/wandering.gd" id="6_8kbma"]
 [ext_resource type="Script" path="res://src/pnj/states/move_to_serment.gd" id="7_cgtjk"]
 [ext_resource type="Script" path="res://src/pnj/states/sermenting.gd" id="8_2gbhh"]
 [ext_resource type="Script" path="res://src/pnj/states/looking_around.gd" id="9_ohw4f"]
 [ext_resource type="Script" path="res://src/pnj/states/chasing.gd" id="10_k7o2q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w45no"]
+radius = 60.0
+height = 150.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gehh8"]
 size = Vector2(130, 130)
@@ -18,13 +21,23 @@ size = Vector2(130, 130)
 radius = 60.0
 height = 150.0
 
-[node name="Pnj" type="CharacterBody2D"]
+[node name="Flic" type="CharacterBody2D"]
 position = Vector2(-1, -64)
 collision_layer = 4
 motion_mode = 1
 slide_on_ceiling = false
 wall_min_slide_angle = 0.0
-script = ExtResource("1_v6fyl")
+script = ExtResource("1_4g741")
+
+[node name="LaughingDetector" type="Area2D" parent="."]
+position = Vector2(0, 60)
+collision_layer = 0
+collision_mask = 64
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaughingDetector"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_w45no")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_cqp5t")
@@ -60,14 +73,12 @@ target_position = Vector2(0, 100)
 position = Vector2(-1, -61)
 target_position = Vector2(0, 100)
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("3_2u6tn")
+state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_b63qi")
-
-[node name="Laughing" type="Node" parent="StateMachine"]
-script = ExtResource("5_dyjvg")
 
 [node name="Wandering" type="Node" parent="StateMachine"]
 script = ExtResource("6_8kbma")
@@ -84,5 +95,6 @@ script = ExtResource("9_ohw4f")
 [node name="Chasing" type="Node" parent="StateMachine"]
 script = ExtResource("10_k7o2q")
 
+[connection signal="area_entered" from="LaughingDetector" to="." method="_on_laughing_detector_area_entered"]
 [connection signal="area_entered" from="PnjDetector" to="." method="_on_pnj_detector_area_entered"]
 [connection signal="body_entered" from="PnjDetector" to="." method="_on_pnj_detector_body_entered"]

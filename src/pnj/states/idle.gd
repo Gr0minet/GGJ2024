@@ -21,5 +21,9 @@ func exit(msg: = {}) -> void:
 	if not _timer.is_stopped():
 		_timer.stop()
 		
+func physics_process(delta):
+	if owner.chasing_raycast_collide():
+		_state_machine.transition_to("Chasing")
+	
 func _idling_finished() -> void:
 	_state_machine.transition_to("Wandering")

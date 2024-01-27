@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cuwkrkhbps5yh"]
+[gd_scene load_steps=11 format=3 uid="uid://cuwkrkhbps5yh"]
 
 [ext_resource type="Script" path="res://src/pnj/pnj.gd" id="1_j0mti"]
 [ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="2_3lu8u"]
@@ -10,6 +10,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gehh8"]
 size = Vector2(130, 130)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6o3bs"]
+radius = 300.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
 radius = 60.0
@@ -29,6 +32,16 @@ texture = ExtResource("2_3lu8u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_gehh8")
+
+[node name="LaughingArea" type="Area2D" parent="."]
+position = Vector2(0, 60)
+collision_layer = 64
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaughingArea"]
+shape = SubResource("CircleShape2D_6o3bs")
 
 [node name="PnjDetector" type="Area2D" parent="."]
 collision_layer = 16
@@ -57,8 +70,9 @@ target_position = Vector2(0, 100)
 position = Vector2(-1, -61)
 target_position = Vector2(0, 100)
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("3_k886y")
+state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_w5e4j")
