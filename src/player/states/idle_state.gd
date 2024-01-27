@@ -3,10 +3,10 @@ extends PlayerState
 const START_MOVING_THRESHOLD:float = 0.01
 
 func unhandled_input(event: InputEvent) -> void:
-	pass
+	_parent.unhandled_input(event)
 	
 func process(delta: float) -> void:
-	pass
+	_parent.process(delta)
 
 func physics_process(delta: float) -> void:
 	_parent.physics_process(delta)
