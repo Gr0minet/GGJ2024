@@ -1,10 +1,8 @@
 # TODO
 
-	- flic: tourner le cone de vision en fonction du mouvement du policier (wandering, chasing,  move to sermenting, looking around, ...)
 	- flic état Chase à fix
-	- flic état Looking Around à compléter
 	- sermenting: pouvoir l'interrompre
-	- citoyen et flic: améliorer collision au spawn sur la map
+	x- citoyen et flic: améliorer collision au spawn sur la map
 	- classe obstacle à finir
 	- instancier les obstacles avec les assets
 	- level design
@@ -14,6 +12,7 @@
 		- flics
 		- PNJ, ...
 
+	- collision line of sight avec petit buisson à retirer
 	- sons
 	- musiques
 	- menu principal
@@ -50,6 +49,8 @@ Divers:
 	- flic état sermenting à faire
 	- flic ajouter un cone de vision
 	- flic état Chase à faire
+	- flic: tourner le cone de vision en fonction du mouvement du policier (wandering, chasing,  move to sermenting, looking around, ...)
+	- flic état Looking Around à compléter
 
 - Game:
 	- instancie le jouer, les citoyens et les flics

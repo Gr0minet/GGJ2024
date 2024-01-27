@@ -60,7 +60,6 @@ func _ready():
 			var player = body as Player
 			player_entered.emit(player)
 	)
-	
 
 func set_LOS_color(col:Color) -> void:
 	LOS_renderer.color = col

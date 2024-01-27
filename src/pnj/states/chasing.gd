@@ -13,12 +13,13 @@ func enter(msg: = {}) -> void:
 		return
 	_target_last_position = player.position
 
-
 func exit(msg: = {}) -> void:
 	pass
 
 func physics_process(delta: float) -> void:
 	var player:Player = owner.line_of_sight.get_player_in_sight()
+	owner.line_of_sight.look_at(player.global_position)
+	owner.line_of_sight.rotation += rad_to_deg(90)
 	if player == null:
 		if owner.position.distance_to(_target_last_position) < DISTANCE_LOST_THRESHOLD:
 			_state_machine.transition_to("LookingAround")
