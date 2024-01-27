@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyyidctugmtxa"]
-
-[ext_resource type="Script" path="res://src/pnj/states/sermenting.gd" id="1_0mnl2"]
-
-[node name="Sermenting" type="Node"]
-script = ExtResource("1_0mnl2")

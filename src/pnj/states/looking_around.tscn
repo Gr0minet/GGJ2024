@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://jugcfp67vjrw"]
-
-[ext_resource type="Script" path="res://src/pnj/states/looking_around.gd" id="1_qnynw"]
-
-[node name="LookingAround" type="Node"]
-script = ExtResource("1_qnynw")

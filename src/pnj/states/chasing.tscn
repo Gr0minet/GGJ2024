@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm3ck54d0lpbt"]
-
-[ext_resource type="Script" path="res://src/pnj/states/chasing.gd" id="1_1womp"]
-
-[node name="Chasing" type="Node"]
-script = ExtResource("1_1womp")
