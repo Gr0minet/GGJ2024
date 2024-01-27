@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://27cjxmbjxlyj"]
 
-[ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="1_3mqyl"]
+[ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="1_p5rjd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmd81"]
 radius = 11.0
 height = 128.0
 
-[node name="Obstacle" type="StaticBody2D"]
+[node name="BaseObstacle" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -64)
-texture = ExtResource("1_3mqyl")
+texture = ExtResource("1_p5rjd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

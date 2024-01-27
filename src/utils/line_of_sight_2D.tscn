@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3ce5h5jebeo8"]
+
+[ext_resource type="Script" path="res://src/utils/line_of_sight_2D.gd" id="1_p8anm"]
+
+[node name="LineOfSight2D" type="Node2D" node_paths=PackedStringArray("LOS_collider", "LOS_renderer")]
+script = ExtResource("1_p8anm")
+collision_blocking_layer = 15
+LOS_collider = NodePath("LOSArea/LOSCollider")
+LOS_renderer = NodePath("LOSRenderer")
+metadata/_edit_group_ = true
+
+[node name="LOSRenderer" type="Polygon2D" parent="."]
+color = Color(0.431373, 0.929412, 0.278431, 0.286275)
+
+[node name="LOSArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 15
+monitorable = false
+
+[node name="LOSCollider" type="CollisionPolygon2D" parent="LOSArea"]

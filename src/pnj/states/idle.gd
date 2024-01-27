@@ -13,6 +13,9 @@ func enter(msg: = {}) -> void:
 		
 func physics_process(delta):
 	_idle_timer += delta
+	if owner is Flic:
+		if owner.line_of_sight.player_is_in_sight():
+			_state_machine.transition_to("Chasing")
 	
 	if owner is Flic and owner.laughing_detector.has_overlapping_areas():
 		_state_machine.transition_to("MoveToSerment", {target = owner.laughing_detector.get_overlapping_areas()[0].owner})
@@ -22,3 +25,6 @@ func physics_process(delta):
 	
 func _idling_finished() -> void:
 	_state_machine.transition_to("Wandering")
+
+
+
