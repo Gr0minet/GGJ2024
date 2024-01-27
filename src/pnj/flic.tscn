@@ -45,15 +45,6 @@ shape = SubResource("CapsuleShape2D_w45no")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_cqp5t")
 
-[node name="PnjDetector" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PnjDetector"]
-position = Vector2(0, 60)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_82vvv")
-
 [node name="RayCasts" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="RayCasts"]
@@ -93,7 +84,3 @@ script = ExtResource("9_ohw4f")
 
 [node name="Chasing" type="Node" parent="StateMachine"]
 script = ExtResource("10_k7o2q")
-
-[connection signal="area_entered" from="LaughingDetector" to="." method="_on_laughing_detector_area_entered"]
-[connection signal="area_entered" from="PnjDetector" to="." method="_on_pnj_detector_area_entered"]
-[connection signal="body_entered" from="PnjDetector" to="." method="_on_pnj_detector_body_entered"]

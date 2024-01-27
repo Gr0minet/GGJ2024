@@ -1,29 +1,24 @@
 extends PNJState
 
-@export var min_wait := 1.0
-@export var max_wait := 2.0
-
-@onready var _timer := Timer.new()
+@export var min_wait := 3.0
+@export var max_wait := 4.0
 
 var _idling_time := 0.0
-
-func _ready():
-	super()
-	_timer.timeout.connect(_idling_finished)
-	add_child(_timer)
+var _idle_timer:float = 0
 	
 func enter(msg: = {}) -> void:
 	owner.modulate = Color.GREEN
 	_idling_time = randf_range(min_wait, max_wait)
-	_timer.start(_idling_time)
-
-func exit(msg: = {}) -> void:
-	if not _timer.is_stopped():
-		_timer.stop()
+	_idle_timer = 0
 		
 func physics_process(delta):
-	if owner is Flic and owner.chasing_raycast_collide():
-		_state_machine.transition_to("Chasing")
+	_idle_timer += delta
+	
+	if owner is Flic and owner.laughing_detector.has_overlapping_areas():
+		_state_machine.transition_to("MoveToSerment", {target = owner.laughing_detector.get_overlapping_areas()[0].owner})
+	
+	if _idle_timer > _idling_time:
+		_idling_finished()
 	
 func _idling_finished() -> void:
 	_state_machine.transition_to("Wandering")

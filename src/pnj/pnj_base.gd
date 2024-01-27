@@ -4,7 +4,6 @@ class_name PNJBase
 @onready var skin := $Sprite2D
 @onready var raycasts := $RayCasts
 @onready var state_machine := $StateMachine
-@onready var pnj_detector := $PnjDetector
 
 func raycast_collide(target_position: Vector2) -> bool:
 	for raycast: RayCast2D in raycasts.get_children():

@@ -1,17 +1,22 @@
 # TODO
 
 ## Scenes
-- citoyen: apparait random sur la map
-	- citoyen: rayon autour duquel il se met à rire
-- flic: pareil que le citoyen.
-	- state machine. Les mêmes que le citoyen +
-		- SERMENTING (sermente citoyen)
-		- STOP_AND_LOOK_AROUND (ne bouge pas, tourne pour surveiller
+	- flic ajouter un cone de vision
+	- flic état Chase à faire
+	- flic état Looking Around à faire
+	- flic état move to serment à faire
+	- flic état sermenting à faire
+	- citoyen: améliorer collision au spawn des citoyens sur la map
 - Game:
-	- instancie le joeuur, les citoyens et les flics
+	- instancie le jouer, les citoyens et les flics
 	- gere les regles
 
 pas urgent: menu principal, crédits, menu perdu...
+
+## Extra
+	- citoyens qui s'approchent quand les autres quand ils rigolent
+	- ajouter un raycast à la détection des rires des policiers pour éviter qu'ils collident dans
+		les obstacles en allant vers la personne à sermenter
 
 - Line of sight, caché par les obstacles
 - pathfinding ?
@@ -20,6 +25,7 @@ Divers:
 - Mettre l'origine du joueur sur les pieds (donc lever le sprite vers le haut)
 
 #DONE
+	- citoyen: apparait random sur la map
 	- joueur qui se déplace dans toutes les directions
 	- citoyen: Collisions "au niveau des pieds"
 	- citoyen: se déplace at random de temps en temps
