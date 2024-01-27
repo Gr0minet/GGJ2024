@@ -1,9 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://brdc5enmv18y0"]
+[gd_scene load_steps=20 format=3 uid="uid://brdc5enmv18y0"]
 
 [ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
-[ext_resource type="Texture2D" uid="uid://c2sp311teya7r" path="res://assets/sprites/cops/policier.png" id="2_43r0c"]
+[ext_resource type="Texture2D" uid="uid://b70c8phul5031" path="res://assets/sprites/cops/cops_walking_F1.png" id="2_dhct6"]
+[ext_resource type="Texture2D" uid="uid://c0ld7dyedtf01" path="res://assets/sprites/cops/cop_look_around_F1.png" id="2_k3gvb"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_2u6tn"]
+[ext_resource type="Texture2D" uid="uid://clniqvex3bl0p" path="res://assets/sprites/cops/cops_sermenting_F1.png" id="3_rj6eu"]
+[ext_resource type="Texture2D" uid="uid://ca6tstj48y65e" path="res://assets/sprites/cops/cops_walking_F2.png" id="3_w1uif"]
 [ext_resource type="Script" path="res://src/pnj/states/idle.gd" id="4_b63qi"]
+[ext_resource type="Texture2D" uid="uid://dbh6yu5o4k3cj" path="res://assets/sprites/cops/cops_sermenting_F2.png" id="4_bg7m1"]
+[ext_resource type="Texture2D" uid="uid://d3oq874da0gqf" path="res://assets/sprites/cops/cops_walking_F3.png" id="4_ogq2v"]
 [ext_resource type="Script" path="res://src/pnj/states/wandering.gd" id="6_8kbma"]
 [ext_resource type="Script" path="res://src/pnj/states/move_to_serment.gd" id="7_cgtjk"]
 [ext_resource type="Script" path="res://src/pnj/states/sermenting.gd" id="8_2gbhh"]
@@ -13,17 +18,53 @@
 [ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/utils/line_of_sight_2D.tscn" id="10_n6pnb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
-radius = 60.0
-height = 150.0
+radius = 30.0
+height = 75.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w45no"]
-radius = 60.0
-height = 150.0
+radius = 30.0
+height = 75.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rwekc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k3gvb")
+}],
+"loop": true,
+"name": &"looking_around",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rj6eu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bg7m1")
+}],
+"loop": true,
+"name": &"sermenting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dhct6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w1uif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ogq2v")
+}],
+"loop": true,
+"name": &"wandering",
+"speed": 5.0
+}]
 
 [node name="Flic" type="CharacterBody2D" node_paths=PackedStringArray("line_of_sight") groups=["walk_on_poop"]]
 position = Vector2(-1, -64)
 collision_layer = 8
-collision_mask = 7
+collision_mask = 15
 motion_mode = 1
 slide_on_ceiling = false
 wall_min_slide_angle = 0.0
@@ -45,10 +86,13 @@ monitorable = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_w45no")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -48)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_43r0c")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8, -40)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_rwekc")
+animation = &"wandering"
+frame_progress = 0.599575
+speed_scale = 1.5
 
 [node name="RayCasts" type="Node2D" parent="."]
 position = Vector2(1, 64)
@@ -71,7 +115,7 @@ target_position = Vector2(0, 100)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("3_2u6tn")
-state = NodePath("Idle")
+state = NodePath("Wandering")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_b63qi")

@@ -9,7 +9,8 @@ const TIME_MAX := 5.0
 var _target_last_position: Vector2
 
 func enter(msg: = {}) -> void:
-	owner.modulate = Color.WHITE
+	owner.skin.play("wandering")
+	owner.modulate = Color.RED
 	var player:Player = owner.line_of_sight.get_player_in_sight()
 	if player == null:
 		_state_machine.transition_to("LookingAround")
@@ -17,7 +18,7 @@ func enter(msg: = {}) -> void:
 	_target_last_position = player.position
 
 func exit(msg: = {}) -> void:
-	pass
+	owner.modulate = Color.WHITE
 
 func physics_process(delta: float) -> void:
 	var player:Player = owner.line_of_sight.get_player_in_sight()
@@ -47,8 +48,6 @@ func physics_process(delta: float) -> void:
 		return
 	
 	_time_before_stop_chasing -= delta
-	print(_time_before_stop_chasing)
 	if _time_before_stop_chasing < 0.0:
-		print("go looking around")
 		_state_machine.transition_to("LookingAround")
 		return

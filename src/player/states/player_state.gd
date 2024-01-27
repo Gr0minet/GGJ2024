@@ -2,7 +2,7 @@ extends State
 class_name PlayerState
 
 var player: Player
-var skin: Sprite2D
+var skin: AnimatedSprite2D
 
 func _ready() -> void:
 	super()

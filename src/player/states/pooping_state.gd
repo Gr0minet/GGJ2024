@@ -15,7 +15,6 @@ func process(delta: float) -> void:
 		_state_machine.transition_to("Move")
 	elif Input.is_action_pressed(Const.INPUT_POOP):
 		_poop_timer += delta;
-		print(_poop_timer)
 		_progress_bar.set_value(_poop_timer)
 	
 	if _poop_timer >= poop_duration:
@@ -27,21 +26,19 @@ func physics_process(delta: float) -> void:
 
 func enter(msg: = {}) -> void:
 	_poop_timer = 0.0
-	print("POOPING")
+	owner.skin.play("pooping")
 	
 	if progress_bar_position == null:
 		push_error("Progress bar is null in pooping")
 		return
 	if progress_bar_scene == null:
-		push_error("Progress bar scene is null is pooping")
+		push_error("Progress bar scene is null in pooping")
 		return
 	
 	_progress_bar = progress_bar_scene.instantiate()
 	_progress_bar.set_max_value(poop_duration)
 	_progress_bar.show_text_progress(true)
 	progress_bar_position.add_child(_progress_bar)
-	
-	
 	
 func exit(msg: = {}) -> void:
 	if _progress_bar:

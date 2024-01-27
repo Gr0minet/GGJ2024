@@ -9,7 +9,7 @@ var _target_angle: Array[float]
 var _target_angle_id := 0
 	
 func enter(msg: = {}) -> void:
-	owner.modulate = Color.YELLOW
+	owner.skin.play("looking_around")
 	
 	_current_angle = rad_to_deg(owner.line_of_sight.rotation)
 	_angle_change_direction = 1 if randi_range(0, 1) else -1
@@ -20,7 +20,6 @@ func enter(msg: = {}) -> void:
 	_target_angle_id = 0
 	
 func physics_process(delta):
-	#owner.line_of_sight.look_at(owner.line_of_sight.global_position + _direction)
 	owner.line_of_sight.rotation += _angle_change_direction * delta * look_around_speed
 	var face_direction = cos(owner.line_of_sight.rotation - deg_to_rad(90))
 	if face_direction > 0:
@@ -30,7 +29,7 @@ func physics_process(delta):
 	if _angle_change_direction * rad_to_deg(owner.line_of_sight.rotation) > _angle_change_direction * _target_angle[_target_angle_id]:
 		_target_angle_id += 1
 		_angle_change_direction *= -1
-	#owner.line_of_sight.rotation += rad_to_deg(90)
+
 	if owner.line_of_sight.player_is_in_sight():
 		_state_machine.transition_to("Chasing")
 		return

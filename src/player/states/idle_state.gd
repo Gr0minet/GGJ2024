@@ -14,7 +14,7 @@ func physics_process(delta: float) -> void:
 		_state_machine.transition_to("Move/Walk")
 
 func enter(msg: = {}) -> void:
-	pass
+	owner.skin.play("idle")
 	
 func exit(msg: = {}) -> void:
 	pass

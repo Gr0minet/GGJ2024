@@ -17,12 +17,10 @@ func enter(msg: = {}) -> void:
 	_idling_time = randf_range(min_wait, max_wait)
 	_idle_timer = 0
 	
-	
 	if Const.MSG_REASON in msg and msg[Const.MSG_REASON] == "poop":
 		owner.modulate = Color.RED
 		stunned = true
 		_idling_time = stun_time
-		
 		
 func physics_process(delta):
 	_idle_timer += delta

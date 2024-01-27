@@ -9,6 +9,7 @@ var _target_position := Vector2.ZERO
 var _direction := Vector2.ZERO
 
 func enter(msg: = {}) -> void:
+	owner.skin.play("wandering")
 	owner.modulate = Color.BLACK
 	_target = msg["target"]
 	_target_position = _target.global_position
@@ -24,6 +25,9 @@ func enter(msg: = {}) -> void:
 	else:
 		_state_machine.transition_to("Sermenting", {target = _target})
 		return
+
+func exit(msg: = {}) -> void:
+	owner.modulate = Color.BLACK
 
 func physics_process(delta: float) -> void:
 	if owner.line_of_sight.player_is_in_sight():

@@ -36,24 +36,7 @@ var _los_points:Array[Vector2] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	print("owner is %s" % owner)
 	LOS_renderer.color = LOS_color
-	
-	# Not needed but kept in case
-	#LOS_area.body_entered.connect(func(body:Node2D):
-		#body_entered.emit(body)
-	#)
-	#LOS_area.body_exited.connect(func(body:Node2D):
-		#body_exited.emit(body)
-	#)
-	#LOS_area.area_entered.connect(func(area:Area2D):
-		#area_entered.emit(area)
-	#)
-	#
-	#LOS_area.area_exited.connect(func(area:Area2D):
-		#area_entered.emit(area)
-	#)
 	
 	LOS_area.body_entered.connect(func(body:Node2D):
 		if body is Player:

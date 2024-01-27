@@ -11,7 +11,7 @@ var _sermenting_timer:float = 0.0
 var _progress_bar:Node2D = null
 
 func enter(msg: = {}) -> void:
-	owner.modulate = Color.DARK_ORANGE
+	owner.skin.play("sermenting")
 	_target = msg["target"]
 	
 	if _target == null:

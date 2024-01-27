@@ -15,7 +15,7 @@ func _ready():
 	add_child(_timer)
 	
 func enter(msg: = {}) -> void:
-	owner.modulate = Color.WHITE
+	owner.skin.play("wandering")
 
 	_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 	var target_position = speed * _direction * _wandering_time
@@ -48,4 +48,4 @@ func physics_process(delta: float) -> void:
 			_state_machine.transition_to("MoveToSerment", {target = owner.laughing_detector.get_overlapping_areas()[0].owner})
 			return
 func _wandering_finished() -> void:
-	_state_machine.transition_to("Idle")
+	_state_machine.transition_to("LookingAround")

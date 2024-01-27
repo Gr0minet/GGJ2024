@@ -2,7 +2,7 @@ extends State
 class_name PNJState
 
 var pnj: PNJBase
-var skin: Sprite2D
+var skin: AnimatedSprite2D
 
 func _ready() -> void:
 	super()

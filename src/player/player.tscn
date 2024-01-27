@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bthqcvt6gip76"]
+[gd_scene load_steps=17 format=3 uid="uid://bthqcvt6gip76"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_j4rin"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="2_0wvlx"]
@@ -9,17 +9,63 @@
 [ext_resource type="Script" path="res://src/player/states/pooping_state.gd" id="6_uw8hi"]
 [ext_resource type="Script" path="res://src/player/states/caught_state.gd" id="7_1ngrc"]
 [ext_resource type="PackedScene" uid="uid://bb6x3dllvfdpk" path="res://src/player/misc/action_progress_bar.tscn" id="8_p3vtb"]
+[ext_resource type="Texture2D" uid="uid://c7mhvxsnxu3yb" path="res://assets/sprites/doggo/idle/idle_F1.png" id="10_4ivde"]
+[ext_resource type="Texture2D" uid="uid://buf01wt0pgjll" path="res://assets/sprites/doggo/walking/doggo_walking_F1.png" id="10_4tbmc"]
+[ext_resource type="Texture2D" uid="uid://bs0bfrqbmo2h6" path="res://assets/sprites/doggo/walking/doggo_walking_F2.png" id="11_ljw6p"]
+[ext_resource type="Texture2D" uid="uid://dc5qnh80y4yry" path="res://assets/sprites/doggo/doggo_poop_F1.png" id="11_ys6ka"]
+[ext_resource type="Texture2D" uid="uid://orlyvffdshjw" path="res://assets/sprites/doggo/walking/doogo_walking_F3.png" id="12_mdrk1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bvw0j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4ivde")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ys6ka")
+}],
+"loop": true,
+"name": &"pooping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4tbmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ljw6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mdrk1")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kmfj"]
 radius = 20.0
-height = 112.0
+height = 76.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_j4rin")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -61)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_bvw0j")
+animation = &"walking"
+speed_scale = 1.5
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -56)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rsoco")

@@ -11,7 +11,7 @@ func physics_process(delta: float) -> void:
 	pass
 
 func enter(msg: = {}) -> void:
-	pass
+	owner.skin.play("walking")
 	
 func exit(msg: = {}) -> void:
 	pass
