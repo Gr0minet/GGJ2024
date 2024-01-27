@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c14u2wv7ttnvt"]
+[gd_scene load_steps=8 format=3 uid="uid://c14u2wv7ttnvt"]
 
 [ext_resource type="PackedScene" uid="uid://bthqcvt6gip76" path="res://src/player/player.tscn" id="1_5etke"]
 [ext_resource type="Script" path="res://src/main/game.gd" id="1_e7evx"]
 [ext_resource type="PackedScene" uid="uid://b4x8aammec5to" path="res://src/player/poop.tscn" id="2_akwfh"]
 [ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="3_m6kbi"]
 [ext_resource type="Script" path="res://src/utils/SpawnMargins.gd" id="4_vx8jg"]
+[ext_resource type="PackedScene" uid="uid://cyfxemw7csdv5" path="res://src/level/level.tscn" id="6_lctox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahfeg"]
 size = Vector2(1920, 21)
@@ -62,3 +63,5 @@ collision_mask = 0
 position = Vector2(1909, 399)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ahfeg")
+
+[node name="Level" parent="." instance=ExtResource("6_lctox")]
