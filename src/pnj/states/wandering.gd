@@ -32,7 +32,7 @@ func exit(msg: = {}) -> void:
 	
 func physics_process(delta: float) -> void:
 	pnj.move_and_slide()
-	if owner.chasing_raycast_collide():
+	if owner is Flic and owner.chasing_raycast_collide():
 		_state_machine.transition_to("Chasing")
 	
 func _wandering_finished() -> void:

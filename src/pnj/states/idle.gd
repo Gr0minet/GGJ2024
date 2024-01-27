@@ -22,7 +22,7 @@ func exit(msg: = {}) -> void:
 		_timer.stop()
 		
 func physics_process(delta):
-	if owner.chasing_raycast_collide():
+	if owner is Flic and owner.chasing_raycast_collide():
 		_state_machine.transition_to("Chasing")
 	
 func _idling_finished() -> void:

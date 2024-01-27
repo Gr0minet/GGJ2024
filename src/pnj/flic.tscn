@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://brdc5enmv18y0"]
+[gd_scene load_steps=12 format=3 uid="uid://brdc5enmv18y0"]
 
 [ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
 [ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="2_cqp5t"]
@@ -10,24 +10,27 @@
 [ext_resource type="Script" path="res://src/pnj/states/looking_around.gd" id="9_ohw4f"]
 [ext_resource type="Script" path="res://src/pnj/states/chasing.gd" id="10_k7o2q"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w45no"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
 radius = 60.0
 height = 150.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gehh8"]
-size = Vector2(130, 130)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w45no"]
 radius = 60.0
 height = 150.0
 
 [node name="Flic" type="CharacterBody2D"]
 position = Vector2(-1, -64)
-collision_layer = 4
+collision_layer = 8
+collision_mask = 7
 motion_mode = 1
 slide_on_ceiling = false
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4g741")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 60)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_82vvv")
 
 [node name="LaughingDetector" type="Area2D" parent="."]
 position = Vector2(0, 60)
@@ -41,10 +44,6 @@ shape = SubResource("CapsuleShape2D_w45no")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_cqp5t")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_gehh8")
 
 [node name="PnjDetector" type="Area2D" parent="."]
 collision_layer = 16
