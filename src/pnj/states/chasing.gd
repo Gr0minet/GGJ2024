@@ -1,8 +1,10 @@
 extends PNJState
 
 const DISTANCE_LOST_THRESHOLD:float = 10
+const TIME_MAX := 5.0
 
 @export var chase_speed:int = 250
+@export var _time_before_stop_chasing := 0.0
 
 var _target_last_position: Vector2
 
@@ -27,6 +29,7 @@ func physics_process(delta: float) -> void:
 	
 	if player != null:
 		_target_last_position = player.position
+		_time_before_stop_chasing = TIME_MAX
 	
 	var direction:Vector2 = (_target_last_position - owner.position).normalized()
 	owner.velocity = direction * chase_speed
@@ -38,10 +41,14 @@ func physics_process(delta: float) -> void:
 	
 	owner.move_and_slide()
 	var dist = owner.position.distance_to(_target_last_position)
-	print("Dist to target: %s" % dist)
+	#print("Dist to target: %s" % dist)
 	if owner.position.distance_to(_target_last_position) < DISTANCE_LOST_THRESHOLD:
-			_state_machine.transition_to("LookingAround")
-			return
+		_state_machine.transition_to("LookingAround")
+		return
 	
-	
-	
+	_time_before_stop_chasing -= delta
+	print(_time_before_stop_chasing)
+	if _time_before_stop_chasing < 0.0:
+		print("go looking around")
+		_state_machine.transition_to("LookingAround")
+		return
