@@ -22,3 +22,6 @@ pas urgent: menu principal, crédits, menu perdu...
 
 - Line of sight, caché par les obstacles
 - pathfinding ?
+
+Divers:
+- Mettre l'origine du joueur sur les pieds (donc lever le sprite vers le haut)
