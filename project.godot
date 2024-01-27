@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Const="*res://src/utils/constants.gd"
+MusicManager="*res://src/utils/MusicManager.tscn"
 
 [display]
 

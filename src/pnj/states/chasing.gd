@@ -9,6 +9,7 @@ const TIME_MAX := 5.0
 var _target_last_position: Vector2
 
 func enter(msg: = {}) -> void:
+	owner.modulate = Color.WHITE
 	var player:Player = owner.line_of_sight.get_player_in_sight()
 	if player == null:
 		_state_machine.transition_to("LookingAround")
@@ -41,7 +42,6 @@ func physics_process(delta: float) -> void:
 	
 	owner.move_and_slide()
 	var dist = owner.position.distance_to(_target_last_position)
-	#print("Dist to target: %s" % dist)
 	if owner.position.distance_to(_target_last_position) < DISTANCE_LOST_THRESHOLD:
 		_state_machine.transition_to("LookingAround")
 		return
