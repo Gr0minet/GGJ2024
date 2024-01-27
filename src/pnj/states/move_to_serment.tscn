@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy0hogngugm7w"]
+
+[ext_resource type="Script" path="res://src/pnj/states/move_to_serment.gd" id="1_2ipqn"]
+
+[node name="MoveToSerment" type="Node"]
+script = ExtResource("1_2ipqn")

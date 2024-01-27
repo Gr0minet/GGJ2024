@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dru8383r5vain"]
+
+[ext_resource type="Script" path="res://src/pnj/states/laughing.gd" id="1_d60ei"]
+
+[node name="Laughing" type="Node"]
+script = ExtResource("1_d60ei")

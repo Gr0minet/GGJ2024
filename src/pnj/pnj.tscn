@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://src/pnj/pnj.gd" id="1_j0mti"]
 [ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="2_3lu8u"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_k886y"]
-[ext_resource type="Script" path="res://src/pnj/states/idle.gd" id="4_eccfn"]
-[ext_resource type="Script" path="res://src/pnj/states/laughing.gd" id="5_3ed7v"]
-[ext_resource type="Script" path="res://src/pnj/states/wandering.gd" id="6_k3ktf"]
-[ext_resource type="Script" path="res://src/pnj/states/chatting.gd" id="7_phmu4"]
+[ext_resource type="PackedScene" uid="uid://ch6vf2tec6hyf" path="res://src/pnj/states/idle.tscn" id="4_mcxtq"]
+[ext_resource type="PackedScene" uid="uid://dru8383r5vain" path="res://src/pnj/states/laughing.tscn" id="5_cq5im"]
+[ext_resource type="PackedScene" uid="uid://c8nwu114f4fw3" path="res://src/pnj/states/wandering.tscn" id="6_ml502"]
+[ext_resource type="PackedScene" uid="uid://d3rij3juqvwd5" path="res://src/pnj/states/chatting.tscn" id="7_4i6th"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gehh8"]
 size = Vector2(130, 130)
@@ -59,19 +59,15 @@ target_position = Vector2(0, 100)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("3_k886y")
-state = NodePath("Wandering")
+state = NodePath("")
 
-[node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("4_eccfn")
+[node name="Idle" parent="StateMachine" instance=ExtResource("4_mcxtq")]
 
-[node name="Laughing" type="Node" parent="StateMachine"]
-script = ExtResource("5_3ed7v")
+[node name="Laughing" parent="StateMachine" instance=ExtResource("5_cq5im")]
 
-[node name="Wandering" type="Node" parent="StateMachine"]
-script = ExtResource("6_k3ktf")
+[node name="Wandering" parent="StateMachine" instance=ExtResource("6_ml502")]
 
-[node name="Chatting" type="Node" parent="StateMachine"]
-script = ExtResource("7_phmu4")
+[node name="Chatting" parent="StateMachine" instance=ExtResource("7_4i6th")]
 
 [connection signal="area_entered" from="PnjDetector" to="." method="_on_pnj_detector_area_entered"]
 [connection signal="body_entered" from="PnjDetector" to="." method="_on_pnj_detector_body_entered"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://brdc5enmv18y0"]
+
+[ext_resource type="Script" path="res://src/pnj/pnj.gd" id="1_v6fyl"]
+[ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="2_cqp5t"]
+[ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_2u6tn"]
+[ext_resource type="PackedScene" uid="uid://ch6vf2tec6hyf" path="res://src/pnj/states/idle.tscn" id="4_ug11m"]
+[ext_resource type="PackedScene" uid="uid://dru8383r5vain" path="res://src/pnj/states/laughing.tscn" id="5_00qco"]
+[ext_resource type="PackedScene" uid="uid://c8nwu114f4fw3" path="res://src/pnj/states/wandering.tscn" id="6_sjcgy"]
+[ext_resource type="PackedScene" uid="uid://cy0hogngugm7w" path="res://src/pnj/states/move_to_serment.tscn" id="7_golaf"]
+[ext_resource type="PackedScene" uid="uid://cyyidctugmtxa" path="res://src/pnj/states/sermenting.tscn" id="7_kiwdm"]
+[ext_resource type="PackedScene" uid="uid://jugcfp67vjrw" path="res://src/pnj/states/looking_around.tscn" id="9_kqvm1"]
+[ext_resource type="PackedScene" uid="uid://cm3ck54d0lpbt" path="res://src/pnj/states/chasing.tscn" id="10_x05ju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gehh8"]
+size = Vector2(130, 130)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
+radius = 60.0
+height = 150.0
+
+[node name="Pnj" type="CharacterBody2D"]
+position = Vector2(-1, -64)
+collision_layer = 4
+motion_mode = 1
+slide_on_ceiling = false
+wall_min_slide_angle = 0.0
+script = ExtResource("1_v6fyl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cqp5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_gehh8")
+
+[node name="PnjDetector" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PnjDetector"]
+position = Vector2(0, 60)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_82vvv")
+
+[node name="RayCasts" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="RayCasts"]
+position = Vector2(0, 64)
+target_position = Vector2(0, 100)
+
+[node name="RayCast2D2" type="RayCast2D" parent="RayCasts"]
+position = Vector2(-64, 0)
+target_position = Vector2(0, 100)
+
+[node name="RayCast2D3" type="RayCast2D" parent="RayCasts"]
+position = Vector2(64, 0)
+target_position = Vector2(0, 100)
+
+[node name="RayCast2D4" type="RayCast2D" parent="RayCasts"]
+position = Vector2(-1, -61)
+target_position = Vector2(0, 100)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_2u6tn")
+
+[node name="Idle" parent="StateMachine" instance=ExtResource("4_ug11m")]
+
+[node name="Laughing" parent="StateMachine" instance=ExtResource("5_00qco")]
+
+[node name="Wandering" parent="StateMachine" instance=ExtResource("6_sjcgy")]
+
+[node name="MoveToSerment" parent="StateMachine" instance=ExtResource("7_golaf")]
+
+[node name="Sermenting" parent="StateMachine" instance=ExtResource("7_kiwdm")]
+
+[node name="LookingAround" parent="StateMachine" instance=ExtResource("9_kqvm1")]
+
+[node name="Chasing" parent="StateMachine" instance=ExtResource("10_x05ju")]
+
+[connection signal="area_entered" from="PnjDetector" to="." method="_on_pnj_detector_area_entered"]
+[connection signal="body_entered" from="PnjDetector" to="." method="_on_pnj_detector_body_entered"]
