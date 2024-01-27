@@ -14,15 +14,9 @@ func raycast_collide(target_position: Vector2) -> bool:
 			return true
 	return false
 
-func _start_chatting() -> void:
-	pnj_detector.set_deferred("monitorable", false)
-	pnj_detector.set_deferred("monitoring", false)
-	state_machine.transition_to("Chatting")
-
-func _stop_chatting() -> void:
-	pnj_detector.set_deferred("monitorable", true)
-	pnj_detector.set_deferred("monitoring", true)
+func start_laughing() -> void:
+	state_machine.transition_to("Laughing")
 
 func _on_pnj_detector_area_entered(area):
 	if area != self:
-		_start_chatting()
+		state_machine.transition_to("Chatting")

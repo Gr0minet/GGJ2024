@@ -17,13 +17,25 @@ position = Vector2(739, 151)
 [node name="Pnj3" parent="." instance=ExtResource("1_agmjb")]
 position = Vector2(568, 442)
 
+[node name="Pnj4" parent="." instance=ExtResource("1_agmjb")]
+position = Vector2(230, 491)
+
+[node name="Pnj5" parent="." instance=ExtResource("1_agmjb")]
+position = Vector2(908, 456)
+
+[node name="Pnj6" parent="." instance=ExtResource("1_agmjb")]
+position = Vector2(969, 272)
+
+[node name="Pnj7" parent="." instance=ExtResource("1_agmjb")]
+position = Vector2(137, 168)
+
 [node name="Bords" type="Node2D" parent="."]
 
 [node name="Area2D" type="StaticBody2D" parent="Bords"]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bords/Area2D"]
-position = Vector2(554, -12)
+position = Vector2(577, -11)
 shape = SubResource("RectangleShape2D_ti22v")
 
 [node name="Area2D2" type="StaticBody2D" parent="Bords"]
