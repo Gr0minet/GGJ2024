@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://brdc5enmv18y0"]
 
 [ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
-[ext_resource type="Texture2D" uid="uid://c2sp311teya7r" path="res://assets/sprites/objects/policier.png" id="2_fsh6c"]
+[ext_resource type="Texture2D" uid="uid://c2sp311teya7r" path="res://assets/sprites/cops/policier.png" id="2_43r0c"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_2u6tn"]
 [ext_resource type="Script" path="res://src/pnj/states/idle.gd" id="4_b63qi"]
 [ext_resource type="Script" path="res://src/pnj/states/wandering.gd" id="6_8kbma"]
@@ -48,7 +48,7 @@ shape = SubResource("CapsuleShape2D_w45no")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -48)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_fsh6c")
+texture = ExtResource("2_43r0c")
 
 [node name="RayCasts" type="Node2D" parent="."]
 position = Vector2(1, 64)

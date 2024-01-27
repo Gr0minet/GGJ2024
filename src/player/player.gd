@@ -8,6 +8,5 @@ signal pooped
 @onready var skin:Sprite2D = $Sprite2D
 @onready var poop_position:Marker2D = $PoopPosition
 
-
 func get_poop_position() -> Vector2:
 	return poop_position.global_position

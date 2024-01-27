@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cuwkrkhbps5yh"]
 
 [ext_resource type="Script" path="res://src/pnj/pnj.gd" id="1_j0mti"]
-[ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="2_3lu8u"]
+[ext_resource type="Texture2D" uid="uid://dni0iawhvr2q6" path="res://assets/sprites/pnj/pnj1.png" id="2_6tmx2"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_k886y"]
 [ext_resource type="Script" path="res://src/pnj/states/idle.gd" id="4_w5e4j"]
 [ext_resource type="Script" path="res://src/pnj/states/laughing.gd" id="5_p0tqv"]
@@ -28,7 +28,9 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_j0mti")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_3lu8u")
+position = Vector2(0, -112)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_6tmx2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
@@ -62,19 +64,19 @@ metadata/_edit_lock_ = true
 [node name="RayCasts" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="RayCasts"]
-position = Vector2(0, 64)
+position = Vector2(0, 20)
 target_position = Vector2(0, 100)
 
 [node name="RayCast2D2" type="RayCast2D" parent="RayCasts"]
-position = Vector2(-64, 0)
+position = Vector2(-33, 0)
 target_position = Vector2(0, 100)
 
 [node name="RayCast2D3" type="RayCast2D" parent="RayCasts"]
-position = Vector2(64, 0)
+position = Vector2(32, 0)
 target_position = Vector2(0, 100)
 
 [node name="RayCast2D4" type="RayCast2D" parent="RayCasts"]
-position = Vector2(-1, -61)
+position = Vector2(0, -22)
 target_position = Vector2(0, 100)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]

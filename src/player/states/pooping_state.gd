@@ -1,12 +1,8 @@
 extends PlayerState
 
-
-
 @export var poop_duration:float = 1.0;
 @export var progress_bar_position:Marker2D = null
 @export var progress_bar_scene:PackedScene = null
-
-
 
 var _poop_timer:float = 0.0
 var _progress_bar:Node2D = null
@@ -25,8 +21,6 @@ func process(delta: float) -> void:
 	if _poop_timer >= poop_duration:
 		player.pooped.emit()
 		_state_machine.transition_to("Move")
-			
-		
 
 func physics_process(delta: float) -> void:
 	pass

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_j4rin"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="2_0wvlx"]
-[ext_resource type="Texture2D" uid="uid://qg5ax3763c3u" path="res://assets/sprites/objects/doggo.png" id="2_4sc3x"]
+[ext_resource type="Texture2D" uid="uid://b5ewerflrr0fh" path="res://assets/sprites/doggo/doggo.png" id="2_rsoco"]
 [ext_resource type="Script" path="res://src/player/states/move_state.gd" id="4_g2l53"]
 [ext_resource type="Script" path="res://src/player/states/idle_state.gd" id="4_mrd12"]
 [ext_resource type="Script" path="res://src/player/states/walk_state.gd" id="6_qr2og"]
@@ -22,7 +22,7 @@ script = ExtResource("1_j4rin")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -56)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_4sc3x")
+texture = ExtResource("2_rsoco")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
