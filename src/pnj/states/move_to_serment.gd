@@ -34,4 +34,5 @@ func physics_process(delta: float) -> void:
 		pnj.move_and_slide()
 	else:
 		_state_machine.transition_to("Sermenting", {target = _target})
+		return
 

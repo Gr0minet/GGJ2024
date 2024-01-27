@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://csrtu3i8lmph"]
+[gd_scene load_steps=6 format=3 uid="uid://csrtu3i8lmph"]
 
 [ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/utils/line_of_sight_2D.tscn" id="1_cmiw4"]
 [ext_resource type="PackedScene" uid="uid://27cjxmbjxlyj" path="res://src/props/BaseObstacle.tscn" id="2_srej8"]
 [ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="3_kuwxu"]
 [ext_resource type="PackedScene" uid="uid://bthqcvt6gip76" path="res://src/player/player.tscn" id="4_iuq5u"]
 [ext_resource type="PackedScene" uid="uid://brdc5enmv18y0" path="res://src/pnj/flic.tscn" id="5_7plv2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qeijt"]
-size = Vector2(42, 34)
 
 [node name="TestLos" type="Node2D"]
 
@@ -17,22 +14,23 @@ debug_ray = false
 debug_shape = false
 
 [node name="BaseObstacle" parent="." instance=ExtResource("2_srej8")]
-position = Vector2(304, 240)
+position = Vector2(208, 280)
 scale = Vector2(0.5, 0.5)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(368, 144)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(11, 7)
-shape = SubResource("RectangleShape2D_qeijt")
-
 [node name="Pnj" parent="." instance=ExtResource("3_kuwxu")]
-position = Vector2(200, 232)
+position = Vector2(968, 496)
 
 [node name="Player" parent="." instance=ExtResource("4_iuq5u")]
-position = Vector2(728, 368)
+position = Vector2(1360, 584)
 
 [node name="Flic" parent="." instance=ExtResource("5_7plv2")]
 position = Vector2(488, 416)
+
+[node name="BaseObstacle2" parent="." instance=ExtResource("2_srej8")]
+position = Vector2(736, 248)
+
+[node name="BaseObstacle3" parent="." instance=ExtResource("2_srej8")]
+position = Vector2(680, 424)
+
+[node name="BaseObstacle4" parent="." instance=ExtResource("2_srej8")]
+position = Vector2(352, 472)

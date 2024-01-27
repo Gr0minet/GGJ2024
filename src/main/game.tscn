@@ -21,18 +21,6 @@ police_scene = ExtResource("4_57ofh")
 player = NodePath("Player")
 spawn_margins = NodePath("SpawnMargins")
 
-[node name="Player" parent="." instance=ExtResource("1_5etke")]
-position = Vector2(1468, 979)
-
-[node name="SpawnMargins" type="Node2D" parent="."]
-script = ExtResource("4_vx8jg")
-
-[node name="top_left" type="Marker2D" parent="SpawnMargins"]
-position = Vector2(116, 68)
-
-[node name="bottom_right" type="Marker2D" parent="SpawnMargins"]
-position = Vector2(1822, 939)
-
 [node name="Bords" type="Node2D" parent="."]
 
 [node name="Area2D" type="StaticBody2D" parent="Bords"]
@@ -67,4 +55,17 @@ position = Vector2(1909, 399)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ahfeg")
 
+[node name="Player" parent="." instance=ExtResource("1_5etke")]
+position = Vector2(1308, 979)
+
+[node name="SpawnMargins" type="Node2D" parent="."]
+script = ExtResource("4_vx8jg")
+
+[node name="top_left" type="Marker2D" parent="SpawnMargins"]
+position = Vector2(116, 68)
+
+[node name="bottom_right" type="Marker2D" parent="SpawnMargins"]
+position = Vector2(1822, 939)
+
 [node name="Level" parent="." instance=ExtResource("6_lctox")]
+metadata/_edit_lock_ = true

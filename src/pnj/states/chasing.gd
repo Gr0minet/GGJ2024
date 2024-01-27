@@ -1,8 +1,8 @@
 extends PNJState
 
-const DISTANCE_LOST_THRESHOLD:int = 3
+const DISTANCE_LOST_THRESHOLD:float = 6
 
-@export var chase_speed:int = 400
+@export var chase_speed:int = 250
 
 var _target_last_position: Vector2
 
@@ -25,6 +25,9 @@ func physics_process(delta: float) -> void:
 			_state_machine.transition_to("LookingAround")
 			return
 	
+	if player != null:
+		_target_last_position = player.position
+	
 	var direction:Vector2 = (_target_last_position - owner.position).normalized()
 	owner.velocity = direction * chase_speed
 	
@@ -34,6 +37,11 @@ func physics_process(delta: float) -> void:
 		owner.skin.flip_h = false
 	
 	owner.move_and_slide()
+	var dist = owner.position.distance_to(_target_last_position)
+	print("Dist to target: %s" % dist)
+	if owner.position.distance_to(_target_last_position) < DISTANCE_LOST_THRESHOLD:
+			_state_machine.transition_to("LookingAround")
+			return
 	
 	
 	

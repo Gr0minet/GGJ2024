@@ -12,7 +12,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kmfj"]
 radius = 20.0
-height = 208.0
+height = 112.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -20,11 +20,12 @@ collision_mask = 13
 script = ExtResource("1_j4rin")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -80)
-scale = Vector2(0.3, 0.3)
+position = Vector2(0, -56)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_4sc3x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2kmfj")
 

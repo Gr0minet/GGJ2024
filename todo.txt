@@ -1,10 +1,9 @@
 # TODO
 
-	- flic état Chase à fix
-	- sermenting: pouvoir l'interrompre
-	x- citoyen et flic: améliorer collision au spawn sur la map
-	- classe obstacle à finir
-	- instancier les obstacles avec les assets
+	- sermenting: pouvoir l'interrompre (M) (CHECK)
+	- citoyen et flic: améliorer collision au spawn sur la map
+	- arranger les tailles d'assets
+	- flic état Chase à fix (M) 
 	- level design
 	- fin de jeu ("perdu")
 	- animations:
@@ -49,6 +48,8 @@ Divers:
 	- flic état sermenting à faire
 	- flic ajouter un cone de vision
 	- flic état Chase à faire
+	- classe obstacle à finir
+	- instancier les obstacles avec les assets
 	- flic: tourner le cone de vision en fonction du mouvement du policier (wandering, chasing,  move to sermenting, looking around, ...)
 	- flic état Looking Around à compléter
 

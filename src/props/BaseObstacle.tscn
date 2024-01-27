@@ -3,10 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="1_p5rjd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmd81"]
-radius = 11.0
+radius = 24.0
 height = 128.0
 
 [node name="BaseObstacle" type="StaticBody2D"]
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -64)

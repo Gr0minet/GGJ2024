@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://brdc5enmv18y0"]
+[gd_scene load_steps=14 format=3 uid="uid://brdc5enmv18y0"]
 
 [ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
 [ext_resource type="Texture2D" uid="uid://c2sp311teya7r" path="res://assets/sprites/objects/policier.png" id="2_fsh6c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://src/pnj/states/wandering.gd" id="6_8kbma"]
 [ext_resource type="Script" path="res://src/pnj/states/move_to_serment.gd" id="7_cgtjk"]
 [ext_resource type="Script" path="res://src/pnj/states/sermenting.gd" id="8_2gbhh"]
+[ext_resource type="PackedScene" uid="uid://bb6x3dllvfdpk" path="res://src/player/misc/action_progress_bar.tscn" id="8_j2dms"]
 [ext_resource type="Script" path="res://src/pnj/states/looking_around.gd" id="9_ohw4f"]
 [ext_resource type="Script" path="res://src/pnj/states/chasing.gd" id="10_k7o2q"]
 [ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/utils/line_of_sight_2D.tscn" id="10_n6pnb"]
@@ -81,8 +82,10 @@ script = ExtResource("6_8kbma")
 [node name="MoveToSerment" type="Node" parent="StateMachine"]
 script = ExtResource("7_cgtjk")
 
-[node name="Sermenting" type="Node" parent="StateMachine"]
+[node name="Sermenting" type="Node" parent="StateMachine" node_paths=PackedStringArray("progress_bar_position")]
 script = ExtResource("8_2gbhh")
+progress_bar_position = NodePath("../../ProgressBarPosition")
+progress_bar_scene = ExtResource("8_j2dms")
 
 [node name="LookingAround" type="Node" parent="StateMachine"]
 script = ExtResource("9_ohw4f")
@@ -93,4 +96,9 @@ script = ExtResource("10_k7o2q")
 [node name="LineOfSight2D" parent="." instance=ExtResource("10_n6pnb")]
 position = Vector2(0, 60)
 
+[node name="ProgressBarPosition" type="Marker2D" parent="."]
+position = Vector2(1, -168)
+
 [connection signal="area_entered" from="LaughingDetector" to="." method="_on_laughing_detector_area_entered"]
+
+[editable path="LineOfSight2D"]
