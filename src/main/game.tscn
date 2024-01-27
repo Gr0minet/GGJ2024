@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4x8aammec5to" path="res://src/player/poop.tscn" id="2_akwfh"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("player")]
+y_sort_enabled = true
 script = ExtResource("1_e7evx")
 poop_scene = ExtResource("2_akwfh")
 player = NodePath("Player")

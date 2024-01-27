@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bthqcvt6gip76"]
+[gd_scene load_steps=11 format=3 uid="uid://bthqcvt6gip76"]
 
 [ext_resource type="Texture2D" uid="uid://capq3o1cr84al" path="res://assets/icon.svg" id="1_i3iqi"]
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_j4rin"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://src/player/states/walk_state.gd" id="6_qr2og"]
 [ext_resource type="Script" path="res://src/player/states/pooping_state.gd" id="6_uw8hi"]
 [ext_resource type="Script" path="res://src/player/states/caught_state.gd" id="7_1ngrc"]
+[ext_resource type="PackedScene" uid="uid://bb6x3dllvfdpk" path="res://src/player/misc/action_progress_bar.tscn" id="8_p3vtb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kmfj"]
 radius = 20.0
@@ -37,11 +38,16 @@ script = ExtResource("4_mrd12")
 [node name="Walk" type="Node" parent="StateMachine/Move"]
 script = ExtResource("6_qr2og")
 
-[node name="Pooping" type="Node" parent="StateMachine"]
+[node name="Pooping" type="Node" parent="StateMachine" node_paths=PackedStringArray("progress_bar_position")]
 script = ExtResource("6_uw8hi")
+progress_bar_position = NodePath("../../ProgressBarPosition")
+progress_bar_scene = ExtResource("8_p3vtb")
 
 [node name="Caught" type="Node" parent="StateMachine"]
 script = ExtResource("7_1ngrc")
 
 [node name="PoopPosition" type="Marker2D" parent="."]
 position = Vector2(1, 60)
+
+[node name="ProgressBarPosition" type="Marker2D" parent="."]
+position = Vector2(1, -87)
