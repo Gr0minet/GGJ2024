@@ -12,3 +12,7 @@ const INPUT_POOP:String = "poop"
 
 # Groups names
 const GROUP_WALK_ON_POOP:String = "walk_on_poop"
+
+
+# MSG STATE
+const MSG_REASON:String = "reason"

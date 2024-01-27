@@ -20,7 +20,7 @@ height = 150.0
 radius = 60.0
 height = 150.0
 
-[node name="Flic" type="CharacterBody2D" node_paths=PackedStringArray("line_of_sight")]
+[node name="Flic" type="CharacterBody2D" node_paths=PackedStringArray("line_of_sight") groups=["walk_on_poop"]]
 position = Vector2(-1, -64)
 collision_layer = 8
 collision_mask = 7

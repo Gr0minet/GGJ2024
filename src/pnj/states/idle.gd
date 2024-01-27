@@ -10,6 +10,11 @@ func enter(msg: = {}) -> void:
 	owner.modulate = Color.GREEN
 	_idling_time = randf_range(min_wait, max_wait)
 	_idle_timer = 0
+	
+	
+	if Const.MSG_REASON in msg and msg[Const.MSG_REASON] == "poop":
+		owner.modulate = Color.AQUAMARINE
+		
 		
 func physics_process(delta):
 	_idle_timer += delta
