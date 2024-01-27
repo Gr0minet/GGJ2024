@@ -24,7 +24,7 @@ func physics_process(delta: float) -> void:
 			_state_machine.transition_to("LookingAround")
 			return
 	
-	var direction:Vector2 = (_target_last_position - owner.position).normalize()
+	var direction:Vector2 = (_target_last_position - owner.position).normalized()
 	owner.velocity = direction * chase_speed
 	
 	if owner.velocity.x > 0:

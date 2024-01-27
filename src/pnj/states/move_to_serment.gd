@@ -20,10 +20,10 @@ func enter(msg: = {}) -> void:
 		return
 
 func physics_process(delta: float) -> void:
-    if owner.line_of_sight.player_is_in_sight():
-        _state_machine.transition_to("Chasing")
-        return 
-    
+	if owner.line_of_sight.player_is_in_sight():
+		_state_machine.transition_to("Chasing")
+		return 
+	
 	if pnj.position.distance_to(_target_position) > SERMENTING_THRESHOD:
 		pnj.move_and_slide()
 	else:

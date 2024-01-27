@@ -16,15 +16,16 @@ func physics_process(delta):
 	if owner is Flic:
 		if owner.line_of_sight.player_is_in_sight():
 			_state_machine.transition_to("Chasing")
+			return
 	
-	if owner is Flic and owner.laughing_detector.has_overlapping_areas():
-		_state_machine.transition_to("MoveToSerment", {target = owner.laughing_detector.get_overlapping_areas()[0].owner})
-	
+		if owner.laughing_detector.has_overlapping_areas():
+			_state_machine.transition_to("MoveToSerment", {target = owner.laughing_detector.get_overlapping_areas()[0].owner})
+			return
+		
 	if _idle_timer > _idling_time:
-		_idling_finished()
+		_state_machine.transition_to("Wandering")
+		return
 	
-func _idling_finished() -> void:
-	_state_machine.transition_to("Wandering")
 
 
 

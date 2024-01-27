@@ -94,5 +94,3 @@ script = ExtResource("10_k7o2q")
 rotation = -1.5708
 
 [connection signal="area_entered" from="LaughingDetector" to="." method="_on_laughing_detector_area_entered"]
-[connection signal="area_entered" from="PnjDetector" to="." method="_on_pnj_detector_area_entered"]
-[connection signal="body_entered" from="PnjDetector" to="." method="_on_pnj_detector_body_entered"]

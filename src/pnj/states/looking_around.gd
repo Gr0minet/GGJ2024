@@ -23,11 +23,15 @@ func exit(msg: = {}) -> void:
 		_timer.stop()
 	
 func physics_process(delta):
-    if owner.line_of_sight.player_is_in_sight():
+	if owner.line_of_sight.player_is_in_sight():
 		_state_machine.transition_to("Chasing")
+		return
+		
 	if owner.laughing_detector.has_overlapping_areas():
 		_state_machine.transition_to("MoveToSerment", {target = owner.laughing_detector.get_overlapping_areas()[0].owner})
-    
+		return
+	
+	
 
 func _looking_around_finished() -> void:
 	_state_machine.transition_to("Wandering")
