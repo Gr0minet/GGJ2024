@@ -1,15 +1,29 @@
 # TODO
 
-## Scenes
-	- flic ajouter un cone de vision
-	- flic état Chase à faire
+	- flic: tourner le cone de vision en fonction du mouvement du policier (wandering, chasing,  move to sermenting, looking around, ...)
+	- flic état Chase à fix
 	- flic état Looking Around à compléter
-	- citoyen: améliorer collision au spawn des citoyens sur la map
-- Game:
-	- instancie le jouer, les citoyens et les flics
-	- gere les regles
+	- sermenting: pouvoir l'interrompre
+	- citoyen et flic: améliorer collision au spawn sur la map
+	- classe obstacle à finir
+	- instancier les obstacles avec les assets
+	- level design
+	- fin de jeu ("perdu")
+	- animations:
+		- chien
+		- flics
+		- PNJ, ...
 
-pas urgent: menu principal, crédits, menu perdu...
+	- sons
+	- musiques
+	- menu principal
+	- crédits
+	- progressivement plus de flics arrivent
+	- équilibrage
+
+Peut-etre
+	- chien peut aboyer, bruit attire les gens
+	- rire attire les gens
 
 ## Extra
 	- citoyens qui s'approchent quand les autres quand ils rigolent
@@ -34,3 +48,9 @@ Divers:
 		- CHATTING (ne bouge pas, parle avec quelqu'un) (plus tard si jamais)
 	- flic état move to serment à faire
 	- flic état sermenting à faire
+	- flic ajouter un cone de vision
+	- flic état Chase à faire
+
+- Game:
+	- instancie le jouer, les citoyens et les flics
+	- gere les regles
