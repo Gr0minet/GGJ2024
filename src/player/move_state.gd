@@ -1,6 +1,5 @@
 extends PlayerState
 
-const START_MOVING_THRESHOLD:float = 0.01
 
 func unhandled_input(event: InputEvent) -> void:
 	pass
@@ -9,12 +8,15 @@ func process(delta: float) -> void:
 	pass
 
 func physics_process(delta: float) -> void:
-	_parent.physics_process(delta)
-	if (player.velocity.length() > START_MOVING_THRESHOLD):
-		_state_machine.transition_to("Move/Walk")
+	var direction:Vector2 = Input.get_vector("left", "right", "up", "down")
+	player.velocity = direction * player.move_speed
+	
+	player.move_and_slide()
+	
+	print("Player velocity:", player.velocity)
 
 func enter(msg: = {}) -> void:
-	print("entering idle, and message is : ", msg)
+	pass
 	
 func exit(msg: = {}) -> void:
 	pass
