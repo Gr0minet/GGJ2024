@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c14u2wv7ttnvt"]
+
+[ext_resource type="PackedScene" uid="uid://bthqcvt6gip76" path="res://src/player/player.tscn" id="1_5etke"]
+[ext_resource type="Script" path="res://src/main/game.gd" id="1_e7evx"]
+[ext_resource type="PackedScene" uid="uid://b4x8aammec5to" path="res://src/player/poop.tscn" id="2_akwfh"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("player")]
+y_sort_enabled = true
+script = ExtResource("1_e7evx")
+poop_scene = ExtResource("2_akwfh")
+player = NodePath("Player")
+
+[node name="Player" parent="." instance=ExtResource("1_5etke")]
+position = Vector2(578, 203)
