@@ -13,7 +13,7 @@ func _ready():
 	add_child(_timer)
 	
 func enter(msg: = {}) -> void:
-	print(owner.name, " idling")
+	owner.modulate = Color.GREEN
 	_idling_time = randf_range(min_wait, max_wait)
 	_timer.start(_idling_time)
 

@@ -4,4 +4,10 @@ extends PNJState
 @export var max_wait := 10.0
 
 func enter(msg: = {}) -> void:
-	print(owner.name, " chatting")
+	owner.modulate = Color.RED
+	owner.pnj_detector.set_deferred("monitorable", false)
+	owner.pnj_detector.set_deferred("monitoring", false)
+
+func exit(msg: = {}) -> void:
+	owner.pnj_detector.set_deferred("monitorable", true)
+	owner.pnj_detector.set_deferred("monitoring", true)

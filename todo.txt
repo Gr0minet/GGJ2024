@@ -1,19 +1,12 @@
 # TODO
 
 ## Scenes
-- joueur qui se déplace dans toutes les directions
-- citoyen: apparait random sur la map, se déplace at random de temps en temps. Collisions "au niveau des pieds"
-	- state machine. Etats:
-		- LAUGHING (ne bouge pas, rigole)
-		- "DEFAULT" (ne bouge pas, ne rigole pas, ne fait rien quoi)
-		- WANDERING (bouge, ne rigole pas)
-		- CHATTING (ne bouge pas, parle avec quelqu'un) (plus tard si jamais)
-	- rayon autour duquel il se met à rire
+- citoyen: apparait random sur la map
+	- citoyen: rayon autour duquel il se met à rire
 - flic: pareil que le citoyen.
 	- state machine. Les mêmes que le citoyen +
 		- SERMENTING (sermente citoyen)
 		- STOP_AND_LOOK_AROUND (ne bouge pas, tourne pour surveiller
-
 - Game:
 	- instancie le joeuur, les citoyens et les flics
 	- gere les regles
@@ -25,3 +18,13 @@ pas urgent: menu principal, crédits, menu perdu...
 
 Divers:
 - Mettre l'origine du joueur sur les pieds (donc lever le sprite vers le haut)
+
+#DONE
+	- joueur qui se déplace dans toutes les directions
+	- citoyen: Collisions "au niveau des pieds"
+	- citoyen: se déplace at random de temps en temps
+		- state machine. Etats:
+		- LAUGHING (ne bouge pas, rigole)
+		- "DEFAULT" (ne bouge pas, ne rigole pas, ne fait rien quoi)
+		- WANDERING (bouge, ne rigole pas)
+		- CHATTING (ne bouge pas, parle avec quelqu'un) (plus tard si jamais)

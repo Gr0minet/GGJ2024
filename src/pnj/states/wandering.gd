@@ -15,7 +15,7 @@ func _ready():
 	add_child(_timer)
 	
 func enter(msg: = {}) -> void:
-	print(owner.name, " wandering")
+	owner.modulate = Color.WHITE
 	_wandering_time = randf_range(min_wait, max_wait)
 
 	_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
