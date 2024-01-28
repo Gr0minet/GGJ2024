@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccyui2sig1sj0"]
+
+[ext_resource type="PackedScene" uid="uid://27cjxmbjxlyj" path="res://src/props/BaseObstacle.tscn" id="1_758b2"]
+[ext_resource type="Texture2D" uid="uid://cyg4p7kj3es7x" path="res://assets/sprites/props/Poubelle.png" id="2_1f313"]
+
+[node name="Trash" instance=ExtResource("1_758b2")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-8, -48)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_1f313")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -10)
