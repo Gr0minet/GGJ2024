@@ -39,6 +39,10 @@ func physics_process(delta: float) -> void:
 		owner.skin.flip_h = false
 	
 	owner.move_and_slide()
+	if owner is Flic:
+		var collision: KinematicCollision2D = owner.get_last_slide_collision()
+		if collision != null and collision.get_collider() is Player:
+			collision.get_collider().die()
 	var dist = owner.position.distance_to(_target_last_position)
 	if owner.position.distance_to(_target_last_position) < DISTANCE_LOST_THRESHOLD:
 		_state_machine.transition_to("LookingAround")

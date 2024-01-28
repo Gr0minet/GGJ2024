@@ -1,6 +1,6 @@
 extends Node2D
 
-const FLIC_SPAWN_TIMER := [10.0, 30.0, 60.0]
+const FLIC_SPAWN_TIMER := [0.0, 30.0, 60.0]
 @onready var _next_flic_id := 0
 
 @export_category("Game parameters")
@@ -81,6 +81,7 @@ func _on_score_gained(amount:int) -> void:
 
 func _game_over() -> void:
 	get_tree().paused = true
+	end_menu.show()
 	
 
 func _win() -> void:

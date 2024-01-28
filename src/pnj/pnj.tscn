@@ -54,7 +54,7 @@ radius = 400.0
 radius = 46.0
 height = 112.0
 
-[sub_resource type="Animation" id="Animation_pnh4l"]
+[sub_resource type="Animation" id="Animation_y3yko"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -80,50 +80,10 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Pivot2/Sprite2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
-[sub_resource type="Animation" id="Animation_1h8xn"]
-resource_name = "alert"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"alert"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot2/Sprite2D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_l5tus"]
-resource_name = "glissing"
-length = 0.35
+[sub_resource type="Animation" id="Animation_1pj1u"]
+resource_name = "glissing_left"
+length = 1.5
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -132,10 +92,10 @@ tracks/0/path = NodePath("Pivot:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.35),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 1.1, 1.5),
+"transitions": PackedFloat32Array(0.406126, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.5708]
+"values": [0.0, 1.5708, 1.5708, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -144,20 +104,49 @@ tracks/1/path = NodePath("Pivot:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.35),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 1.1, 1.5),
+"transitions": PackedFloat32Array(0.554785, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-100, 0)]
+"values": [Vector2(0, 0), Vector2(-100, 0), Vector2(-100, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gcq6t"]
+[sub_resource type="Animation" id="Animation_4o28d"]
+resource_name = "glissing_right"
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.1, 1.5),
+"transitions": PackedFloat32Array(0.406126, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.5708, -1.5708, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.1, 1.5),
+"transitions": PackedFloat32Array(0.554785, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(100, 0), Vector2(100, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8xgd7"]
 _data = {
-"RESET": SubResource("Animation_pnh4l"),
-"alert": SubResource("Animation_1h8xn"),
-"glissing": SubResource("Animation_l5tus")
+"RESET": SubResource("Animation_y3yko"),
+"glissing_left": SubResource("Animation_1pj1u"),
+"glissing_right": SubResource("Animation_4o28d")
 }
 
-[node name="Pnj" type="CharacterBody2D" groups=["walk_on_poop"]]
+[node name="Pnj" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 11
 motion_mode = 1
@@ -171,7 +160,7 @@ script = ExtResource("1_j0mti")
 position = Vector2(6, -112)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_yxtum")
-animation = &"wandering"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -240,7 +229,7 @@ script = ExtResource("7_yr70c")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_gcq6t")
+"": SubResource("AnimationLibrary_8xgd7")
 }
 
 [connection signal="area_entered" from="PnjDetector" to="." method="_on_pnj_detector_area_entered"]

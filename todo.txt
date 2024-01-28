@@ -1,6 +1,14 @@
 # TODO
+	- timer après lequel poop disparait (Martin)
 	- animation pnj fille
-	- reverse animation glissing
+	- ajout des bulles
+	- ombre (Martin)
+	- line of sight y sorting
+	- ajouter variantes de pnj + spawn des variantes
+	- music et bruitage à ajouter
+	- ajouter une possibilité pour looking around à 360 degrés plutôt que balayage
+	- tourner flip_h flic vers la target position joueur quand il est alerting
+
 	- voir pour désactiver les animations quand on sort des états
 	- avoir une jauge de points de rire et quand on atteint un certain score on a gagné
 	- ajouter une bulle au dessus des pnj qui parlent
@@ -65,6 +73,8 @@ Divers:
 	- sermenting: pouvoir l'interrompre (M) (CHECK)
 	- ajouter un flic sur la map toutes les X secondes
 	- citoyen et flic: améliorer collision au spawn sur la map
+	- reverse animation glissing
+	- chien qui puisse mourrir
 
 - Game:
 	- instancie le jouer, les citoyens et les flics

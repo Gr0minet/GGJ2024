@@ -45,5 +45,8 @@ func physics_process(delta):
 		if stunned:
 			stunned = false
 		else:
-			_state_machine.transition_to("Wandering")
+			if owner is Flic:
+				_state_machine.transition_to("LookingAround")
+			else:
+				_state_machine.transition_to("Wandering")
 			return

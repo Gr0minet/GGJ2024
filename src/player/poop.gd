@@ -17,8 +17,7 @@ func _on_walk_on_poop(body:Node2D):
 	if !body.is_in_group(Const.GROUP_WALK_ON_POOP):
 		return
 		
-	if body is Flic:
-		body.on_walk_on_poop()
+	body.on_walk_on_poop()
 	
 	var pnj_nearby:Array[Node2D] = pnj_detection_area.get_overlapping_bodies()
 	for pnj_body in pnj_nearby:

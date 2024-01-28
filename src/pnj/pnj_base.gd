@@ -6,6 +6,9 @@ class_name PNJBase
 @onready var raycasts := $RayCasts
 @onready var state_machine := $StateMachine
 
+func on_walk_on_poop() -> void:
+	state_machine.transition_to("Idle", {Const.MSG_REASON: "poop"})
+	
 func raycast_collide(target_position: Vector2) -> bool:
 	for raycast: RayCast2D in raycasts.get_children():
 		raycast.target_position = target_position
