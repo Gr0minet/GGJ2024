@@ -30,6 +30,8 @@ func _ready():
 		)
 		
 	MusicManager.play_music(main_menu_music)
+	
+	button_play.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

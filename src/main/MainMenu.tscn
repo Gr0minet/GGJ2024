@@ -72,16 +72,22 @@ metadata/_edit_group_ = true
 
 [node name="ButtonPlay" type="Button" parent="CenterContainer/Buttons"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonQuit")
+focus_neighbor_bottom = NodePath("../ButtonCredits")
 theme_override_font_sizes/font_size = 30
 text = "Play"
 
 [node name="ButtonCredits" type="Button" parent="CenterContainer/Buttons"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonPlay")
+focus_neighbor_bottom = NodePath("../ButtonQuit")
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
 [node name="ButtonQuit" type="Button" parent="CenterContainer/Buttons"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonCredits")
+focus_neighbor_bottom = NodePath("../ButtonPlay")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
