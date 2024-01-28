@@ -1,7 +1,7 @@
 extends Node
 
-@export var BGM_bus:String = "Master"
-@export var SE_bus:String = "Master"
+@export var BGM_bus:String = "BGM"
+@export var SE_bus:String = "SE"
 
 @onready var _music_player : AudioStreamPlayer = $MusicPlayer
 

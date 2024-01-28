@@ -1,0 +1,17 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm5evqbwx5kr3"]
+
+[ext_resource type="Script" path="res://src/utils/SoundBank.gd" id="1_0cjme"]
+[ext_resource type="AudioStream" uid="uid://dy7nw0elt42m2" path="res://assets/SE/Bruit_Policiers.wav" id="2_swax6"]
+[ext_resource type="AudioStream" uid="uid://b3rmtm2vpnx20" path="res://assets/SE/Bruit_Villageois.wav" id="3_7yxhl"]
+[ext_resource type="AudioStream" uid="uid://oly5gvfw4fn5" path="res://assets/SE/GAME_JAM_-_Lose.mp3" id="4_vkfv8"]
+[ext_resource type="AudioStream" uid="uid://bwoks460d2i7i" path="res://assets/SE/GAME_JAM_-_Win.mp3" id="5_yfxu5"]
+[ext_resource type="AudioStream" uid="uid://4f0ygxyem0md" path="res://assets/SE/Glissadev4.mp3" id="6_ne0fs"]
+
+[node name="SoundBank" type="Node"]
+process_mode = 3
+script = ExtResource("1_0cjme")
+sermenting = ExtResource("2_swax6")
+chatting = ExtResource("3_7yxhl")
+lose = ExtResource("4_vkfv8")
+win = ExtResource("5_yfxu5")
+glissade = ExtResource("6_ne0fs")

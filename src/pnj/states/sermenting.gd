@@ -16,6 +16,8 @@ func enter(msg: = {}) -> void:
 	_sermenting_timer = 0.0
 	_target = msg["target"]
 	
+	MusicManager.play_sound_effect(SoundBank.sermenting)
+	
 	if _target == null:
 		push_error("Entered Sermenting state with no target in %s" % [owner])
 	

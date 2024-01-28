@@ -4,6 +4,7 @@ var _laugh_timer:float = 0
 var _laugh_time_before_points:float = 1.0
 
 func enter(msg: = {}) -> void:
+	MusicManager.play_sound_effect(SoundBank.chatting)
 	owner.skin.play("laughing")
 	_laugh_timer = 0
 	owner.show_reaction(Const.REACTION_LAUGHING)

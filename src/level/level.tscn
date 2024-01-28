@@ -59,7 +59,7 @@ position = Vector2(702, 204)
 position = Vector2(202, 480)
 
 [node name="Bush3" parent="Props" instance=ExtResource("3_0hydp")]
-position = Vector2(242, 796)
+position = Vector2(178, 822)
 
 [node name="Bush5" parent="Props" instance=ExtResource("3_0hydp")]
 position = Vector2(1189, 874)

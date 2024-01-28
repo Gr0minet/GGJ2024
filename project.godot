@@ -20,6 +20,7 @@ config/icon="res://assets/icon.svg"
 Const="*res://src/utils/constants.gd"
 MusicManager="*res://src/utils/MusicManager.tscn"
 EventBus="*res://src/utils/EventBus.gd"
+SoundBank="*res://src/utils/SoundBank.tscn"
 
 [display]
 
