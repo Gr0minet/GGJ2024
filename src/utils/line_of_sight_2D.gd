@@ -70,13 +70,11 @@ func calculate_vision_shape() -> Array[Vector2]:
 	if _angle_rad < 2*PI:
 		new_points.append(Vector2.ZERO)
 	
-	var direct_space_state:PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
 	
 	var ray_start:Vector2 = global_position
 	
 	# make the owner not block raycasting
 	var exclude:Array = [owner]
-	print("%s: %s" % [owner, get_world_2d().direct_space_state])
 	# cast rays
 	for i in range(ray_count +1):
 		# cast ray
@@ -91,7 +89,7 @@ func calculate_vision_shape() -> Array[Vector2]:
 			exclude
 		)
 
-		var collision = direct_space_state.intersect_ray(query)
+		var collision = get_world_2d().direct_space_state.intersect_ray(query)
 		
 		var view_point:Vector2 = destination
 		
