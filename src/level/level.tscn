@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyfxemw7csdv5"]
 
-[ext_resource type="Texture2D" uid="uid://wpxgw0itkug" path="res://assets/sprites/objects/background.png" id="1_d6y21"]
+[ext_resource type="Texture2D" uid="uid://wpxgw0itkug" path="res://assets/sprites/level/background.png" id="1_d6y21"]
 [ext_resource type="PackedScene" uid="uid://cwj31l7koeuu8" path="res://src/props/tree.tscn" id="2_y1mia"]
 [ext_resource type="PackedScene" uid="uid://ccaxci6wffc2x" path="res://src/props/bush.tscn" id="3_0hydp"]
 

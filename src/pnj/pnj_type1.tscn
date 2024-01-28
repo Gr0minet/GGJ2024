@@ -1,14 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://iyse5qnrnyp1"]
+[gd_scene load_steps=2 format=3 uid="uid://iyse5qnrnyp1"]
 
 [ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="1_buq7w"]
-[ext_resource type="Texture2D" uid="uid://dni0iawhvr2q6" path="res://assets/sprites/objects/pnj/pnj1.png" id="2_2ma5y"]
 
 [node name="Pnj1" instance=ExtResource("1_buq7w")]
-
-[node name="Sprite2D" parent="." index="0"]
-position = Vector2(3, -111)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_2ma5y")
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 51)
