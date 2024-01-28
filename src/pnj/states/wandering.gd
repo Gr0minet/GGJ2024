@@ -20,6 +20,8 @@ func _ready():
 	add_child(_timer)
 	
 func enter(msg: = {}) -> void:
+	if owner is Flic:
+		owner.line_of_sight.set_LOS_color(owner.normal_line_of_sight_color)
 	owner.skin.play("wandering")
 
 	var previous_direction := Vector2(0, 0)

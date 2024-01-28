@@ -197,6 +197,7 @@ slide_on_ceiling = false
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4g741")
 line_of_sight = NodePath("LineOfSight2D")
+chase_line_of_sight_color = Color(1, 0.635294, 0.588235, 0.286275)
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]
 position = Vector2(9, 0)
@@ -285,6 +286,7 @@ script = ExtResource("16_6n751")
 [node name="LineOfSight2D" parent="." instance=ExtResource("10_n6pnb")]
 position = Vector2(0, -4)
 ray_count = 25
+LOS_color = Color(1, 0.713726, 0.67451, 0.286275)
 
 [node name="ProgressBarPosition" type="Marker2D" parent="."]
 position = Vector2(0, -268)

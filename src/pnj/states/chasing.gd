@@ -9,12 +9,15 @@ const TIME_MAX := 5.0
 var _target_last_position: Vector2
 
 func enter(msg: = {}) -> void:
+	if owner is Flic:
+		owner.line_of_sight.set_LOS_color(owner.chase_line_of_sight_color)
 	owner.skin.play("wandering")
 	_target_last_position = msg[Const.PLAYER_LAST_POSITION]
 	_time_before_stop_chasing = TIME_MAX
 
 func exit(msg: = {}) -> void:
-	pass
+	if owner is Flic:
+		owner.line_of_sight.set_LOS_color(owner.normal_line_of_sight_color)
 
 func physics_process(delta: float) -> void:
 	var player:Player = owner.line_of_sight.get_player_in_sight()

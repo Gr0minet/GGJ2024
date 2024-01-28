@@ -9,6 +9,8 @@ var _target_position := Vector2.ZERO
 var _direction := Vector2.ZERO
 
 func enter(msg: = {}) -> void:
+	if owner is Flic:
+		owner.line_of_sight.set_LOS_color(owner.normal_line_of_sight_color)
 	owner.skin.play("wandering")
 	_target = msg["target"]
 	_target_position = _target.global_position
