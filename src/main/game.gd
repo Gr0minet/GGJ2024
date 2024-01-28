@@ -1,11 +1,11 @@
 extends Node2D
 
-const FLIC_SPAWN_TIMER := [5.0, 20.0, 60.0, 100.0]
+const FLIC_SPAWN_TIMER := [0.0, 20.0, 60.0, 100.0]
 @onready var _next_flic_id := 0
 
 @export_category("Game parameters")
 @export var nb_police:int = 1
-@export var nb_citizen:int = 5
+@export var nb_citizen:int = 8
 
 @export_category("Game Rules")
 @export var target_score:int = 100
