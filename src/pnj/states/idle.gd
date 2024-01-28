@@ -22,6 +22,9 @@ func enter(msg: = {}) -> void:
 		stunned = true
 		_idling_time = stun_time
 		
+func exit(msg: = {}) -> void:
+	owner.modulate = Color.WHITE
+	
 func physics_process(delta):
 	_idle_timer += delta
 	if owner is Flic and not stunned:

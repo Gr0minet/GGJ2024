@@ -1,13 +1,19 @@
 extends PNJState
 
-@export var min_wait := 2.0
-@export var max_wait := 10.0
+const CHATTING_TIME := 7.0
+
+var _time_left_chatting := 0.0
 
 func enter(msg: = {}) -> void:
 	owner.modulate = Color.RED
-	owner.pnj_detector.set_deferred("monitorable", false)
-	owner.pnj_detector.set_deferred("monitoring", false)
+	_time_left_chatting = CHATTING_TIME
 
 func exit(msg: = {}) -> void:
-	owner.pnj_detector.set_deferred("monitorable", true)
-	owner.pnj_detector.set_deferred("monitoring", true)
+	owner.modulate = Color.WHITE
+	owner.can_chat = false
+	owner.time_before_can_chatting = owner.COOLDOWN_BEFORE_CHATTING
+
+func process(delta):
+	_time_left_chatting -= delta
+	if _time_left_chatting < 0.0:
+		_state_machine.transition_to("Wandering")

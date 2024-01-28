@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 
 func transition_to(target_state_path: String, msg: = {}) -> void:
 	if not has_node(target_state_path):
+		push_error("Non existant target state path: %s" % target_state_path)
 		return
 	var target_state := get_node(target_state_path)
 	
