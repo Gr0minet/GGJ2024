@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bthqcvt6gip76"]
+[gd_scene load_steps=23 format=3 uid="uid://bthqcvt6gip76"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_j4rin"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="2_0wvlx"]
+[ext_resource type="Texture2D" uid="uid://ckjonnvsucfvf" path="res://assets/sprites/shadow.png" id="2_6esbj"]
 [ext_resource type="Texture2D" uid="uid://b5ewerflrr0fh" path="res://assets/sprites/doggo/doggo.png" id="2_rsoco"]
 [ext_resource type="Texture2D" uid="uid://d1lsswv0npfnl" path="res://assets/sprites/doggo/idle/idle_F2.png" id="3_580fi"]
 [ext_resource type="Script" path="res://src/player/states/move_state.gd" id="4_g2l53"]
@@ -107,6 +108,11 @@ collision_mask = 13
 script = ExtResource("1_j4rin")
 move_speed = 500
 doggo_invicible = true
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+position = Vector2(-2.99999, 0)
+scale = Vector2(0.145833, 0.145833)
+texture = ExtResource("2_6esbj")
 
 [node name="Pivot" type="Marker2D" parent="."]
 

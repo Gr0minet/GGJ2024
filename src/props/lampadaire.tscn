@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyrdrfgi7yhhl"]
+
+[ext_resource type="PackedScene" uid="uid://27cjxmbjxlyj" path="res://src/props/BaseObstacle.tscn" id="1_p60dk"]
+[ext_resource type="Texture2D" uid="uid://3p6w3a1vx4at" path="res://assets/sprites/props/lampadaire.png" id="2_a0c0b"]
+
+[node name="Lampadaire" instance=ExtResource("1_p60dk")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-5.68434e-14, -104)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_a0c0b")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = null
