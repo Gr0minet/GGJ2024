@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var FLIC_SPAW_TIME := 30.0
+const FLIC_SPAWN_TIMER := [10.0, 30.0, 60.0]
+@onready var _next_flic_id := 0
 
 @export_category("Game parameters")
 @export var nb_police:int = 1
@@ -19,13 +20,10 @@ extends Node2D
 
 @export var spawn_margins:SpawnMargins = null
 
-
 ### Game rules variables ###
 var _current_score:int = 0
 
-
-
-@onready var _time_before_new_flic := FLIC_SPAW_TIME
+@onready var _timer := 0.0
 
 func _ready():
 	randomize()
@@ -51,10 +49,11 @@ func _ready():
 	_init_level()
 
 func _process(delta):
-	_time_before_new_flic -= delta
-	if _time_before_new_flic <= 0:
-		_spawn(police_scene.instantiate())
-		_time_before_new_flic = FLIC_SPAW_TIME
+	if _next_flic_id < len(FLIC_SPAWN_TIMER):
+		_timer += delta
+		if _timer >= FLIC_SPAWN_TIMER[_next_flic_id]:
+			_spawn(police_scene.instantiate())
+			_next_flic_id += 1
 
 func _on_player_pooped() -> void:
 	if poop_scene == null:
@@ -67,7 +66,6 @@ func _on_player_pooped() -> void:
 func _init_HUD() -> void:
 	HUD.set_current_score(_current_score)
 	HUD.set_max_score(target_score)
-
 
 ######################
 # GAME RULES
@@ -101,11 +99,6 @@ func _init_level() -> void:
 	if spawn_margins == null:
 		push_error("no spawn margins")
 		return
-	
-	if police_scene != null:
-		for i in range(nb_police):
-			_spawn(police_scene.instantiate())
-			_time_before_new_flic = FLIC_SPAW_TIME
 	
 	if citizen_scene != null:
 		for i in range(nb_citizen):
