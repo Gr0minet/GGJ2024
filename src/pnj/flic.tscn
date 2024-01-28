@@ -139,6 +139,7 @@ script = ExtResource("10_k7o2q")
 
 [node name="LineOfSight2D" parent="." instance=ExtResource("10_n6pnb")]
 position = Vector2(0, -4)
+ray_count = 20
 
 [node name="ProgressBarPosition" type="Marker2D" parent="."]
 position = Vector2(1, -168)

@@ -20,9 +20,6 @@ signal player_entered(player:Player)
 
 @export var LOS_color:Color = Color("#6eed4749")
 
-@export_category("Debug")
-@export var debug_ray:bool = true;
-@export var debug_shape:bool = true;
 
 var _los_points:Array[Vector2] = []
 
@@ -56,10 +53,6 @@ func get_player_in_sight() -> Player:
 			return body
 	return null
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if debug_ray or debug_shape:
-		queue_redraw()
 
 func _physics_process(delta):
 	_calculate_vision()
@@ -77,23 +70,32 @@ func calculate_vision_shape() -> Array[Vector2]:
 	if _angle_rad < 2*PI:
 		new_points.append(Vector2.ZERO)
 	
+	var direct_space_state:PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
+	
+	var ray_start:Vector2 = global_position
+	
+	# make the owner not block raycasting
+	var exclude:Array = [owner]
+	print("%s: %s" % [owner, get_world_2d().direct_space_state])
 	# cast rays
 	for i in range(ray_count +1):
 		# cast ray
 		var direction:Vector2 = Vector2(0, view_distance).rotated(_angle_delta * i + global_rotation - _angle_half)
-		var start:Vector2 = global_position
+		
 		var destination:Vector2 = global_position + direction
 		
 		var query = PhysicsRayQueryParameters2D.create(
-			start, 
+			ray_start, 
 			destination, 
-			collision_blocking_layer
+			collision_blocking_layer,
+			exclude
 		)
-		var collision = get_world_2d().direct_space_state.intersect_ray(query)
+
+		var collision = direct_space_state.intersect_ray(query)
 		
 		var view_point:Vector2 = destination
 		
-		if collision and collision["collider"] != owner:
+		if collision:
 			view_point = collision["position"]
 		
 		view_point = to_local(view_point)
@@ -117,18 +119,5 @@ func _update_los_renderer():
 	if LOS_renderer == null:
 		return
 	
-	LOS_renderer.polygon = PackedVector2Array(_los_points)
+	LOS_renderer.polygon = LOS_collider.polygon #PackedVector2Array(_los_points)
 
-func _draw():
-	if len(_los_points) == 0:
-		return
-	
-	var start:Vector2 = _los_points[0]
-	var end:Vector2
-	for i in range(1, len(_los_points)):
-		end = _los_points[i]
-		if debug_shape:
-			draw_line(start, end, Color.GREEN)
-		if debug_ray:
-			draw_line(Vector2.ZERO, end, Color(0,0,1, 0.5))
-		start = end
