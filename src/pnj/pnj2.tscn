@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdq25o084g8pr"]
+
+[ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="1_csu5o"]
+[ext_resource type="SpriteFrames" uid="uid://ci4gfi6dxvyks" path="res://src/pnj/sprite_frames/pnj2.tres" id="2_kjki0"]
+
+[node name="Pnj" instance=ExtResource("1_csu5o")]
+
+[node name="AnimatedSprite2D" parent="Pivot" index="0"]
+sprite_frames = ExtResource("2_kjki0")
+frame_progress = 0.530891

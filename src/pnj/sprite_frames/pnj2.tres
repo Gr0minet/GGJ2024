@@ -1,0 +1,55 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://ci4gfi6dxvyks"]
+
+[ext_resource type="Texture2D" uid="uid://cmkqr11afjl4e" path="res://assets/sprites/pnj/pnj2/idle.png" id="1_c8arv"]
+[ext_resource type="Texture2D" uid="uid://cdsa71vajdhqt" path="res://assets/sprites/pnj/pnj2/laughing/F1.png" id="2_3c7kj"]
+[ext_resource type="Texture2D" uid="uid://kg7yc031r3fo" path="res://assets/sprites/pnj/pnj2/laughing/F2.png" id="3_yiagc"]
+[ext_resource type="Texture2D" uid="uid://cq4xlpsbaw83" path="res://assets/sprites/pnj/pnj2/walking/F1.png" id="4_q3btt"]
+[ext_resource type="Texture2D" uid="uid://ce608jidotygd" path="res://assets/sprites/pnj/pnj2/walking/F2.png" id="5_vsf4x"]
+[ext_resource type="Texture2D" uid="uid://cj4wn4st46g6t" path="res://assets/sprites/pnj/pnj2/walking/F3.png" id="6_wvw0y"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c8arv")
+}],
+"loop": true,
+"name": &"chatting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c8arv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3c7kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yiagc")
+}],
+"loop": true,
+"name": &"laughing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q3btt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vsf4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q3btt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wvw0y")
+}],
+"loop": true,
+"name": &"wandering",
+"speed": 5.0
+}]

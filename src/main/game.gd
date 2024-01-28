@@ -12,7 +12,12 @@ const FLIC_SPAWN_TIMER := [5.0, 20.0, 60.0, 100.0]
 
 @export_category("Game actors")
 @export var poop_scene:PackedScene = null
-@export var citizen_scene:PackedScene = null
+
+var pnj_scenes :Array[PackedScene] = [
+	preload("res://src/pnj/pnj.tscn"),
+	preload("res://src/pnj/pnj2.tscn")
+]
+
 @export var police_scene:PackedScene = null
 @export var player:Player = null
 @export var HUD:HUDCanvas = null
@@ -104,9 +109,10 @@ func _init_level() -> void:
 		push_error("no spawn margins")
 		return
 	
-	if citizen_scene != null:
+	if pnj_scenes != []:
 		for i in range(nb_citizen):
-			_spawn(citizen_scene.instantiate())
+			var random_pnj_scene := randi_range(0, len(pnj_scenes) - 1)
+			_spawn(pnj_scenes[random_pnj_scene].instantiate())
 
 func _spawn(node: Node) -> void:
 	node.position = _get_non_collidable_position(node.get_node("CollisionShape2D"))
