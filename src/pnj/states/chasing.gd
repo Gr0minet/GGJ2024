@@ -3,7 +3,7 @@ extends PNJState
 const DISTANCE_LOST_THRESHOLD:float = 10
 const TIME_MAX := 5.0
 
-@export var chase_speed:int = 250
+@export var chase_speed:int = 300
 @export var _time_before_stop_chasing := 0.0
 
 var _target_last_position: Vector2
