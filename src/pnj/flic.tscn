@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://brdc5enmv18y0"]
+[gd_scene load_steps=29 format=3 uid="uid://brdc5enmv18y0"]
 
 [ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
 [ext_resource type="Texture2D" uid="uid://b70c8phul5031" path="res://assets/sprites/cops/cops_walking_F1.png" id="2_dhct6"]
 [ext_resource type="Texture2D" uid="uid://cg1xgt5xk28rm" path="res://assets/sprites/cops/cop_alert_popup_F1.png" id="2_jnce8"]
 [ext_resource type="Texture2D" uid="uid://c0ld7dyedtf01" path="res://assets/sprites/cops/cop_look_around_F1.png" id="2_k3gvb"]
+[ext_resource type="Texture2D" uid="uid://ckjonnvsucfvf" path="res://assets/sprites/shadow.png" id="2_unjh3"]
 [ext_resource type="Texture2D" uid="uid://o5bvqgjtnokr" path="res://assets/sprites/cops/cop_alert_F1.png" id="2_w6xk1"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_2u6tn"]
 [ext_resource type="Texture2D" uid="uid://clniqvex3bl0p" path="res://assets/sprites/cops/cops_sermenting_F1.png" id="3_rj6eu"]
@@ -217,6 +218,11 @@ slide_on_ceiling = false
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4g741")
 line_of_sight = NodePath("LineOfSight2D")
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+position = Vector2(9, 0)
+scale = Vector2(0.109443, 0.0989583)
+texture = ExtResource("2_unjh3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

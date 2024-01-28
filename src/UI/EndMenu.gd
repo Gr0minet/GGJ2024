@@ -13,6 +13,7 @@ class_name EndMenuCanvas
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button_return_menu.pressed.connect(func():
+		get_tree().paused = false
 		get_tree().change_scene_to_packed(main_menu_scene)
 	)
 

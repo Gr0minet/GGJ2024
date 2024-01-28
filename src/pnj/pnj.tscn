@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cuwkrkhbps5yh"]
+[gd_scene load_steps=17 format=3 uid="uid://cuwkrkhbps5yh"]
 
 [ext_resource type="Script" path="res://src/pnj/pnj.gd" id="1_j0mti"]
 [ext_resource type="Texture2D" uid="uid://dni0iawhvr2q6" path="res://assets/sprites/pnj/pnj1.png" id="2_6tmx2"]
+[ext_resource type="Texture2D" uid="uid://ckjonnvsucfvf" path="res://assets/sprites/shadow.png" id="2_hufja"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_k886y"]
 [ext_resource type="Script" path="res://src/pnj/states/idle.gd" id="4_w5e4j"]
 [ext_resource type="Script" path="res://src/pnj/states/laughing.gd" id="5_p0tqv"]
@@ -153,6 +154,11 @@ motion_mode = 1
 slide_on_ceiling = false
 wall_min_slide_angle = 0.0
 script = ExtResource("1_j0mti")
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+position = Vector2(4, -4)
+scale = Vector2(0.09375, 0.09375)
+texture = ExtResource("2_hufja")
 
 [node name="Pivot" type="Marker2D" parent="."]
 
