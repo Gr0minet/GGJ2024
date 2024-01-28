@@ -1,9 +1,9 @@
 extends Control
 
-@export var button_play:Button = null
-@export var button_credits:Button = null
-@export var button_quit:Button = null
-@export var button_quit_credit:Button = null
+@export var button_play:TextureButton = null
+@export var button_credits:TextureButton = null
+@export var button_quit:TextureButton = null
+@export var button_quit_credit:TextureButton = null
 @export var credit_panel:PanelContainer = null
 @export_file("*.tscn","*.scn") var game_scene_path:String
 
@@ -29,7 +29,7 @@ func _ready():
 			get_tree().quit()
 		)
 		
-	#MusicManager.play_music(main_menu_music)
+	MusicManager.play_music(main_menu_music)
 	
 	button_play.grab_focus()
 

@@ -20,6 +20,7 @@ func enter(msg: = {}) -> void:
 	_idle_timer = 0
 	
 	if Const.MSG_REASON in msg and msg[Const.MSG_REASON] == "poop":
+		MusicManager.play_sound_effect(SoundBank.glissade)
 		if owner.skin.flip_h == true:
 			owner.animation_player.play("glissing_right")
 		else:

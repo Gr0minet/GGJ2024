@@ -35,7 +35,7 @@ var _current_score:int = 0
 func _ready():
 	randomize()
 	end_menu.hide()
-	#MusicManager.play_music(game_music)
+	MusicManager.play_music(game_music)
 
 	_current_score = 0
 	
@@ -90,6 +90,7 @@ func _on_score_gained(amount:int) -> void:
 func _game_over() -> void:
 	get_tree().paused = true
 	end_menu.show()
+	end_menu.play_end_music()
 	
 
 func _win() -> void:
@@ -99,6 +100,7 @@ func _win() -> void:
 func _lose() -> void:
 	end_menu.set_lose()
 	_game_over()
+	
 
 ########################
 # LEVEL GENERATION
