@@ -1,17 +1,17 @@
 # TODO
+	- avoir une jauge de points de rire et quand on atteint un certain score on a gagné
 	- ajouter une bulle au dessus des pnj qui parlent
 	- ajouter point d'exclamation sur policier qui détecte doggo
 	- ajouter point d'exclamation sur policier qui sermente ? Pas sûr d'être nécessaire (ou voir pour un autre truc)
 	- chien qui passe à travers les buissons ?
-	- citoyen et flic: améliorer collision au spawn sur la map
 	- arranger les tailles d'assets
 	- flic état Chase à fix (M) 
 	- level design
 	- fin de jeu ("perdu")
 	- animations:
-		- chien
-		- flics
-		- PNJ, ...
+		- chien (à finir)
+		- flics (à finir)
+		- PNJ (à ajouter)
 
 	- collision line of sight avec petit buisson à retirer
 	- sons
@@ -20,6 +20,7 @@
 	- crédits
 	- progressivement plus de flics arrivent
 	- équilibrage
+	- faire en sorte que les flics arrivent depuis les côtés de la map
 ASSETS QUI MANQUENT
 	- rire des pnj ? -> peut-être le faire programmatiquement ?
 	- walking des pnj ?
@@ -60,6 +61,8 @@ Divers:
 	- flic: tourner le cone de vision en fonction du mouvement du policier (wandering, chasing,  move to sermenting, looking around, ...)
 	- flic état Looking Around à compléter
 	- sermenting: pouvoir l'interrompre (M) (CHECK)
+	- ajouter un flic sur la map toutes les X secondes
+	- citoyen et flic: améliorer collision au spawn sur la map
 
 - Game:
 	- instancie le jouer, les citoyens et les flics

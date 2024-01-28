@@ -1,7 +1,9 @@
 extends Node2D
 
+@export var FLIC_SPAW_TIME := 30.0
+
 @export_category("Game parameters")
-@export var nb_police:int = 2
+@export var nb_police:int = 1
 @export var nb_citizen:int = 5
 
 @export_category("Game actors")
@@ -12,7 +14,8 @@ extends Node2D
 
 @export var spawn_margins:SpawnMargins = null
 
-# Called when the node enters the scene tree for the first time.
+@onready var _time_before_new_flic := FLIC_SPAW_TIME
+
 func _ready():
 	randomize()
 	
@@ -28,19 +31,18 @@ func _ready():
 	
 	if police_scene != null:
 		for i in range(nb_police):
-			var police_instance := police_scene.instantiate()
-			police_instance.position = spawn_margins.get_random_position()
-			add_child(police_instance)
+			_spawn(police_scene.instantiate())
+			_time_before_new_flic = FLIC_SPAW_TIME
 	
 	if citizen_scene != null:
 		for i in range(nb_citizen):
-			var citizen_instance := citizen_scene.instantiate()
-			citizen_instance.position = spawn_margins.get_random_position()
-			add_child(citizen_instance)
+			_spawn(citizen_scene.instantiate())
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	_time_before_new_flic -= delta
+	if _time_before_new_flic <= 0:
+		_spawn(police_scene.instantiate())
+		_time_before_new_flic = FLIC_SPAW_TIME
 
 func _on_player_pooped() -> void:
 	if poop_scene == null:
@@ -49,3 +51,22 @@ func _on_player_pooped() -> void:
 	var poop_instance:Node2D = poop_scene.instantiate()
 	poop_instance.position = player.get_poop_position()
 	add_child(poop_instance)
+
+func _spawn(node: Node) -> void:
+	node.position = _get_non_collidable_position(node.get_node("CollisionShape2D"))
+	add_child(node)
+
+func _get_non_collidable_position(collision_shape: CollisionShape2D) -> Vector2:
+	var non_collidable_position: Vector2
+	var shape_cast := ShapeCast2D.new()
+	shape_cast.shape = collision_shape.shape.duplicate()
+	add_child(shape_cast)
+	shape_cast.collision_mask = Const.WORLD_LAYER + Const.PLAYER_LAYER + Const.PNJ_LAYER + Const.FLIC_LAYER + Const.POOP_LAYER
+	shape_cast.position = spawn_margins.get_random_position()
+	shape_cast.force_shapecast_update()
+	while shape_cast.is_colliding():
+		shape_cast.position = spawn_margins.get_random_position()
+		shape_cast.force_shapecast_update()
+	non_collidable_position = shape_cast.position
+	shape_cast.queue_free()
+	return non_collidable_position

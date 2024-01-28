@@ -72,11 +72,11 @@ script = ExtResource("1_4g741")
 line_of_sight = NodePath("LineOfSight2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_82vvv")
 
 [node name="LaughingDetector" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -4)
 collision_layer = 0
 collision_mask = 64
@@ -87,14 +87,14 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_w45no")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-8, -104)
+position = Vector2(1, -104)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_rwekc")
 animation = &"wandering"
-frame_progress = 0.599575
 speed_scale = 1.5
 
 [node name="RayCasts" type="Node2D" parent="."]
+visible = false
 position = Vector2(1, 0)
 
 [node name="RayCast2D" type="RayCast2D" parent="RayCasts"]

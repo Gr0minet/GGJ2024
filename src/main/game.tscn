@@ -14,7 +14,6 @@ size = Vector2(1920, 21)
 [node name="Game" type="Node2D" node_paths=PackedStringArray("player", "spawn_margins")]
 y_sort_enabled = true
 script = ExtResource("1_e7evx")
-nb_police = 1
 poop_scene = ExtResource("2_akwfh")
 citizen_scene = ExtResource("3_1402k")
 police_scene = ExtResource("4_57ofh")
@@ -27,7 +26,7 @@ spawn_margins = NodePath("SpawnMargins")
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bords/Area2D"]
-position = Vector2(960, 0)
+position = Vector2(960, 50)
 shape = SubResource("RectangleShape2D_ahfeg")
 
 [node name="Area2D2" type="StaticBody2D" parent="Bords"]
