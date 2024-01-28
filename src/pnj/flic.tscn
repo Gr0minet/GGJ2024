@@ -1,10 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://brdc5enmv18y0"]
+[gd_scene load_steps=27 format=3 uid="uid://brdc5enmv18y0"]
 
 [ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
 [ext_resource type="Texture2D" uid="uid://b70c8phul5031" path="res://assets/sprites/cops/cops_walking_F1.png" id="2_dhct6"]
-[ext_resource type="Texture2D" uid="uid://cg1xgt5xk28rm" path="res://assets/sprites/cops/cop_alert_popup_F1.png" id="2_jnce8"]
 [ext_resource type="Texture2D" uid="uid://c0ld7dyedtf01" path="res://assets/sprites/cops/cop_look_around_F1.png" id="2_k3gvb"]
 [ext_resource type="Texture2D" uid="uid://o5bvqgjtnokr" path="res://assets/sprites/cops/cop_alert_F1.png" id="2_w6xk1"]
+[ext_resource type="Texture2D" uid="uid://cg1xgt5xk28rm" path="res://assets/sprites/reaction/alert.png" id="2_yvs2k"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_2u6tn"]
 [ext_resource type="Texture2D" uid="uid://clniqvex3bl0p" path="res://assets/sprites/cops/cops_sermenting_F1.png" id="3_rj6eu"]
 [ext_resource type="Texture2D" uid="uid://ca6tstj48y65e" path="res://assets/sprites/cops/cops_walking_F2.png" id="3_w1uif"]
@@ -114,34 +114,6 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_1h8xn"]
-resource_name = "alert"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"alert"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot2/Sprite2D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_l5tus"]
 resource_name = "glissing_left"
 length = 1.5
@@ -203,7 +175,6 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gcq6t"]
 _data = {
 "RESET": SubResource("Animation_pnh4l"),
-"alert": SubResource("Animation_1h8xn"),
 "glissing_left": SubResource("Animation_l5tus"),
 "glissing_right": SubResource("Animation_wwxfm")
 }
@@ -228,7 +199,7 @@ position = Vector2(0, -237)
 [node name="Sprite2D" type="Sprite2D" parent="Pivot2"]
 visible = false
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_jnce8")
+texture = ExtResource("2_yvs2k")
 
 [node name="Pivot" type="Marker2D" parent="."]
 
@@ -236,7 +207,7 @@ texture = ExtResource("2_jnce8")
 position = Vector2(1, -104)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_rwekc")
-animation = &"wandering"
+animation = &"alert"
 speed_scale = 1.5
 
 [node name="LaughingDetector" type="Area2D" parent="."]

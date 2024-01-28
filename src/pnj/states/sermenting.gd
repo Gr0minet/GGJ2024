@@ -12,6 +12,7 @@ var _progress_bar:Node2D = null
 
 func enter(msg: = {}) -> void:
 	owner.skin.play("sermenting")
+	owner.show_reaction(Const.REACTION_SERMENTING)
 	_sermenting_timer = 0.0
 	_target = msg["target"]
 	
@@ -43,8 +44,9 @@ func physics_process(delta) -> void:
 		_target.stop_laughing()
 		_state_machine.transition_to("LookingAround")
 		return
-
 	
 func exit(msg: = {}) -> void:
+	print("end sermenting")
+	owner.hide_reaction()
 	if _progress_bar:
 		_progress_bar.queue_free()

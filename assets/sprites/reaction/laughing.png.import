@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg1xgt5xk28rm"
-path="res://.godot/imported/cop_alert_popup_F1.png-114b78023d21f6b152343e99d4d58915.ctex"
+uid="uid://bhpne74ivckrf"
+path="res://.godot/imported/laughing.png-d902a232a4384d07151ab1d6ad073dfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cops/cop_alert_popup_F1.png"
-dest_files=["res://.godot/imported/cop_alert_popup_F1.png-114b78023d21f6b152343e99d4d58915.ctex"]
+source_file="res://assets/sprites/reaction/laughing.png"
+dest_files=["res://.godot/imported/laughing.png-d902a232a4384d07151ab1d6ad073dfc.ctex"]
 
 [params]
 

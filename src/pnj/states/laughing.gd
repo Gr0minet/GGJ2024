@@ -5,13 +5,13 @@ var _laugh_time_before_points:float = 1.0
 
 func enter(msg: = {}) -> void:
 	_laugh_timer = 0
-	owner.modulate = Color.BLUE
+	owner.show_reaction(Const.REACTION_LAUGHING)
 	owner.laughing_area.set_deferred("monitorable", true)
 	owner.pnj_detector.set_deferred("monitorable", false)
 	owner.pnj_detector.set_deferred("monitoring", false)
 
 func exit(msg: = {}) -> void:
-	owner.modulate = Color.WHITE
+	owner.hide_reaction()
 	owner.laughing_area.set_deferred("monitorable", false)
 	owner.pnj_detector.set_deferred("monitorable", true)
 	owner.pnj_detector.set_deferred("monitoring", true)

@@ -15,8 +15,6 @@ func _ready():
 		get_tree().change_scene_to_file(game_scene_path)
 	)
 	
-	
-	
 	button_credits.pressed.connect(func():
 		credit_panel.show()
 	)
@@ -31,7 +29,7 @@ func _ready():
 			get_tree().quit()
 		)
 		
-	MusicManager.play_music(main_menu_music)
+	#MusicManager.play_music(main_menu_music)
 	
 	button_play.grab_focus()
 

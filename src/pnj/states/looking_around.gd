@@ -10,6 +10,7 @@ var _target_angle_id := 0
 	
 func enter(msg: = {}) -> void:
 	owner.skin.play("looking_around")
+	owner.show_reaction(Const.REACTION_LOOKING_AROUND)
 	
 	_current_angle = rad_to_deg(owner.line_of_sight.rotation)
 	_angle_change_direction = 1 if randi_range(0, 1) else -1
@@ -18,7 +19,10 @@ func enter(msg: = {}) -> void:
 	_target_angle.append(_current_angle - _angle_change_direction * 90)
 	_target_angle.append(_current_angle)
 	_target_angle_id = 0
-	
+
+func exit(msg: = {}) -> void:
+	owner.hide_reaction()
+
 func physics_process(delta):
 	owner.line_of_sight.rotation += _angle_change_direction * delta * look_around_speed
 	var face_direction = cos(owner.line_of_sight.rotation - deg_to_rad(90))

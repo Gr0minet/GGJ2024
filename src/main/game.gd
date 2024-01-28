@@ -30,7 +30,7 @@ var _current_score:int = 0
 func _ready():
 	randomize()
 	end_menu.hide()
-	MusicManager.play_music(game_music)
+	#MusicManager.play_music(game_music)
 
 	_current_score = 0
 	

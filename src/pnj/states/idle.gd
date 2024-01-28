@@ -13,7 +13,6 @@ var stunned:bool = false
 func enter(msg: = {}) -> void:
 	stunned = false
 	owner.velocity = Vector2.ZERO
-	owner.modulate = Color.GREEN
 	_idling_time = randf_range(min_wait, max_wait)
 	_idle_timer = 0
 	
@@ -27,7 +26,7 @@ func enter(msg: = {}) -> void:
 		_idling_time = stun_time
 		
 func exit(msg: = {}) -> void:
-	owner.modulate = Color.WHITE
+	pass
 	
 func physics_process(delta):
 	_idle_timer += delta

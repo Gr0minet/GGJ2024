@@ -27,3 +27,4 @@ func start_laughing() -> void:
 
 func stop_laughing() -> void:
 	state_machine.transition_to("Wandering")
+

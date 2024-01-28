@@ -11,10 +11,11 @@ func enter(msg: = {}) -> void:
 	_time_before_chasing = ALERT_TIME
 	owner.line_of_sight.look_at(_player_last_seen_position)
 	owner.line_of_sight.rotation -= deg_to_rad(90)
-	owner.animation_player.play("alert")
+	owner.skin.play("alert")
+	owner.show_reaction(Const.REACTION_ALERT)
 	
 func exit(msg: = {}) -> void:
-	pass
+	owner.hide_reaction()
 	
 func process(delta):
 	_time_before_chasing -= delta

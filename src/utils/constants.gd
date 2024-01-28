@@ -30,3 +30,11 @@ const MSG_REASON:String = "reason"
 const PREVIOUS_DIRECTION: String = "previous_direction"
 
 const PLAYER_LAST_POSITION: String = "player_laster_position"
+
+const REACTION_LAUGHING := "laughing"
+const REACTION_CHATTING1 := "chatting1"
+const REACTION_CHATTING2 := "chatting2"
+const REACTION_CHATTING3 := "chatting3"
+const REACTION_ALERT := "alert"
+const REACTION_SERMENTING := "sermenting"
+const REACTION_LOOKING_AROUND := "looking_around"
