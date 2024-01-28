@@ -1,4 +1,6 @@
 # TODO
+	- animation pnj fille
+	- reverse animation glissing
 	- voir pour désactiver les animations quand on sort des états
 	- avoir une jauge de points de rire et quand on atteint un certain score on a gagné
 	- ajouter une bulle au dessus des pnj qui parlent
