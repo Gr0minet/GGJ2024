@@ -1,0 +1,16 @@
+Credits:
+
+Art:
+- Aufort Chloé
+- Lou-ann Saquet (Sapphire)
+Design:
+- TimG
+- Lou-Ann Saquet (Sapphire)
+- Aufort Chloé
+- Grominet
+- Tehelka
+Code:
+- Tehelka (github: tehelka-gamedev)
+- Grominet
+Music and sound design:
+- Relapse64
