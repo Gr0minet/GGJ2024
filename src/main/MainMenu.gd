@@ -36,7 +36,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("start_controller"):
-		get_tree().change_scene_to_file(game_scene_path)
+		get_tree().change_scene_to_file.call_deferred(game_scene_path)
 	
 
 func _on_quit_credit() -> void:
