@@ -8,7 +8,7 @@ const FLIC_SPAWN_TIMER := [0.0, 20.0, 60.0, 100.0]
 @export var nb_citizen:int = 8
 
 @export_category("Game Rules")
-@export var target_score:int = 100
+@export var target_score:int = 300
 
 @export_category("Game actors")
 @export var poop_scene:PackedScene = null
