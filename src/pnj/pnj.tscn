@@ -1,66 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://cuwkrkhbps5yh"]
+[gd_scene load_steps=17 format=3 uid="uid://cuwkrkhbps5yh"]
 
 [ext_resource type="Script" path="res://src/pnj/pnj.gd" id="1_j0mti"]
-[ext_resource type="Texture2D" uid="uid://dni0iawhvr2q6" path="res://assets/sprites/pnj/pnj1.png" id="2_6tmx2"]
 [ext_resource type="Texture2D" uid="uid://ckjonnvsucfvf" path="res://assets/sprites/shadow.png" id="2_hufja"]
 [ext_resource type="Texture2D" uid="uid://br54r5jj6exxo" path="res://assets/sprites/reaction/chatting3.png" id="2_luo5i"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_k886y"]
+[ext_resource type="SpriteFrames" uid="uid://drt3mrklfafnv" path="res://src/pnj/sprite_frames/pnj1.tres" id="4_qbxs1"]
 [ext_resource type="Script" path="res://src/pnj/states/idle.gd" id="4_w5e4j"]
-[ext_resource type="Texture2D" uid="uid://d0h037hij1y0k" path="res://assets/sprites/pnj/pnj1/walking/F1.png" id="5_8ma4n"]
-[ext_resource type="Texture2D" uid="uid://dcv871hbcrcud" path="res://assets/sprites/pnj/pnj1/laughing/F1.png" id="5_15wbt"]
 [ext_resource type="Script" path="res://src/pnj/states/laughing.gd" id="5_p0tqv"]
-[ext_resource type="Texture2D" uid="uid://cw4hqq8yemx3u" path="res://assets/sprites/pnj/pnj1/laughing/F2.png" id="6_r3f5m"]
 [ext_resource type="Script" path="res://src/pnj/states/wandering.gd" id="6_rwsvh"]
-[ext_resource type="Texture2D" uid="uid://bkpqy5bib1r3d" path="res://assets/sprites/pnj/pnj1/walking/F2.png" id="6_sso41"]
-[ext_resource type="Texture2D" uid="uid://b4kyfedxlfecp" path="res://assets/sprites/pnj/pnj1/walking/F3.png" id="7_4p3nr"]
 [ext_resource type="Script" path="res://src/pnj/states/chatting.gd" id="7_yr70c"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yxtum"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_6tmx2")
-}],
-"loop": true,
-"name": &"chatting",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_6tmx2")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_15wbt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_r3f5m")
-}],
-"loop": true,
-"name": &"laughing",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_8ma4n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_sso41")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_8ma4n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_4p3nr")
-}],
-"loop": true,
-"name": &"wandering",
-"speed": 5.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
 radius = 21.0
@@ -191,9 +139,8 @@ texture = ExtResource("2_hufja")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
 position = Vector2(6, -112)
 scale = Vector2(0.2, 0.2)
-sprite_frames = SubResource("SpriteFrames_yxtum")
+sprite_frames = ExtResource("4_qbxs1")
 animation = &"chatting"
-frame_progress = 0.40289
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
