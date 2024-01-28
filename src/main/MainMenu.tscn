@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt6mkd6yo1x8r"]
+[gd_scene load_steps=3 format=3 uid="uid://bt6mkd6yo1x8r"]
 
 [ext_resource type="Script" path="res://src/main/MainMenu.gd" id="1_q4480"]
-[ext_resource type="PackedScene" uid="uid://c14u2wv7ttnvt" path="res://src/main/game.tscn" id="2_mpuyu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rb3f5"]
 bg_color = Color(0.188235, 0.188235, 0.188235, 1)
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("button_play", "button_credits", "button_quit")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("button_play", "button_credits", "button_quit", "button_quit_credit", "credit_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +16,9 @@ script = ExtResource("1_q4480")
 button_play = NodePath("CenterContainer/Buttons/ButtonPlay")
 button_credits = NodePath("CenterContainer/Buttons/ButtonCredits")
 button_quit = NodePath("CenterContainer/Buttons/ButtonQuit")
-game_scene = ExtResource("2_mpuyu")
+button_quit_credit = NodePath("CreditsPanel/MarginContainer/VBoxContainer/CenterContainer/ButtonQuitCredits")
+credit_panel = NodePath("CreditsPanel")
+game_scene_path = "res://src/main/game.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -83,6 +84,7 @@ theme_override_font_sizes/font_size = 30
 text = "Quit"
 
 [node name="CreditsPanel" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 350.0
 offset_top = 68.0
@@ -109,9 +111,19 @@ horizontal_alignment = 1
 
 [node name="credits" type="Label" parent="CreditsPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 26
 text = "Art:
 Design:
 Code:
 Music and sound design:
 "
+
+[node name="CenterContainer" type="CenterContainer" parent="CreditsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="ButtonQuitCredits" type="Button" parent="CreditsPanel/MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Close"
