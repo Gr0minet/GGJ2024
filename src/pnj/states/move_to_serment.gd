@@ -36,7 +36,9 @@ func physics_process(delta: float) -> void:
 	
 	if pnj.position.distance_to(_target_position) > SERMENTING_THRESHOD:
 		pnj.move_and_slide()
+	elif not _target.is_laughing(): 
+		_state_machine.transition_to("LookingAround", {target = _target})
+		return
 	else:
 		_state_machine.transition_to("Sermenting", {target = _target})
 		return
-

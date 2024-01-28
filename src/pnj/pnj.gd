@@ -28,3 +28,5 @@ func start_laughing() -> void:
 func stop_laughing() -> void:
 	state_machine.transition_to("Wandering")
 
+func is_laughing() -> bool:
+	return state_machine.state_name == "Laughing"
