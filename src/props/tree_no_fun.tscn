@@ -6,8 +6,8 @@
 [node name="TreeNoFun" instance=ExtResource("1_cxhcx")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, -120)
-scale = Vector2(0.2, 0.2)
+position = Vector2(0, -185)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_jqxx2")
 
 [node name="CollisionShape2D" parent="." index="1"]

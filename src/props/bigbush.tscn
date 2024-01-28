@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3fceq5w56d0f"]
+
+[ext_resource type="Texture2D" uid="uid://chxv20glv1hn2" path="res://assets/sprites/props/bush.png" id="1_logxb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnpix"]
+radius = 20.0
+height = 250.0
+
+[node name="Bigbush" type="StaticBody2D"]
+y_sort_enabled = true
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-46, -46)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_logxb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-46, -21)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_logxb")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-1, -43)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_logxb")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-86, -34)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_logxb")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(13, -22)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_logxb")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(66, -48.2)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_logxb")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(66, -23.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_logxb")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(111, -45.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_logxb")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(26, -36.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_logxb")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(125, -24.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_logxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30, -29)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wnpix")

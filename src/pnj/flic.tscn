@@ -22,8 +22,8 @@
 [ext_resource type="Script" path="res://src/pnj/states/alert.gd" id="16_6n751"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
-radius = 30.0
-height = 75.0
+radius = 18.0
+height = 43.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rwekc"]
 animations = [{
@@ -81,8 +81,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w45no"]
-radius = 30.0
-height = 75.0
+radius = 17.0
+height = 44.0
 
 [sub_resource type="Animation" id="Animation_pnh4l"]
 length = 0.001
@@ -200,7 +200,7 @@ line_of_sight = NodePath("LineOfSight2D")
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]
 position = Vector2(9, 0)
-scale = Vector2(0.109443, 0.0989583)
+scale = Vector2(0.08, 0.073)
 texture = ExtResource("2_unjh3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -208,7 +208,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_82vvv")
 
 [node name="Pivot2" type="Marker2D" parent="."]
-position = Vector2(0, -237)
+position = Vector2(0, -178)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot2"]
 visible = false
@@ -218,15 +218,13 @@ texture = ExtResource("2_yvs2k")
 [node name="Pivot" type="Marker2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
-position = Vector2(1, -104)
-scale = Vector2(0.15, 0.15)
+position = Vector2(0, -77)
+scale = Vector2(0.11, 0.11)
 sprite_frames = SubResource("SpriteFrames_rwekc")
 animation = &"sermenting"
 speed_scale = 1.5
 
 [node name="LaughingDetector" type="Area2D" parent="."]
-visible = false
-position = Vector2(0, -4)
 collision_layer = 0
 collision_mask = 64
 monitorable = false
@@ -240,19 +238,19 @@ visible = false
 position = Vector2(1, 0)
 
 [node name="RayCast2D" type="RayCast2D" parent="RayCasts"]
-position = Vector2(0, 26)
+position = Vector2(-1, 18)
 target_position = Vector2(0, 100)
 
 [node name="RayCast2D2" type="RayCast2D" parent="RayCasts"]
-position = Vector2(-40, 1)
+position = Vector2(-23, 0)
 target_position = Vector2(0, 100)
 
 [node name="RayCast2D3" type="RayCast2D" parent="RayCasts"]
-position = Vector2(37, -1)
+position = Vector2(21, 0)
 target_position = Vector2(0, 100)
 
 [node name="RayCast2D4" type="RayCast2D" parent="RayCasts"]
-position = Vector2(-1, -34)
+position = Vector2(-1, -18)
 target_position = Vector2(0, 100)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
@@ -285,9 +283,11 @@ script = ExtResource("16_6n751")
 [node name="LineOfSight2D" parent="." instance=ExtResource("10_n6pnb")]
 position = Vector2(0, -4)
 ray_count = 25
+view_distance = 350
+LOS_color = Color(0.694118, 0.113725, 0, 0.286275)
 
 [node name="ProgressBarPosition" type="Marker2D" parent="."]
-position = Vector2(0, -268)
+position = Vector2(0, -213)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

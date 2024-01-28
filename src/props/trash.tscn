@@ -6,8 +6,8 @@
 [node name="Trash" instance=ExtResource("1_758b2")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(-8, -48)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-5, -38)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_1f313")
 
 [node name="CollisionShape2D" parent="." index="1"]

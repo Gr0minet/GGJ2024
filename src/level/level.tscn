@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyfxemw7csdv5"]
+[gd_scene load_steps=10 format=3 uid="uid://cyfxemw7csdv5"]
 
 [ext_resource type="Texture2D" uid="uid://wpxgw0itkug" path="res://assets/sprites/level/background.png" id="1_d6y21"]
 [ext_resource type="Texture2D" uid="uid://b3vg86eca0cnu" path="res://assets/sprites/level/path.png" id="2_wjr0t"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ccaxci6wffc2x" path="res://src/props/bush.tscn" id="3_0hydp"]
 [ext_resource type="PackedScene" uid="uid://ccyui2sig1sj0" path="res://src/props/trash.tscn" id="5_4u3vm"]
 [ext_resource type="PackedScene" uid="uid://cyrdrfgi7yhhl" path="res://src/props/lampadaire.tscn" id="6_51ogd"]
+[ext_resource type="PackedScene" uid="uid://dq54yxlbcnvuu" path="res://src/props/tree_no_fun.tscn" id="7_hyv6t"]
+[ext_resource type="PackedScene" uid="uid://b24wqrjexn37k" path="res://src/props/bigbush2.tscn" id="8_1le32"]
+[ext_resource type="PackedScene" uid="uid://c3fceq5w56d0f" path="res://src/props/bigbush.tscn" id="9_r4wq0"]
 
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
@@ -43,14 +46,11 @@ position = Vector2(1170, 380)
 [node name="Tree6" parent="Props" instance=ExtResource("2_y1mia")]
 position = Vector2(1738, 498)
 
-[node name="Tree7" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(494, 813)
-
 [node name="Tree8" parent="Props" instance=ExtResource("2_y1mia")]
 position = Vector2(960, 526)
 
 [node name="Tree9" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(1364, 776)
+position = Vector2(1355, 693)
 
 [node name="Bush" parent="Props" instance=ExtResource("3_0hydp")]
 position = Vector2(702, 204)
@@ -61,23 +61,20 @@ position = Vector2(202, 480)
 [node name="Bush3" parent="Props" instance=ExtResource("3_0hydp")]
 position = Vector2(242, 796)
 
-[node name="Bush4" parent="Props" instance=ExtResource("3_0hydp")]
-position = Vector2(746, 790)
-
 [node name="Bush5" parent="Props" instance=ExtResource("3_0hydp")]
 position = Vector2(1189, 874)
-
-[node name="Bush6" parent="Props" instance=ExtResource("3_0hydp")]
-position = Vector2(1628, 727)
-
-[node name="Bush7" parent="Props" instance=ExtResource("3_0hydp")]
-position = Vector2(1656, 612)
-
-[node name="Bush8" parent="Props" instance=ExtResource("3_0hydp")]
-position = Vector2(1574, 880)
 
 [node name="Trash" parent="." instance=ExtResource("5_4u3vm")]
 position = Vector2(174, 355)
 
 [node name="Lampadaire" parent="." instance=ExtResource("6_51ogd")]
 position = Vector2(764, 536)
+
+[node name="TreeNoFun" parent="." instance=ExtResource("7_hyv6t")]
+position = Vector2(1006, 694)
+
+[node name="Bigbush2" parent="." instance=ExtResource("8_1le32")]
+position = Vector2(1659, 838)
+
+[node name="Bigbush" parent="." instance=ExtResource("9_r4wq0")]
+position = Vector2(638, 809)

@@ -6,7 +6,7 @@
 [node name="Bush" instance=ExtResource("1_0214a")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, -24)
+position = Vector2(0, -30)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_eowdu")
 

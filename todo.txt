@@ -1,13 +1,10 @@
 # TODO
-	- faire un scale cohérent
 	- faire un test d'upload sur site ggj
-	- line of sight y sorting
-	- ajouter variantes de pnj
-	- bruitage à ajouter
 	- ajouter une possibilité pour looking around à 360 degrés plutôt que balayage
 	- tourner flip_h flic vers la target position joueur quand il est alerting
 	- faire des bulles conversation back and forth entre les pnj quand ils discuttent
-
+	- changer couleur line of sight quand état chasing flic
+	- line of sight y sorting
 	- voir pour désactiver les animations quand on sort des états
 	- avoir une jauge de points de rire et quand on atteint un certain score on a gagné
 	- ajouter une bulle au dessus des pnj qui parlent
@@ -81,6 +78,9 @@ Divers:
 	- faire un ctrl R sur les modulates et les retirer
 	- animation pnj fille
 	- spawn des variantes de pnj
+	- faire un scale cohérent
+	- ajouter variantes de pnj
+	- bruitage à ajouter
 - Game:
 	- instancie le jouer, les citoyens et les flics
 	- gere les regles

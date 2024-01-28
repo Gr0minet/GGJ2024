@@ -6,7 +6,7 @@
 [node name="Lampadaire" instance=ExtResource("1_p60dk")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(-5.68434e-14, -104)
+position = Vector2(0, -110)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_a0c0b")
 
