@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuwkrkhbps5yh"]
+[gd_scene load_steps=16 format=3 uid="uid://cuwkrkhbps5yh"]
 
 [ext_resource type="Script" path="res://src/pnj/pnj.gd" id="1_j0mti"]
 [ext_resource type="Texture2D" uid="uid://dni0iawhvr2q6" path="res://assets/sprites/pnj/pnj1.png" id="2_6tmx2"]
@@ -54,6 +54,109 @@ radius = 400.0
 radius = 46.0
 height = 112.0
 
+[sub_resource type="Animation" id="Animation_l5tus"]
+resource_name = "glissing"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-100, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pnh4l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot2/Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1h8xn"]
+resource_name = "alert"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"alert"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot2/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gcq6t"]
+_data = {
+"RESET": SubResource("Animation_pnh4l"),
+"alert": SubResource("Animation_1h8xn"),
+"glissing": SubResource("Animation_l5tus")
+}
+
 [node name="Pnj" type="CharacterBody2D" groups=["walk_on_poop"]]
 collision_layer = 4
 collision_mask = 11
@@ -62,7 +165,9 @@ slide_on_ceiling = false
 wall_min_slide_angle = 0.0
 script = ExtResource("1_j0mti")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Pivot" type="Marker2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
 position = Vector2(6, -112)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_yxtum")
@@ -132,5 +237,10 @@ script = ExtResource("6_rwsvh")
 
 [node name="Chatting" type="Node" parent="StateMachine"]
 script = ExtResource("7_yr70c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gcq6t")
+}
 
 [connection signal="area_entered" from="PnjDetector" to="." method="_on_pnj_detector_area_entered"]

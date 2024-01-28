@@ -32,7 +32,8 @@ func enter(msg: = {}) -> void:
 	
 func physics_process(delta) -> void:
 	if owner.line_of_sight.player_is_in_sight():
-		_state_machine.transition_to("Chasing")
+		var position = owner.line_of_sight.get_player_in_sight().position
+		_state_machine.transition_to("Alert", {Const.PLAYER_LAST_POSITION: position})
 		return
 	
 	_sermenting_timer += delta

@@ -1,8 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://brdc5enmv18y0"]
+[gd_scene load_steps=27 format=3 uid="uid://brdc5enmv18y0"]
 
 [ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
 [ext_resource type="Texture2D" uid="uid://b70c8phul5031" path="res://assets/sprites/cops/cops_walking_F1.png" id="2_dhct6"]
+[ext_resource type="Texture2D" uid="uid://cg1xgt5xk28rm" path="res://assets/sprites/cops/cop_alert_popup_F1.png" id="2_jnce8"]
 [ext_resource type="Texture2D" uid="uid://c0ld7dyedtf01" path="res://assets/sprites/cops/cop_look_around_F1.png" id="2_k3gvb"]
+[ext_resource type="Texture2D" uid="uid://o5bvqgjtnokr" path="res://assets/sprites/cops/cop_alert_F1.png" id="2_w6xk1"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_2u6tn"]
 [ext_resource type="Texture2D" uid="uid://clniqvex3bl0p" path="res://assets/sprites/cops/cops_sermenting_F1.png" id="3_rj6eu"]
 [ext_resource type="Texture2D" uid="uid://ca6tstj48y65e" path="res://assets/sprites/cops/cops_walking_F2.png" id="3_w1uif"]
@@ -16,17 +18,22 @@
 [ext_resource type="Script" path="res://src/pnj/states/looking_around.gd" id="9_ohw4f"]
 [ext_resource type="Script" path="res://src/pnj/states/chasing.gd" id="10_k7o2q"]
 [ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/utils/line_of_sight_2D.tscn" id="10_n6pnb"]
+[ext_resource type="Script" path="res://src/pnj/states/alert.gd" id="16_6n751"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
 radius = 30.0
 height = 75.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w45no"]
-radius = 30.0
-height = 75.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_rwekc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w6xk1")
+}],
+"loop": true,
+"name": &"alert",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_k3gvb")
@@ -36,10 +43,10 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": ExtResource("3_rj6eu")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("4_bg7m1")
 }],
 "loop": true,
@@ -54,12 +61,122 @@ animations = [{
 "texture": ExtResource("3_w1uif")
 }, {
 "duration": 1.0,
+"texture": ExtResource("2_dhct6")
+}, {
+"duration": 1.0,
 "texture": ExtResource("4_ogq2v")
 }],
 "loop": true,
 "name": &"wandering",
 "speed": 5.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w45no"]
+radius = 30.0
+height = 75.0
+
+[sub_resource type="Animation" id="Animation_l5tus"]
+resource_name = "glissing"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-100, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pnh4l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot2/Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1h8xn"]
+resource_name = "alert"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"alert"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot2/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gcq6t"]
+_data = {
+"RESET": SubResource("Animation_pnh4l"),
+"alert": SubResource("Animation_1h8xn"),
+"glissing": SubResource("Animation_l5tus")
+}
 
 [node name="Flic" type="CharacterBody2D" node_paths=PackedStringArray("line_of_sight") groups=["walk_on_poop"]]
 position = Vector2(-1, 0)
@@ -75,6 +192,23 @@ line_of_sight = NodePath("LineOfSight2D")
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_82vvv")
 
+[node name="Pivot2" type="Marker2D" parent="."]
+position = Vector2(0, -237)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot2"]
+visible = false
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_jnce8")
+
+[node name="Pivot" type="Marker2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
+position = Vector2(1, -104)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_rwekc")
+animation = &"alert"
+speed_scale = 1.5
+
 [node name="LaughingDetector" type="Area2D" parent="."]
 visible = false
 position = Vector2(0, -4)
@@ -85,13 +219,6 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LaughingDetector"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_w45no")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -104)
-scale = Vector2(0.15, 0.15)
-sprite_frames = SubResource("SpriteFrames_rwekc")
-animation = &"wandering"
-speed_scale = 1.5
 
 [node name="RayCasts" type="Node2D" parent="."]
 visible = false
@@ -137,11 +264,19 @@ script = ExtResource("9_ohw4f")
 [node name="Chasing" type="Node" parent="StateMachine"]
 script = ExtResource("10_k7o2q")
 
+[node name="Alert" type="Node" parent="StateMachine"]
+script = ExtResource("16_6n751")
+
 [node name="LineOfSight2D" parent="." instance=ExtResource("10_n6pnb")]
 position = Vector2(0, -4)
 
 [node name="ProgressBarPosition" type="Marker2D" parent="."]
-position = Vector2(1, -168)
+position = Vector2(1, -226)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gcq6t")
+}
 
 [connection signal="area_entered" from="LaughingDetector" to="." method="_on_laughing_detector_area_entered"]
 

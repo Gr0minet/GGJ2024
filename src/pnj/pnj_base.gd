@@ -1,7 +1,8 @@
 extends CharacterBody2D
 class_name PNJBase
 
-@onready var skin := $AnimatedSprite2D
+@onready var skin := $Pivot/AnimatedSprite2D
+@onready var animation_player := $AnimationPlayer
 @onready var raycasts := $RayCasts
 @onready var state_machine := $StateMachine
 

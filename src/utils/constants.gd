@@ -26,3 +26,5 @@ const GROUP_WALK_ON_POOP:String = "walk_on_poop"
 const MSG_REASON:String = "reason"
 
 const PREVIOUS_DIRECTION: String = "previous_direction"
+
+const PLAYER_LAST_POSITION: String = "player_laster_position"

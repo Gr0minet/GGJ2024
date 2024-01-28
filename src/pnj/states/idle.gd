@@ -18,6 +18,7 @@ func enter(msg: = {}) -> void:
 	_idle_timer = 0
 	
 	if Const.MSG_REASON in msg and msg[Const.MSG_REASON] == "poop":
+		owner.animation_player.play("glissing")
 		owner.modulate = Color.RED
 		stunned = true
 		_idling_time = stun_time
@@ -29,7 +30,8 @@ func physics_process(delta):
 	_idle_timer += delta
 	if owner is Flic and not stunned:
 		if owner.line_of_sight.player_is_in_sight():
-			_state_machine.transition_to("Chasing")
+			var position = owner.line_of_sight.get_player_in_sight().position
+			_state_machine.transition_to("Alert", {Const.PLAYER_LAST_POSITION: position})
 			return
 	
 		if owner.laughing_detector.has_overlapping_areas():

@@ -27,6 +27,7 @@ func physics_process(delta: float) -> void:
 func enter(msg: = {}) -> void:
 	_poop_timer = 0.0
 	owner.skin.play("pooping")
+	owner.animation_player.play("pooping")
 	
 	if progress_bar_position == null:
 		push_error("Progress bar is null in pooping")

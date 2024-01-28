@@ -1,4 +1,5 @@
 # TODO
+	- voir pour désactiver les animations quand on sort des états
 	- avoir une jauge de points de rire et quand on atteint un certain score on a gagné
 	- ajouter une bulle au dessus des pnj qui parlent
 	- ajouter point d'exclamation sur policier qui détecte doggo
@@ -9,9 +10,8 @@
 	- level design
 	- fin de jeu ("perdu")
 	- animations:
-		- chien (à finir)
-		- flics (à finir)
 		- PNJ (à ajouter)
+	- animation PNJ (walking)
 
 	- collision line of sight avec petit buisson à retirer
 	- sons
