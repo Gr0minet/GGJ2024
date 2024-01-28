@@ -8,7 +8,7 @@ const FLIC_SPAWN_TIMER := [0.0, 30.0, 60.0]
 @export var nb_citizen:int = 5
 
 @export_category("Game Rules")
-@export var target_score:int = 1000
+@export var target_score:int = 100
 
 @export_category("Game actors")
 @export var poop_scene:PackedScene = null
@@ -88,11 +88,11 @@ func _game_over() -> void:
 	
 
 func _win() -> void:
-	end_menu.set_end_result_label("You win :)")
+	end_menu.set_win()
 	_game_over()
 
 func _lose() -> void:
-	end_menu.set_end_result_label("You lose :(")
+	end_menu.set_lose()
 	_game_over()
 
 ########################

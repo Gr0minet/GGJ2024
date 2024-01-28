@@ -5,6 +5,10 @@ class_name EndMenuCanvas
 @export var button_return_menu:Button = null
 
 @export var main_menu_scene:PackedScene = null
+@export var win_lose_frame:TextureRect = null
+
+@export var win_image:Texture
+@export var lose_image:Texture
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +24,15 @@ func _process(delta):
 
 func set_end_result_label(text:String) -> void:
 	end_result_label.text = text
+	
+
+func set_win() -> void:
+	end_result_label.text = "You win :)"
+	win_lose_frame.texture = win_image
+
+func set_lose() -> void:
+	end_result_label.text = "You lose :("
+	win_lose_frame.texture = lose_image
 
 
 func display() -> void:
