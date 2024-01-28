@@ -1,6 +1,10 @@
 extends PNJState
 
+var _laugh_timer:float = 0
+var _laugh_time_before_points:float = 1.0
+
 func enter(msg: = {}) -> void:
+	_laugh_timer = 0
 	owner.modulate = Color.BLUE
 	owner.laughing_area.set_deferred("monitorable", true)
 	owner.pnj_detector.set_deferred("monitorable", false)
@@ -11,3 +15,11 @@ func exit(msg: = {}) -> void:
 	owner.laughing_area.set_deferred("monitorable", false)
 	owner.pnj_detector.set_deferred("monitorable", true)
 	owner.pnj_detector.set_deferred("monitoring", true)
+
+func process(delta: float) -> void:
+	_laugh_timer += delta
+	if _laugh_timer >= _laugh_time_before_points:
+		_laugh_timer -= _laugh_time_before_points
+		EventBus.score_earned.emit(Const.LAUGHING_SCORE_ADDED)
+		
+	

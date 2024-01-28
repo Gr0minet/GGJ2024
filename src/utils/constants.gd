@@ -2,6 +2,8 @@ extends Node
 
 const RAYCAST_RANGE = 300.0
 
+const LAUGHING_SCORE_ADDED:int = 5
+
 # Input control names
 const INPUT_UP:String = "up"
 const INPUT_DOWN:String = "down"
