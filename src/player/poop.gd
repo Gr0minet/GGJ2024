@@ -1,5 +1,9 @@
 extends Node2D
 
+@export var poop_duration:float = 10.0
+
+var _duration_timer:float = 0
+
 @onready var skin:Sprite2D = $Sprite2D
 @onready var walk_detection_area:Area2D = $WalkDetection
 @onready var pnj_detection_area:Area2D = $PNJDetection
@@ -10,7 +14,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	_duration_timer += delta
+	if _duration_timer > poop_duration:
+		queue_free()
 
 # When walk on poop, detect pnj in detection area
 func _on_walk_on_poop(body:Node2D):
