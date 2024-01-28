@@ -7,11 +7,15 @@ extends Control
 @export var credit_panel:PanelContainer = null
 @export_file("*.tscn","*.scn") var game_scene_path:String
 
+@export var main_menu_music:AudioStream = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button_play.pressed.connect(func():
 		get_tree().change_scene_to_file(game_scene_path)
 	)
+	
+	
 	
 	button_credits.pressed.connect(func():
 		credit_panel.show()
@@ -26,10 +30,16 @@ func _ready():
 		button_quit.pressed.connect(func():
 			get_tree().quit()
 		)
+		
+	MusicManager.play_music(main_menu_music)
+	
+	button_play.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("start_controller"):
+		get_tree().change_scene_to_file(game_scene_path)
+	
 
 func _on_quit_credit() -> void:
 	credit_panel.hide()

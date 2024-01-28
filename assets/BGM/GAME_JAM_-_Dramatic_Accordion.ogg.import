@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/GAME_JAM_-_Dramatic_Accordion.ogg-bf70d699388
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

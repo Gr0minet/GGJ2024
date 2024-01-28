@@ -20,6 +20,8 @@ const FLIC_SPAWN_TIMER := [0.0, 30.0, 60.0]
 
 @export var spawn_margins:SpawnMargins = null
 
+@export var game_music:AudioStream = null
+
 ### Game rules variables ###
 var _current_score:int = 0
 
@@ -28,6 +30,7 @@ var _current_score:int = 0
 func _ready():
 	randomize()
 	end_menu.hide()
+	MusicManager.play_music(game_music)
 
 	_current_score = 0
 	

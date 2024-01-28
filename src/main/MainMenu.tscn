@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bt6mkd6yo1x8r"]
+[gd_scene load_steps=4 format=3 uid="uid://bt6mkd6yo1x8r"]
 
 [ext_resource type="Script" path="res://src/main/MainMenu.gd" id="1_q4480"]
+[ext_resource type="AudioStream" uid="uid://ckmtst74l8uk0" path="res://assets/BGM/GAME_JAM_-_Accordion_Chill.mp3" id="2_yo3hs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rb3f5"]
 bg_color = Color(0.188235, 0.188235, 0.188235, 1)
@@ -19,6 +20,7 @@ button_quit = NodePath("CenterContainer/Buttons/ButtonQuit")
 button_quit_credit = NodePath("CreditsPanel/MarginContainer/VBoxContainer/CenterContainer/ButtonQuitCredits")
 credit_panel = NodePath("CreditsPanel")
 game_scene_path = "res://src/main/game.tscn"
+main_menu_music = ExtResource("2_yo3hs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -70,16 +72,22 @@ metadata/_edit_group_ = true
 
 [node name="ButtonPlay" type="Button" parent="CenterContainer/Buttons"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonQuit")
+focus_neighbor_bottom = NodePath("../ButtonCredits")
 theme_override_font_sizes/font_size = 30
 text = "Play"
 
 [node name="ButtonCredits" type="Button" parent="CenterContainer/Buttons"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonPlay")
+focus_neighbor_bottom = NodePath("../ButtonQuit")
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
 [node name="ButtonQuit" type="Button" parent="CenterContainer/Buttons"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonCredits")
+focus_neighbor_bottom = NodePath("../ButtonPlay")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
