@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drj5rhqfulerd"
-path="res://.godot/imported/Contour_Progressbar.png-39a26b31a29e2675fd8ce7aba46b7bcc.ctex"
+uid="uid://bxuegayiqn17c"
+path="res://.godot/imported/Contour_Progressbar_smiley.png-0006c2e6eaadb978e46348c625f4bfd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/UI/Contour_Progressbar.png"
-dest_files=["res://.godot/imported/Contour_Progressbar.png-39a26b31a29e2675fd8ce7aba46b7bcc.ctex"]
+source_file="res://assets/sprites/UI/Contour_Progressbar_smiley.png"
+dest_files=["res://.godot/imported/Contour_Progressbar_smiley.png-0006c2e6eaadb978e46348c625f4bfd7.ctex"]
 
 [params]
 
