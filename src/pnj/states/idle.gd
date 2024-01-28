@@ -39,7 +39,3 @@ func physics_process(delta):
 		else:
 			_state_machine.transition_to("Wandering")
 			return
-	
-
-
-

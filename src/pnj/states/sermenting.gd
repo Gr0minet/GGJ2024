@@ -28,9 +28,8 @@ func enter(msg: = {}) -> void:
 	_progress_bar.set_max_value(sermenting_duration)
 	_progress_bar.show_text_progress(true)
 	progress_bar_position.add_child(_progress_bar)
+	_sermenting_timer = 0.0
 	
-	
-
 func physics_process(delta) -> void:
 	if owner.line_of_sight.player_is_in_sight():
 		_state_machine.transition_to("Chasing")

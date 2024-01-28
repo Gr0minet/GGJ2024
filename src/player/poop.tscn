@@ -1,20 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4x8aammec5to"]
 
 [ext_resource type="Script" path="res://src/player/poop.gd" id="1_tt3n0"]
-[ext_resource type="Texture2D" uid="uid://b36n2mr7kn218" path="res://assets/sprites/objects/poop.png" id="2_xqvsu"]
+[ext_resource type="Texture2D" uid="uid://b36n2mr7kn218" path="res://assets/sprites/doggo/poop.png" id="2_xqvsu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dc7y5"]
-radius = 9.0
+radius = 21.0
 height = 80.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3q3uq"]
-radius = 116.482
+radius = 300.0
 
 [node name="Poop" type="Node2D"]
 script = ExtResource("1_tt3n0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -27)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_xqvsu")
 
@@ -29,7 +29,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dc7y5")
 
 [node name="PNJDetection" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 monitorable = false

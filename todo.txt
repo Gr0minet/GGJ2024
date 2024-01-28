@@ -1,5 +1,4 @@
 # TODO
-
 	- sermenting: pouvoir l'interrompre (M) (CHECK)
 	- citoyen et flic: améliorer collision au spawn sur la map
 	- arranger les tailles d'assets

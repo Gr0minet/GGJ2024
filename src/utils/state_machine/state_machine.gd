@@ -7,15 +7,15 @@ signal transitioned(state_path)
 @export var state: State = null:
 	set(value):
 		state = value
-		_state_name = state.name
+		state_name = state.name
 
-var _state_name := ""
+var state_name := ""
 
 func _ready() -> void:
 	await owner.ready
 	if state:
 		state.enter()
-		transitioned.emit(_state_name)
+		transitioned.emit(state_name)
 
 func _unhandled_input(event: InputEvent) -> void:
 	state.unhandled_input(event)

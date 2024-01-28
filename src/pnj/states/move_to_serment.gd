@@ -27,7 +27,7 @@ func enter(msg: = {}) -> void:
 		return
 
 func exit(msg: = {}) -> void:
-	owner.modulate = Color.BLACK
+	owner.modulate = Color.WHITE
 
 func physics_process(delta: float) -> void:
 	if owner.line_of_sight.player_is_in_sight():

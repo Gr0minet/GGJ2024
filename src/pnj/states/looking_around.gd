@@ -1,7 +1,7 @@
 extends PNJState
 
 @export var look_around_angle := 90 # en degrés
-@export var look_around_speed := 1
+@export var look_around_speed := 1.5
 
 var _current_angle # en degrés
 var _angle_change_direction := 1

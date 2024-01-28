@@ -48,7 +48,7 @@ radius = 21.0
 height = 66.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6o3bs"]
-radius = 300.0
+radius = 400.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vp0lw"]
 radius = 46.0
@@ -117,7 +117,7 @@ target_position = Vector2(0, 100)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("3_k886y")
-state = NodePath("Idle")
+state = NodePath("Laughing")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_w5e4j")
@@ -132,4 +132,3 @@ script = ExtResource("6_rwsvh")
 script = ExtResource("7_yr70c")
 
 [connection signal="area_entered" from="PnjDetector" to="." method="_on_pnj_detector_area_entered"]
-[connection signal="body_entered" from="PnjDetector" to="." method="_on_pnj_detector_body_entered"]

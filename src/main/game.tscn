@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bthqcvt6gip76" path="res://src/player/player.tscn" id="1_5etke"]
 [ext_resource type="Script" path="res://src/main/game.gd" id="1_e7evx"]
 [ext_resource type="PackedScene" uid="uid://b4x8aammec5to" path="res://src/player/poop.tscn" id="2_akwfh"]
-[ext_resource type="PackedScene" uid="uid://iyse5qnrnyp1" path="res://src/pnj/pnj_type1.tscn" id="3_65nrs"]
+[ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="3_1402k"]
 [ext_resource type="PackedScene" uid="uid://brdc5enmv18y0" path="res://src/pnj/flic.tscn" id="4_57ofh"]
 [ext_resource type="Script" path="res://src/utils/SpawnMargins.gd" id="4_vx8jg"]
 [ext_resource type="PackedScene" uid="uid://cyfxemw7csdv5" path="res://src/level/level.tscn" id="6_lctox"]
@@ -16,7 +16,7 @@ y_sort_enabled = true
 script = ExtResource("1_e7evx")
 nb_police = 1
 poop_scene = ExtResource("2_akwfh")
-citizen_scene = ExtResource("3_65nrs")
+citizen_scene = ExtResource("3_1402k")
 police_scene = ExtResource("4_57ofh")
 player = NodePath("Player")
 spawn_margins = NodePath("SpawnMargins")

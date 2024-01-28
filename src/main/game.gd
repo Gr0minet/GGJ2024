@@ -12,7 +12,6 @@ extends Node2D
 
 @export var spawn_margins:SpawnMargins = null
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -27,26 +26,21 @@ func _ready():
 		push_error("no spawn margins")
 		return
 	
-	
 	if police_scene != null:
 		for i in range(nb_police):
 			var police_instance := police_scene.instantiate()
 			police_instance.position = spawn_margins.get_random_position()
 			add_child(police_instance)
 	
-	
 	if citizen_scene != null:
 		for i in range(nb_citizen):
 			var citizen_instance := citizen_scene.instantiate()
 			citizen_instance.position = spawn_margins.get_random_position()
 			add_child(citizen_instance)
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
 
 func _on_player_pooped() -> void:
 	if poop_scene == null:
