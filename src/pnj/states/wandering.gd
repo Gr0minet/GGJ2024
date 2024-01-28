@@ -29,16 +29,19 @@ func enter(msg: = {}) -> void:
 	var loop_number := 0
 	while owner.raycast_collide(target_position) or (Const.PREVIOUS_DIRECTION in msg and abs(_consecutive_angle) > CONSECUTIVE_WANDERING_MAX_ANGLE):
 		if loop_number > MAX_LOOP_NUMBER:
-			_state_machine.transition_to("Idle")
+			if owner is Flic:
+				_state_machine.transition_to("LookingAround")
+			else:
+				_state_machine.transition_to("Idle")
 			return
 		target_position = _generate_target_position(previous_direction)
 		loop_number += 1
 
 	pnj.velocity = _direction * speed
 	if pnj.velocity.x > 0:
-		skin.flip_h = false
-	else:
 		skin.flip_h = true
+	else:
+		skin.flip_h = false
 
 	_timer.start(_wandering_time)
 	if owner is Flic:

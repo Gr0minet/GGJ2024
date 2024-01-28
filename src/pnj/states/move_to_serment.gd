@@ -19,9 +19,9 @@ func enter(msg: = {}) -> void:
 		owner.line_of_sight.look_at(owner.line_of_sight.global_position + _direction)
 		owner.line_of_sight.rotation += rad_to_deg(90)
 		if _direction.x > 0:
-			skin.flip_h = false
-		else:
 			skin.flip_h = true
+		else:
+			skin.flip_h = false
 	else:
 		_state_machine.transition_to("Sermenting", {target = _target})
 		return
