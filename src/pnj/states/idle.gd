@@ -11,6 +11,8 @@ var _idle_timer:float = 0
 var stunned:bool = false
 	
 func enter(msg: = {}) -> void:
+	if owner is Flic:
+		owner.line_of_sight.set_LOS_color(owner.normal_line_of_sight_color)
 	owner.skin.play("idle")
 	stunned = false
 	owner.velocity = Vector2.ZERO
