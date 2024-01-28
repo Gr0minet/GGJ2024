@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://brdc5enmv18y0"]
+[gd_scene load_steps=28 format=3 uid="uid://brdc5enmv18y0"]
 
 [ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
 [ext_resource type="Texture2D" uid="uid://b70c8phul5031" path="res://assets/sprites/cops/cops_walking_F1.png" id="2_dhct6"]
