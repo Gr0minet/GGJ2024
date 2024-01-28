@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://c14u2wv7ttnvt"]
+[gd_scene load_steps=14 format=3 uid="uid://c14u2wv7ttnvt"]
 
 [ext_resource type="PackedScene" uid="uid://bthqcvt6gip76" path="res://src/player/player.tscn" id="1_5etke"]
 [ext_resource type="Script" path="res://src/main/game.gd" id="1_e7evx"]
 [ext_resource type="PackedScene" uid="uid://b4x8aammec5to" path="res://src/player/poop.tscn" id="2_akwfh"]
-[ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="3_1402k"]
 [ext_resource type="PackedScene" uid="uid://brdc5enmv18y0" path="res://src/pnj/flic.tscn" id="4_57ofh"]
 [ext_resource type="Script" path="res://src/utils/SpawnMargins.gd" id="4_vx8jg"]
 [ext_resource type="AudioStream" uid="uid://cvaccuepks7k5" path="res://assets/BGM/GAME_JAM_-_Dramatic_Accordion.mp3" id="5_q6aqg"]
@@ -21,7 +20,6 @@ size = Vector2(1920, 21)
 y_sort_enabled = true
 script = ExtResource("1_e7evx")
 poop_scene = ExtResource("2_akwfh")
-citizen_scene = ExtResource("3_1402k")
 police_scene = ExtResource("4_57ofh")
 player = NodePath("Player")
 HUD = NodePath("HUD")

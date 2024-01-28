@@ -2,7 +2,7 @@
 	- faire un scale cohérent
 	- faire un test d'upload sur site ggj
 	- line of sight y sorting
-	- ajouter variantes de pnj + spawn des variantes
+	- ajouter variantes de pnj
 	- bruitage à ajouter
 	- ajouter une possibilité pour looking around à 360 degrés plutôt que balayage
 	- tourner flip_h flic vers la target position joueur quand il est alerting
@@ -80,6 +80,7 @@ Divers:
 	- ajout des bulles
 	- faire un ctrl R sur les modulates et les retirer
 	- animation pnj fille
+	- spawn des variantes de pnj
 - Game:
 	- instancie le jouer, les citoyens et les flics
 	- gere les regles
