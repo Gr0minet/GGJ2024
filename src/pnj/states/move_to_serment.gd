@@ -10,7 +10,6 @@ var _direction := Vector2.ZERO
 
 func enter(msg: = {}) -> void:
 	owner.skin.play("wandering")
-	owner.modulate = Color.BLACK
 	_target = msg["target"]
 	_target_position = _target.global_position
 	if pnj.position.distance_to(_target_position) > SERMENTING_THRESHOD:
@@ -27,7 +26,7 @@ func enter(msg: = {}) -> void:
 		return
 
 func exit(msg: = {}) -> void:
-	owner.modulate = Color.WHITE
+	pass
 
 func physics_process(delta: float) -> void:
 	if owner.line_of_sight.player_is_in_sight():

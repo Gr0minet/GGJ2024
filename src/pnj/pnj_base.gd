@@ -27,7 +27,6 @@ func raycast_collide(target_position: Vector2) -> bool:
 	return false
 
 func show_reaction(reaction: String) -> void:
-	print(reaction)
 	if reaction == Const.REACTION_CHATTING1:
 		reaction_sprite.texture = reaction_chatting1_sprite
 	elif reaction == Const.REACTION_CHATTING2:

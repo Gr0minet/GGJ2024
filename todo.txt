@@ -1,6 +1,6 @@
 # TODO
-	- animation pnj fille
-	- ajout des bulles
+	- faire un scale cohérent
+	- faire un test d'upload sur site ggj
 	- line of sight y sorting
 	- ajouter variantes de pnj + spawn des variantes
 	- bruitage à ajouter
@@ -77,6 +77,9 @@ Divers:
 	- timer après lequel poop disparait (Martin)
 	- ombre (Martin)
 	- musique
+	- ajout des bulles
+	- faire un ctrl R sur les modulates et les retirer
+	- animation pnj fille
 - Game:
 	- instancie le jouer, les citoyens et les flics
 	- gere les regles

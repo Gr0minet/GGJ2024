@@ -10,12 +10,11 @@ var _target_last_position: Vector2
 
 func enter(msg: = {}) -> void:
 	owner.skin.play("wandering")
-	owner.modulate = Color.RED
 	_target_last_position = msg[Const.PLAYER_LAST_POSITION]
 	_time_before_stop_chasing = TIME_MAX
 
 func exit(msg: = {}) -> void:
-	owner.modulate = Color.WHITE
+	pass
 
 func physics_process(delta: float) -> void:
 	var player:Player = owner.line_of_sight.get_player_in_sight()
