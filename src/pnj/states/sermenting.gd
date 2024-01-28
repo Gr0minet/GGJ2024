@@ -40,13 +40,12 @@ func physics_process(delta) -> void:
 	_sermenting_timer += delta
 	_progress_bar.set_value(_sermenting_timer)
 	
-	if _sermenting_timer >= sermenting_duration:
+	if _sermenting_timer >= sermenting_duration or not _target.is_laughing():
 		_target.stop_laughing()
 		_state_machine.transition_to("LookingAround")
 		return
 	
 func exit(msg: = {}) -> void:
-	print("end sermenting")
 	owner.hide_reaction()
 	if _progress_bar:
 		_progress_bar.queue_free()

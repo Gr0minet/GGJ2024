@@ -11,6 +11,7 @@ var _idle_timer:float = 0
 var stunned:bool = false
 	
 func enter(msg: = {}) -> void:
+	owner.skin.play("idle")
 	stunned = false
 	owner.velocity = Vector2.ZERO
 	_idling_time = randf_range(min_wait, max_wait)
@@ -21,7 +22,6 @@ func enter(msg: = {}) -> void:
 			owner.animation_player.play("glissing_right")
 		else:
 			owner.animation_player.play("glissing_left")
-		owner.modulate = Color.RED
 		stunned = true
 		_idling_time = stun_time
 		

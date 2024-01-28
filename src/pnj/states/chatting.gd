@@ -5,6 +5,7 @@ const CHATTING_TIME := 7.0
 var _time_left_chatting := 0.0
 
 func enter(msg: = {}) -> void:
+	owner.skin.play("chatting")
 	owner.show_reaction(Const.REACTION_CHATTING3)
 	_time_left_chatting = CHATTING_TIME
 
