@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name HUDCanvas
 
-@export var laugh_progress_bar:ProgressBar = null
+@export var laugh_progress_bar:TextureProgressBar = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
