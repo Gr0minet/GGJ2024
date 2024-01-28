@@ -7,6 +7,8 @@ extends Control
 @export var credit_panel:PanelContainer = null
 @export_file("*.tscn","*.scn") var game_scene_path:String
 
+@export var main_menu_music:AudioStream = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button_play.pressed.connect(func():
@@ -26,6 +28,8 @@ func _ready():
 		button_quit.pressed.connect(func():
 			get_tree().quit()
 		)
+		
+	MusicManager.play_music(main_menu_music)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
