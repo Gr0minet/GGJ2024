@@ -7,6 +7,8 @@ const ALERT_TIME:float = 0.5
 var _player_last_seen_position: Vector2
 
 func enter(msg: = {}) -> void:
+	if owner is Flic:
+		owner.line_of_sight.set_LOS_color(owner.chase_line_of_sight_color)
 	_player_last_seen_position = msg[Const.PLAYER_LAST_POSITION]
 	_time_before_chasing = ALERT_TIME
 	owner.line_of_sight.look_at(_player_last_seen_position)

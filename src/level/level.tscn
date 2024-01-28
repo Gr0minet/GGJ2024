@@ -28,53 +28,105 @@ metadata/_edit_lock_ = true
 [node name="Props" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Tree" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(182, 242)
+[node name="Trash2" parent="Props" instance=ExtResource("5_4u3vm")]
+position = Vector2(776, 521)
+
+[node name="Lampadaire" parent="Props" instance=ExtResource("6_51ogd")]
+position = Vector2(398, 535)
+
+[node name="TreeNoFun" parent="Props" instance=ExtResource("7_hyv6t")]
+position = Vector2(781, 457)
+
+[node name="Bigbush2" parent="Props" instance=ExtResource("8_1le32")]
+position = Vector2(1514, 927)
+
+[node name="Bigbush" parent="Props" instance=ExtResource("9_r4wq0")]
+position = Vector2(406, 893)
+
+[node name="Lampadaire2" parent="Props" instance=ExtResource("6_51ogd")]
+position = Vector2(1074, 524)
+
+[node name="Lampadaire3" parent="Props" instance=ExtResource("6_51ogd")]
+position = Vector2(1337, 352)
+
+[node name="Lampadaire4" parent="Props" instance=ExtResource("6_51ogd")]
+position = Vector2(1243, 109)
+
+[node name="Trash" parent="Props" instance=ExtResource("5_4u3vm")]
+position = Vector2(1184, 121)
+
+[node name="Bush18" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(61, 88)
+
+[node name="Bush17" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(122, 65)
+
+[node name="Bush16" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(1576, 806)
+
+[node name="Bush15" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(987, -298)
+
+[node name="Bush14" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(1845, 39)
 
 [node name="Tree2" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(406, 214)
-
-[node name="Tree3" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(1006, 240)
+position = Vector2(375, 901)
 
 [node name="Tree4" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(1744, 133)
+position = Vector2(1580, 804)
 
 [node name="Tree5" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(1170, 380)
-
-[node name="Tree6" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(1738, 498)
+position = Vector2(960, 460)
 
 [node name="Tree8" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(960, 526)
+position = Vector2(612, 465)
 
 [node name="Tree9" parent="Props" instance=ExtResource("2_y1mia")]
-position = Vector2(1355, 693)
+position = Vector2(521, 401)
 
 [node name="Bush" parent="Props" instance=ExtResource("3_0hydp")]
-position = Vector2(702, 204)
+position = Vector2(645, 489)
 
 [node name="Bush2" parent="Props" instance=ExtResource("3_0hydp")]
-position = Vector2(202, 480)
+position = Vector2(543, 429)
 
 [node name="Bush3" parent="Props" instance=ExtResource("3_0hydp")]
-position = Vector2(178, 822)
+position = Vector2(871, 458)
 
 [node name="Bush5" parent="Props" instance=ExtResource("3_0hydp")]
-position = Vector2(1189, 874)
+position = Vector2(57, 54)
 
-[node name="Trash" parent="." instance=ExtResource("5_4u3vm")]
-position = Vector2(174, 355)
+[node name="Bush6" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(955, 479)
 
-[node name="Lampadaire" parent="." instance=ExtResource("6_51ogd")]
-position = Vector2(764, 536)
+[node name="Bush7" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(308, 911)
 
-[node name="TreeNoFun" parent="." instance=ExtResource("7_hyv6t")]
-position = Vector2(1006, 694)
+[node name="Bush8" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(755, 476)
 
-[node name="Bigbush2" parent="." instance=ExtResource("8_1le32")]
-position = Vector2(1659, 838)
+[node name="Bush9" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(693, 435)
 
-[node name="Bigbush" parent="." instance=ExtResource("9_r4wq0")]
-position = Vector2(638, 809)
+[node name="Sprite2D" parent="Props/Bush9" index="0"]
+flip_h = true
+
+[node name="Bush10" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(1897, 83)
+
+[node name="Bush11" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(955, 479)
+
+[node name="Sprite2D" parent="Props/Bush11" index="0"]
+position = Vector2(-45, -23)
+flip_h = true
+
+[node name="Bush12" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(-19, 1039)
+
+[node name="Bush13" parent="Props" instance=ExtResource("3_0hydp")]
+position = Vector2(485, 35)
+
+[editable path="Props/Bush9"]
+[editable path="Props/Bush11"]
