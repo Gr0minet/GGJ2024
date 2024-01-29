@@ -1,5 +1,14 @@
 # TODO
-	- faire un test d'upload sur site ggj
+	- refactor un peu les noms de fichier
+	- refactor les bouts de code commun des states pnj et flics
+	- refactor les states qui utilisent tous un timer
+	- faire en sorte que la line of sight du flic suive le joueur quand il est dans l'état "Alert" (et pas juste une unique fois)
+	- voir si on peut pas faire en sorte que line of sight ne "tremble pas"
+	- ajouter un bouton de menu "how to play"
+	- configurer mieux les valeurs du jeu vis à vis du game design  
+	- ajouter un bouton pour couper la musique (et des touches clavier/manette)
+	- faire en sorte qu'on puisse bouger dans les menus à la manette
+	- refactor le line of sight pour un truc moins gourmand
 	- ajouter une possibilité pour looking around à 360 degrés plutôt que balayage
 	- tourner flip_h flic vers la target position joueur quand il est alerting
 	- faire des bulles conversation back and forth entre les pnj quand ils discuttent
@@ -81,6 +90,7 @@ Divers:
 	- faire un scale cohérent
 	- ajouter variantes de pnj
 	- bruitage à ajouter
+	- faire un test d'upload sur site ggj
 - Game:
 	- instancie le jouer, les citoyens et les flics
 	- gere les regles
