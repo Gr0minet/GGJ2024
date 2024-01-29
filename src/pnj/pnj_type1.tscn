@@ -4,11 +4,11 @@
 
 [node name="Pnj1" instance=ExtResource("1_buq7w")]
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(0, 51)
 debug_color = Color(0.827451, 0, 0.94902, 0.419608)
 
-[node name="LaughingArea" parent="." index="2"]
+[node name="LaughingArea" parent="." index="4"]
 position = Vector2(0, 0)
 
 [node name="CollisionShape2D" parent="LaughingArea" index="0"]

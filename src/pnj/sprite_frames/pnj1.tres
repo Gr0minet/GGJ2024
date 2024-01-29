@@ -1,17 +1,17 @@
 [gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://drt3mrklfafnv"]
 
-[ext_resource type="Texture2D" uid="uid://dni0iawhvr2q6" path="res://assets/sprites/pnj/pnj1.png" id="1_83j6e"]
-[ext_resource type="Texture2D" uid="uid://dcv871hbcrcud" path="res://assets/sprites/pnj/pnj1/laughing/F1.png" id="2_rmvwr"]
-[ext_resource type="Texture2D" uid="uid://cw4hqq8yemx3u" path="res://assets/sprites/pnj/pnj1/laughing/F2.png" id="3_phpbw"]
-[ext_resource type="Texture2D" uid="uid://d0h037hij1y0k" path="res://assets/sprites/pnj/pnj1/walking/F1.png" id="4_gt5qg"]
-[ext_resource type="Texture2D" uid="uid://bkpqy5bib1r3d" path="res://assets/sprites/pnj/pnj1/walking/F2.png" id="5_canb6"]
-[ext_resource type="Texture2D" uid="uid://b4kyfedxlfecp" path="res://assets/sprites/pnj/pnj1/walking/F3.png" id="6_cxekk"]
+[ext_resource type="Texture2D" uid="uid://bompujp5nr6a6" path="res://assets/sprites/villageois/pnj1/pnj1_idle.png" id="1_fnbil"]
+[ext_resource type="Texture2D" uid="uid://dcv871hbcrcud" path="res://assets/sprites/villageois/pnj1/laughing/pnj1_laughing_F1.png" id="2_rmvwr"]
+[ext_resource type="Texture2D" uid="uid://cw4hqq8yemx3u" path="res://assets/sprites/villageois/pnj1/laughing/pnj1_laughing_F2.png" id="3_phpbw"]
+[ext_resource type="Texture2D" uid="uid://d0h037hij1y0k" path="res://assets/sprites/villageois/pnj1/walking/pnj1_walking_F1.png" id="4_gt5qg"]
+[ext_resource type="Texture2D" uid="uid://bkpqy5bib1r3d" path="res://assets/sprites/villageois/pnj1/walking/pnj1_walking_F2.png" id="5_canb6"]
+[ext_resource type="Texture2D" uid="uid://b4kyfedxlfecp" path="res://assets/sprites/villageois/pnj1/walking/pnj1_walking_F3.png" id="6_cxekk"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_83j6e")
+"texture": ExtResource("1_fnbil")
 }],
 "loop": true,
 "name": &"chatting",
@@ -19,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_83j6e")
+"texture": ExtResource("1_fnbil")
 }],
 "loop": true,
 "name": &"idle",

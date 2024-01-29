@@ -8,7 +8,7 @@
 [node name="AnimatedSprite2D" parent="Pivot" index="0"]
 position = Vector2(0, -85)
 sprite_frames = ExtResource("2_kjki0")
-frame_progress = 0.530891
+animation = &"wandering"
 
 [node name="PnjDetector" parent="." index="5"]
 visible = true

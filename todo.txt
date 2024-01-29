@@ -1,7 +1,10 @@
 # TODO
+	- stopper l'animation pooping quand le joueur l'interrompt avant la fin
+	- tourner les pnj entre eux quand ils se parlent
 	- refactor un peu les noms de fichier
 	- refactor les bouts de code commun des states pnj et flics
 	- refactor les states qui utilisent tous un timer
+	- faire en sorte que les pnj et player soient transparents derrière obstacle
 	- faire en sorte que la line of sight du flic suive le joueur quand il est dans l'état "Alert" (et pas juste une unique fois)
 	- voir si on peut pas faire en sorte que line of sight ne "tremble pas"
 	- ajouter un bouton de menu "how to play"
