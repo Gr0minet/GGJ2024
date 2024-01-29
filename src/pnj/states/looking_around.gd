@@ -8,7 +8,7 @@ var _angle_change_direction := 1
 var _target_angle: Array[float]
 var _target_angle_id := 0
 	
-func enter(msg: = {}) -> void:
+func enter(_msg: = {}) -> void:
 	owner.skin.play("looking_around")
 	owner.show_reaction(Const.REACTION_LOOKING_AROUND)
 	
@@ -20,7 +20,7 @@ func enter(msg: = {}) -> void:
 	_target_angle.append(_current_angle)
 	_target_angle_id = 0
 
-func exit(msg: = {}) -> void:
+func exit(_msg: = {}) -> void:
 	owner.hide_reaction()
 
 func physics_process(delta):

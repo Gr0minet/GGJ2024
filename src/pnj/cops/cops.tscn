@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://brdc5enmv18y0"]
+[gd_scene load_steps=28 format=3 uid="uid://brdc5enmv18y0"]
 
 [ext_resource type="Script" path="res://src/pnj/cops/cops.gd" id="1_4g741"]
 [ext_resource type="Texture2D" uid="uid://b70c8phul5031" path="res://assets/sprites/cops/walking/cops_walking_F1.png" id="2_dhct6"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dbh6yu5o4k3cj" path="res://assets/sprites/cops/sermenting/cops_sermenting_F2.png" id="4_bg7m1"]
 [ext_resource type="Texture2D" uid="uid://d3oq874da0gqf" path="res://assets/sprites/cops/walking/cops_walking_F3.png" id="4_ogq2v"]
 [ext_resource type="Script" path="res://src/pnj/states/wandering.gd" id="6_8kbma"]
+[ext_resource type="Texture2D" uid="uid://jeeo6fewx0ph" path="res://assets/sprites/cops/cops_looking_around.png" id="6_qpd4h"]
 [ext_resource type="Script" path="res://src/pnj/states/move_to_serment.gd" id="7_cgtjk"]
 [ext_resource type="Script" path="res://src/pnj/states/sermenting.gd" id="8_2gbhh"]
 [ext_resource type="PackedScene" uid="uid://bb6x3dllvfdpk" path="res://src/player/misc/action_progress_bar.tscn" id="8_j2dms"]
@@ -44,7 +45,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_rj6eu")
+"texture": ExtResource("6_qpd4h")
 }],
 "loop": true,
 "name": &"looking_around",
@@ -222,7 +223,7 @@ texture = ExtResource("2_yvs2k")
 position = Vector2(0, -77)
 scale = Vector2(0.11, 0.11)
 sprite_frames = SubResource("SpriteFrames_rwekc")
-animation = &"idle"
+animation = &"looking_around"
 speed_scale = 1.5
 
 [node name="LaughingDetector" type="Area2D" parent="."]

@@ -47,7 +47,7 @@ func physics_process(delta) -> void:
 		_state_machine.transition_to("LookingAround")
 		return
 	
-func exit(msg: = {}) -> void:
+func exit(_msg: = {}) -> void:
 	owner.hide_reaction()
 	if _progress_bar:
 		_progress_bar.queue_free()

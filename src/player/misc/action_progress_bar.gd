@@ -10,7 +10,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func set_value(value:float) -> void:
@@ -21,6 +21,6 @@ func set_value(value:float) -> void:
 func set_max_value(value:float) -> void:
 	progress_bar.max_value = value
 	
-func show_text_progress(show:bool) -> void:
+func show_text_progress(_show:bool) -> void:
 	if progress_label:
-		progress_label.visible = show
+		progress_label.visible = _show

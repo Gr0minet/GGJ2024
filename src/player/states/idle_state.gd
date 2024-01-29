@@ -13,8 +13,6 @@ func physics_process(delta: float) -> void:
 	if (player.velocity.length() > START_MOVING_THRESHOLD):
 		_state_machine.transition_to("Move/Walk")
 
-func enter(msg: = {}) -> void:
+func enter(_msg: = {}) -> void:
 	owner.skin.play("idle")
 	
-func exit(msg: = {}) -> void:
-	pass

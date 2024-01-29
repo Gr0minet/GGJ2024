@@ -16,7 +16,7 @@ func enter(msg: = {}) -> void:
 	owner.skin.play("alert")
 	owner.show_reaction(Const.REACTION_ALERT)
 	
-func exit(msg: = {}) -> void:
+func exit(_msg: = {}) -> void:
 	owner.hide_reaction()
 	
 func process(delta):

@@ -6,9 +6,6 @@ extends PlayerState
 
 var _poop_timer:float = 0.0
 var _progress_bar:Node2D = null
-
-func unhandled_input(event: InputEvent) -> void:
-	pass
 	
 func process(delta: float) -> void:
 	if Input.is_action_just_released(Const.INPUT_POOP):
@@ -21,10 +18,7 @@ func process(delta: float) -> void:
 		player.pooped.emit()
 		_state_machine.transition_to("Move")
 
-func physics_process(delta: float) -> void:
-	pass
-
-func enter(msg: = {}) -> void:
+func enter(_msg: = {}) -> void:
 	_poop_timer = 0.0
 	owner.skin.play("pooping")
 	owner.animation_player.play("pooping")
@@ -41,6 +35,6 @@ func enter(msg: = {}) -> void:
 	_progress_bar.show_text_progress(true)
 	progress_bar_position.add_child(_progress_bar)
 	
-func exit(msg: = {}) -> void:
+func exit(_msg: = {}) -> void:
 	if _progress_bar:
 		_progress_bar.queue_free()

@@ -9,6 +9,3 @@
 position = Vector2(0, -85)
 sprite_frames = ExtResource("2_kjki0")
 animation = &"wandering"
-
-[node name="PnjDetector" parent="." index="5"]
-visible = true

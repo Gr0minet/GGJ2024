@@ -28,8 +28,6 @@ func enter(msg: = {}) -> void:
 		stunned = true
 		_idling_time = stun_time
 		
-func exit(msg: = {}) -> void:
-	pass
 	
 func physics_process(delta):
 	_idle_timer += delta

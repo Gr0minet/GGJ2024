@@ -1,24 +1,33 @@
-[gd_scene load_steps=22 format=3 uid="uid://bthqcvt6gip76"]
+[gd_scene load_steps=23 format=3 uid="uid://bthqcvt6gip76"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_j4rin"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="2_0wvlx"]
 [ext_resource type="Texture2D" uid="uid://ckjonnvsucfvf" path="res://assets/sprites/shadow.png" id="2_6esbj"]
-[ext_resource type="Texture2D" uid="uid://d1lsswv0npfnl" path="res://assets/sprites/doggo/idle/idle_F2.png" id="3_580fi"]
+[ext_resource type="Texture2D" uid="uid://b5ewerflrr0fh" path="res://assets/sprites/doggo/doggo.png" id="3_6vd75"]
+[ext_resource type="Texture2D" uid="uid://d1lsswv0npfnl" path="res://assets/sprites/doggo/idle/doggo_idle_F2.png" id="3_580fi"]
 [ext_resource type="Script" path="res://src/player/states/move_state.gd" id="4_g2l53"]
 [ext_resource type="Script" path="res://src/player/states/idle_state.gd" id="4_mrd12"]
-[ext_resource type="Texture2D" uid="uid://bnyrxm28bge5k" path="res://assets/sprites/doggo/idle/idle_F3.png" id="4_scas2"]
+[ext_resource type="Texture2D" uid="uid://bnyrxm28bge5k" path="res://assets/sprites/doggo/idle/doggo_idle_F3.png" id="4_scas2"]
 [ext_resource type="Script" path="res://src/player/states/walk_state.gd" id="6_qr2og"]
 [ext_resource type="Script" path="res://src/player/states/pooping_state.gd" id="6_uw8hi"]
 [ext_resource type="Script" path="res://src/player/states/caught_state.gd" id="7_1ngrc"]
 [ext_resource type="PackedScene" uid="uid://bb6x3dllvfdpk" path="res://src/player/misc/action_progress_bar.tscn" id="8_p3vtb"]
-[ext_resource type="Texture2D" uid="uid://c7mhvxsnxu3yb" path="res://assets/sprites/doggo/idle/idle_F1.png" id="10_4ivde"]
+[ext_resource type="Texture2D" uid="uid://c7mhvxsnxu3yb" path="res://assets/sprites/doggo/idle/doggo_idle_F1.png" id="10_4ivde"]
 [ext_resource type="Texture2D" uid="uid://buf01wt0pgjll" path="res://assets/sprites/doggo/walking/doggo_walking_F1.png" id="10_4tbmc"]
 [ext_resource type="Texture2D" uid="uid://bs0bfrqbmo2h6" path="res://assets/sprites/doggo/walking/doggo_walking_F2.png" id="11_ljw6p"]
-[ext_resource type="Texture2D" uid="uid://dc5qnh80y4yry" path="res://assets/sprites/doggo/doggo_poop_F1.png" id="11_ys6ka"]
+[ext_resource type="Texture2D" uid="uid://dc5qnh80y4yry" path="res://assets/sprites/doggo/doggo_poop.png" id="11_ys6ka"]
 [ext_resource type="Texture2D" uid="uid://orlyvffdshjw" path="res://assets/sprites/doggo/walking/doogo_walking_F3.png" id="12_mdrk1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvw0j"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6vd75")
+}],
+"loop": true,
+"name": &"caught",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("10_4ivde")
@@ -118,7 +127,7 @@ texture = ExtResource("2_6esbj")
 position = Vector2(0, -41)
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_bvw0j")
-animation = &"idle"
+animation = &"caught"
 speed_scale = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

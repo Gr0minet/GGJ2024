@@ -11,16 +11,8 @@ var _tween:Tween = null
 var BGM_bus_index = AudioServer.get_bus_index(BGM_bus)
 var SE_bus_index = AudioServer.get_bus_index(SE_bus)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func play_music(stream:AudioStream, fade_in_time:float=0.25) -> void:
+	return # en attendant d'avoir un bouton pour couper la musique
 	# If the same music is already playing, don't do anything
 	if _music_player.stream == stream:
 		return

@@ -27,10 +27,7 @@ func enter(msg: = {}) -> void:
 		_state_machine.transition_to("Sermenting", {target = _target})
 		return
 
-func exit(msg: = {}) -> void:
-	pass
-
-func physics_process(delta: float) -> void:
+func physics_process(_delta: float) -> void:
 	if owner.line_of_sight.player_is_in_sight():
 		var position = owner.line_of_sight.get_player_in_sight().position
 		_state_machine.transition_to("Alert", {Const.PLAYER_LAST_POSITION: position})

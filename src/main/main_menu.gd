@@ -34,10 +34,9 @@ func _ready():
 	button_play.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("start_controller"):
 		get_tree().change_scene_to_file.call_deferred(game_scene_path)
-	
 
 func _on_quit_credit() -> void:
 	credit_panel.hide()

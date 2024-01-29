@@ -13,7 +13,7 @@ func enter(msg: = {}) -> void:
 	_target_last_position = msg[Const.PLAYER_LAST_POSITION]
 	_time_before_stop_chasing = TIME_MAX
 
-func exit(msg: = {}) -> void:
+func exit(_msg: = {}) -> void:
 	if owner is Flic:
 		owner.line_of_sight.set_LOS_color(owner.normal_line_of_sight_color)
 
@@ -43,7 +43,6 @@ func physics_process(delta: float) -> void:
 		var collision: KinematicCollision2D = owner.get_last_slide_collision()
 		if collision != null and collision.get_collider() is Player:
 			collision.get_collider().die()
-	var dist = owner.position.distance_to(_target_last_position)
 	if owner.position.distance_to(_target_last_position) < DISTANCE_LOST_THRESHOLD:
 		_state_machine.transition_to("LookingAround")
 		return

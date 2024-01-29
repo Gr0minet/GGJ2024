@@ -54,9 +54,8 @@ func get_player_in_sight() -> Player:
 	return null
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	_calculate_vision()
-
 
 func _calculate_vision():
 	_los_points.clear()
@@ -69,7 +68,6 @@ func calculate_vision_shape() -> Array[Vector2]:
 	
 	if _angle_rad < 2*PI:
 		new_points.append(Vector2.ZERO)
-	
 	
 	var ray_start:Vector2 = global_position
 	

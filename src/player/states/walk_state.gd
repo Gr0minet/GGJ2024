@@ -14,8 +14,6 @@ func physics_process(delta: float) -> void:
 	if (player.velocity.length() < STOP_MOVING_THRESHOLD):
 		_state_machine.transition_to("Move/Idle")
 
-func enter(msg: = {}) -> void:
+func enter(_msg: = {}) -> void:
 	owner.skin.play("walking")
 	
-func exit(msg: = {}) -> void:
-	pass

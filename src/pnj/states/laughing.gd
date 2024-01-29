@@ -3,7 +3,7 @@ extends PNJState
 var _laugh_timer:float = 0
 var _laugh_time_before_points:float = 1.0
 
-func enter(msg: = {}) -> void:
+func enter(_msg: = {}) -> void:
 	MusicManager.play_sound_effect(SoundBank.chatting)
 	owner.skin.play("laughing")
 	_laugh_timer = 0
@@ -12,7 +12,7 @@ func enter(msg: = {}) -> void:
 	owner.villageois_detector.set_deferred("monitorable", false)
 	owner.villageois_detector.set_deferred("monitoring", false)
 
-func exit(msg: = {}) -> void:
+func exit(_msg: = {}) -> void:
 	owner.hide_reaction()
 	owner.laughing_area.set_deferred("monitorable", false)
 	owner.villageois_detector.set_deferred("monitorable", true)

@@ -50,11 +50,11 @@ func enter(msg: = {}) -> void:
 		owner.line_of_sight.look_at(owner.line_of_sight.global_position + _direction)
 		owner.line_of_sight.rotation += rad_to_deg(90)
 
-func exit(msg: = {}) -> void:
+func exit(_msg: = {}) -> void:
 	if not _timer.is_stopped():
 		_timer.stop()
 	
-func physics_process(delta: float) -> void:
+func physics_process(_delta: float) -> void:
 	pnj.move_and_slide()
 	if owner is Flic:
 		if owner.line_of_sight.player_is_in_sight():
