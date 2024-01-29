@@ -1,21 +1,18 @@
 extends Node2D
 
-const FLIC_SPAWN_TIMER := [0.0, 20.0, 60.0, 100.0]
-@onready var _next_flic_id := 0
+@onready var _next_flic_id:int = 0
 
 @export_category("Game parameters")
-@export var nb_police:int = 1
+@export var FLIC_SPAWN_TIMER:Array[float] = [0.0, 20.0, 60.0, 100.0]
 @export var nb_citizen:int = 8
-
-@export_category("Game Rules")
 @export var target_score:int = 300
 
-@export_category("Game actors")
+@export_category("Game scenes")
 @export var poop_scene:PackedScene = null
 
-var pnj_scenes :Array[PackedScene] = [
-	preload("res://src/pnj/pnj.tscn"),
-	preload("res://src/pnj/pnj2.tscn")
+@export var villageois_scenes:Array[PackedScene] = [
+	preload("res://src/pnj/villageois/villageois.tscn"),
+	preload("res://src/pnj/villageois/villageois2.tscn")
 ]
 
 @export var police_scene:PackedScene = null
@@ -111,10 +108,10 @@ func _init_level() -> void:
 		push_error("no spawn margins")
 		return
 	
-	if pnj_scenes != []:
+	if villageois_scenes != []:
 		for i in range(nb_citizen):
-			var random_pnj_scene := randi_range(0, len(pnj_scenes) - 1)
-			_spawn(pnj_scenes[random_pnj_scene].instantiate())
+			var random_villageois_scene := randi_range(0, len(villageois_scenes) - 1)
+			_spawn(villageois_scenes[random_villageois_scene].instantiate())
 
 func _spawn(node: Node) -> void:
 	node.position = _get_non_collidable_position(node.get_node("CollisionShape2D"))
@@ -125,7 +122,7 @@ func _get_non_collidable_position(collision_shape: CollisionShape2D) -> Vector2:
 	var shape_cast := ShapeCast2D.new()
 	shape_cast.shape = collision_shape.shape.duplicate()
 	add_child(shape_cast)
-	shape_cast.collision_mask = Const.WORLD_LAYER + Const.PLAYER_LAYER + Const.PNJ_LAYER + Const.FLIC_LAYER + Const.POOP_LAYER
+	shape_cast.collision_mask = Const.WORLD_LAYER + Const.PLAYER_LAYER + Const.VILLAGEOIS_LAYER + Const.FLIC_LAYER + Const.POOP_LAYER
 	shape_cast.position = spawn_margins.get_random_position()
 	shape_cast.force_shapecast_update()
 	while shape_cast.is_colliding():

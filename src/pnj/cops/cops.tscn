@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://brdc5enmv18y0"]
 
-[ext_resource type="Script" path="res://src/pnj/flic.gd" id="1_4g741"]
+[ext_resource type="Script" path="res://src/pnj/cops/cops.gd" id="1_4g741"]
 [ext_resource type="Texture2D" uid="uid://b70c8phul5031" path="res://assets/sprites/cops/walking/cops_walking_F1.png" id="2_dhct6"]
 [ext_resource type="Texture2D" uid="uid://ckjonnvsucfvf" path="res://assets/sprites/shadow.png" id="2_unjh3"]
 [ext_resource type="Texture2D" uid="uid://gj50vj0k17e4" path="res://assets/sprites/cops/cops_alert.png" id="2_w6xk1"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bb6x3dllvfdpk" path="res://src/player/misc/action_progress_bar.tscn" id="8_j2dms"]
 [ext_resource type="Script" path="res://src/pnj/states/looking_around.gd" id="9_ohw4f"]
 [ext_resource type="Script" path="res://src/pnj/states/chasing.gd" id="10_k7o2q"]
-[ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/utils/line_of_sight_2D.tscn" id="10_n6pnb"]
+[ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/pnj/cops/line_of_sight_2D.tscn" id="10_n6pnb"]
 [ext_resource type="Script" path="res://src/pnj/states/alert.gd" id="16_6n751"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]

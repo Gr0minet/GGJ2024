@@ -4,7 +4,7 @@ extends PNJState
 
 const SERMENTING_THRESHOD := 160.0
 
-var _target: PNJ
+var _target: Villageois
 var _target_position := Vector2.ZERO
 var _direction := Vector2.ZERO
 

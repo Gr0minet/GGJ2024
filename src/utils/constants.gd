@@ -13,9 +13,9 @@ const INPUT_POOP:String = "poop"
 
 const WORLD_LAYER := 1
 const PLAYER_LAYER := 2
-const PNJ_LAYER := 4
+const VILLAGEOIS_LAYER := 4
 const FLIC_LAYER := 8
-const PNJ_BASE_LAYER := 16
+const VILLAGEOIS_BASE_LAYER := 16
 const POOP_LAYER := 32
 const LAUGH_LAYER := 64
 

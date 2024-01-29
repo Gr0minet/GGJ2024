@@ -3,16 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://bthqcvt6gip76" path="res://src/player/player.tscn" id="1_5etke"]
 [ext_resource type="Script" path="res://src/main/game.gd" id="1_e7evx"]
 [ext_resource type="PackedScene" uid="uid://b4x8aammec5to" path="res://src/player/poop.tscn" id="2_akwfh"]
-[ext_resource type="PackedScene" uid="uid://brdc5enmv18y0" path="res://src/pnj/flic.tscn" id="4_57ofh"]
-[ext_resource type="Script" path="res://src/utils/SpawnMargins.gd" id="4_vx8jg"]
-[ext_resource type="AudioStream" uid="uid://ckmtst74l8uk0" path="res://assets/BGM/GAME_JAM_-_Accordion_Chill.mp3" id="4_x8vb3"]
+[ext_resource type="PackedScene" uid="uid://brdc5enmv18y0" path="res://src/pnj/cops/cops.tscn" id="4_57ofh"]
+[ext_resource type="Script" path="res://src/utils/spawn_margins.gd" id="4_vx8jg"]
+[ext_resource type="AudioStream" uid="uid://ckmtst74l8uk0" path="res://assets/background_musics/accordion_chill.mp3" id="4_x8vb3"]
 [ext_resource type="PackedScene" uid="uid://cyfxemw7csdv5" path="res://src/level/level.tscn" id="6_lctox"]
-[ext_resource type="Script" path="res://src/UI/HUD.gd" id="8_deblv"]
-[ext_resource type="Texture2D" uid="uid://dj30jmwql647n" path="res://assets/sprites/UI/Fond_Progressbar.png" id="9_8ejyb"]
-[ext_resource type="Script" path="res://src/UI/EndMenu.gd" id="9_fewve"]
-[ext_resource type="PackedScene" uid="uid://bt6mkd6yo1x8r" path="res://src/main/MainMenu.tscn" id="10_hqhwh"]
-[ext_resource type="Texture2D" uid="uid://drj5rhqfulerd" path="res://assets/sprites/UI/Contour_Progressbar.png" id="10_wlu78"]
-[ext_resource type="Texture2D" uid="uid://semp5ou4k0lq" path="res://assets/sprites/UI/Progress_Progressbar.png" id="11_y2uil"]
+[ext_resource type="Script" path="res://src/UI/hud.gd" id="8_deblv"]
+[ext_resource type="Texture2D" uid="uid://dj30jmwql647n" path="res://assets/sprites/UI/progressbar/progressbar_background.png" id="9_8ejyb"]
+[ext_resource type="Script" path="res://src/UI/end_menu.gd" id="9_fewve"]
+[ext_resource type="PackedScene" uid="uid://bt6mkd6yo1x8r" path="res://src/main/main_menu.tscn" id="10_hqhwh"]
+[ext_resource type="Texture2D" uid="uid://drj5rhqfulerd" path="res://assets/sprites/UI/progressbar/progressbar_outline.png" id="10_wlu78"]
+[ext_resource type="Texture2D" uid="uid://semp5ou4k0lq" path="res://assets/sprites/UI/progressbar/progressbar_progress.png" id="11_y2uil"]
 [ext_resource type="Texture2D" uid="uid://bhpne74ivckrf" path="res://assets/sprites/reaction/laughing.png" id="12_4vsw2"]
 [ext_resource type="Texture2D" uid="uid://oytairkmwj6f" path="res://assets/sprites/ending/win_frame.png" id="12_fpc31"]
 [ext_resource type="Texture2D" uid="uid://cc51dcq3xr48u" path="res://assets/sprites/ending/sad_frame.png" id="13_j477t"]
@@ -23,6 +23,7 @@ size = Vector2(1920, 21)
 [node name="Game" type="Node2D" node_paths=PackedStringArray("player", "HUD", "end_menu", "spawn_margins")]
 y_sort_enabled = true
 script = ExtResource("1_e7evx")
+target_score = 10
 poop_scene = ExtResource("2_akwfh")
 police_scene = ExtResource("4_57ofh")
 player = NodePath("Player")

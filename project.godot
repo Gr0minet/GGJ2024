@@ -11,16 +11,16 @@ config_version=5
 [application]
 
 config/name="En attendant Doggo"
-run/main_scene="res://src/main/MainMenu.tscn"
+run/main_scene="res://src/main/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icons/project_icon.png"
 
 [autoload]
 
 Const="*res://src/utils/constants.gd"
-MusicManager="*res://src/utils/MusicManager.tscn"
-EventBus="*res://src/utils/EventBus.gd"
-SoundBank="*res://src/utils/SoundBank.tscn"
+MusicManager="*res://src/sound/music_manager.tscn"
+EventBus="*res://src/utils/event_bus.gd"
+SoundBank="*res://src/sound/sound_bank.tscn"
 
 [display]
 
@@ -84,8 +84,8 @@ start_controller={
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
-2d_physics/layer_3="pnj"
+2d_physics/layer_3="villageois"
 2d_physics/layer_4="flic"
-2d_physics/layer_5="pnj_base"
+2d_physics/layer_5="villageois_base"
 2d_physics/layer_6="poop"
 2d_physics/layer_7="laugh"

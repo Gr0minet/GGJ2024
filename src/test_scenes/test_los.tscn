@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://csrtu3i8lmph"]
 
-[ext_resource type="Script" path="res://src/main/test_los.gd" id="1_ow1j6"]
+[ext_resource type="Script" path="res://src/test_scenes/test_los.gd" id="1_ow1j6"]
 [ext_resource type="PackedScene" uid="uid://b4x8aammec5to" path="res://src/player/poop.tscn" id="2_57ypv"]
-[ext_resource type="PackedScene" uid="uid://27cjxmbjxlyj" path="res://src/props/BaseObstacle.tscn" id="2_srej8"]
+[ext_resource type="PackedScene" uid="uid://27cjxmbjxlyj" path="res://src/props/base_obstacle.tscn" id="2_srej8"]
 [ext_resource type="PackedScene" uid="uid://bthqcvt6gip76" path="res://src/player/player.tscn" id="4_iuq5u"]
-[ext_resource type="PackedScene" uid="uid://brdc5enmv18y0" path="res://src/pnj/flic.tscn" id="5_7plv2"]
+[ext_resource type="PackedScene" uid="uid://brdc5enmv18y0" path="res://src/pnj/cops/cops.tscn" id="5_7plv2"]
 
 [node name="TestLos" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_ow1j6")

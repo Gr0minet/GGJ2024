@@ -9,14 +9,14 @@ func enter(msg: = {}) -> void:
 	_laugh_timer = 0
 	owner.show_reaction(Const.REACTION_LAUGHING)
 	owner.laughing_area.set_deferred("monitorable", true)
-	owner.pnj_detector.set_deferred("monitorable", false)
-	owner.pnj_detector.set_deferred("monitoring", false)
+	owner.villageois_detector.set_deferred("monitorable", false)
+	owner.villageois_detector.set_deferred("monitoring", false)
 
 func exit(msg: = {}) -> void:
 	owner.hide_reaction()
 	owner.laughing_area.set_deferred("monitorable", false)
-	owner.pnj_detector.set_deferred("monitorable", true)
-	owner.pnj_detector.set_deferred("monitoring", true)
+	owner.villageois_detector.set_deferred("monitorable", true)
+	owner.villageois_detector.set_deferred("monitoring", true)
 
 func process(delta: float) -> void:
 	_laugh_timer += delta

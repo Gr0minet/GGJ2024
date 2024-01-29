@@ -28,10 +28,10 @@ position = Vector2(0, -11)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dc7y5")
 
-[node name="PNJDetection" type="Area2D" parent="."]
+[node name="VillageoisDetection" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJDetection"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VillageoisDetection"]
 shape = SubResource("CircleShape2D_3q3uq")

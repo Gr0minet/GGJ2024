@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccaxci6wffc2x"]
 
-[ext_resource type="PackedScene" uid="uid://27cjxmbjxlyj" path="res://src/props/BaseObstacle.tscn" id="1_0214a"]
+[ext_resource type="PackedScene" uid="uid://27cjxmbjxlyj" path="res://src/props/base_obstacle.tscn" id="1_0214a"]
 [ext_resource type="Texture2D" uid="uid://chxv20glv1hn2" path="res://assets/sprites/props/bush.png" id="2_eowdu"]
 
 [node name="Bush" instance=ExtResource("1_0214a")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bm5evqbwx5kr3"]
 
-[ext_resource type="Script" path="res://src/utils/SoundBank.gd" id="1_0cjme"]
+[ext_resource type="Script" path="res://src/sound/sound_bank.gd" id="1_0cjme"]
 [ext_resource type="AudioStream" uid="uid://bom8lj6wm46us" path="res://assets/sound_effects/policier_qui_parle.wav" id="2_swax6"]
 [ext_resource type="AudioStream" uid="uid://b3rmtm2vpnx20" path="res://assets/sound_effects/villageois_qui_parle.wav" id="3_7yxhl"]
 [ext_resource type="AudioStream" uid="uid://oneh6bbgl5o5" path="res://assets/sound_effects/lose_music.mp3" id="4_vkfv8"]

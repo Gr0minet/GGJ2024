@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdq25o084g8pr"]
 
-[ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/pnj.tscn" id="1_csu5o"]
-[ext_resource type="SpriteFrames" uid="uid://ci4gfi6dxvyks" path="res://src/pnj/sprite_frames/pnj2.tres" id="2_kjki0"]
+[ext_resource type="PackedScene" uid="uid://cuwkrkhbps5yh" path="res://src/pnj/villageois/villageois.tscn" id="1_csu5o"]
+[ext_resource type="SpriteFrames" uid="uid://ci4gfi6dxvyks" path="res://src/pnj/villageois/sprite_frames/villageois2.tres" id="2_kjki0"]
 
 [node name="Pnj" instance=ExtResource("1_csu5o")]
 

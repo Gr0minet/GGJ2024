@@ -1,5 +1,6 @@
 # TODO
 	- stopper l'animation pooping quand le joueur l'interrompt avant la fin
+	- stopper les bruitages villageois, glissage et policiers quand on passe à losing/winning frame
 	- tourner les pnj entre eux quand ils se parlent
 	- refactor un peu les noms de fichier
 	- refactor les bouts de code commun des states pnj et flics

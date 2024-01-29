@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ceh1vep3lpi5t"]
 
-[ext_resource type="Script" path="res://src/utils/MusicManager.gd" id="1_8b4fj"]
+[ext_resource type="Script" path="res://src/sound/music_manager.gd" id="1_8b4fj"]
 
 [node name="MusicManager" type="Node"]
 process_mode = 3
