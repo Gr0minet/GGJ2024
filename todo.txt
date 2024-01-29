@@ -1,5 +1,4 @@
 # TODO
-	- stopper l'animation pooping quand le joueur l'interrompt avant la fin
 	- stopper les bruitages villageois, glissage et policiers quand on passe à losing/winning frame
 	- tourner les pnj entre eux quand ils se parlent
 	- refactor les bouts de code commun des states pnj et flics
@@ -60,6 +59,8 @@ Divers:
 - Mettre l'origine du joueur sur les pieds (donc lever le sprite vers le haut)
 
 #DONE
+	- instancie le jouer, les citoyens et les flics
+	- gere les regles
 	- citoyen: apparait random sur la map
 	- joueur qui se déplace dans toutes les directions
 	- citoyen: Collisions "au niveau des pieds"
@@ -95,6 +96,4 @@ Divers:
 	- faire un test d'upload sur site ggj
 	- refactor un peu les noms de fichier
 	- faire en sorte que la line of sight du flic suive le joueur quand il est dans l'état "Alert" (et pas juste une unique fois)
-- Game:
-	- instancie le jouer, les citoyens et les flics
-	- gere les regles
+	- stopper l'animation pooping quand le joueur l'interrompt avant la fin

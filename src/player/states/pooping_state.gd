@@ -36,5 +36,6 @@ func enter(_msg: = {}) -> void:
 	progress_bar_position.add_child(_progress_bar)
 	
 func exit(_msg: = {}) -> void:
+	owner.animation_player.play("RESET")
 	if _progress_bar:
 		_progress_bar.queue_free()
