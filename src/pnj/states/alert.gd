@@ -20,6 +20,10 @@ func exit(msg: = {}) -> void:
 	owner.hide_reaction()
 	
 func process(delta):
+	if owner.line_of_sight.player_is_in_sight():
+		var player_position = owner.line_of_sight.get_player_in_sight().position
+		owner.line_of_sight.look_at(player_position)
+		owner.line_of_sight.rotation -= deg_to_rad(90)
 	_time_before_chasing -= delta
 	if _time_before_chasing <= 0.0:
 		_state_machine.transition_to("Chasing", {Const.PLAYER_LAST_POSITION: _player_last_seen_position})
