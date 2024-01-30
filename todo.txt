@@ -1,13 +1,13 @@
 # TODO
+	- Faire un tween qui rotate le LOS des policiers quand ils font des états wandering consécutifs
+		(actuellement le LOS "saute" en terme de rotation)
 	- stopper les bruitages villageois, glissage et policiers quand on passe à losing/winning frame
 	- tourner les pnj entre eux quand ils se parlent
-	- refactor les bouts de code commun des states pnj et flics
-	- refactor les states qui utilisent tous un timer
 	- faire en sorte que les pnj et player soient transparents derrière obstacle
 	- voir si on peut pas faire en sorte que line of sight ne "tremble pas"
 	- ajouter un bouton de menu "how to play"
+	- ajouter des touches clavier/manette pour couper la musique
 	- configurer mieux les valeurs du jeu vis à vis du game design  
-	- ajouter un bouton pour couper la musique (et des touches clavier/manette)
 	- faire en sorte qu'on puisse bouger dans les menus à la manette
 	- refactor le line of sight pour un truc moins gourmand
 	- ajouter une possibilité pour looking around à 360 degrés plutôt que balayage
@@ -98,4 +98,6 @@ Divers:
 	- faire en sorte que la line of sight du flic suive le joueur quand il est dans l'état "Alert" (et pas juste une unique fois)
 	- stopper l'animation pooping quand le joueur l'interrompt avant la fin
 	- (un)mute sons et musiques + sauvegarde du choix dans un fichier
+	- refactor les bouts de code commun des states pnj et flics
+	- ajouter un bouton pour couper la musique (et des touches clavier/manette)
 	

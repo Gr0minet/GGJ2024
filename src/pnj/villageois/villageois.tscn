@@ -6,8 +6,8 @@
 [ext_resource type="SpriteFrames" uid="uid://drt3mrklfafnv" path="res://src/pnj/villageois/sprite_frames/villageois1.tres" id="4_v0kep"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="5_i77nq"]
 [ext_resource type="Script" path="res://src/pnj/states/villageois/idle.gd" id="6_pt0m2"]
+[ext_resource type="Script" path="res://src/pnj/states/villageois/villageois_wandering.gd" id="7_q2h23"]
 [ext_resource type="Script" path="res://src/pnj/states/villageois/laughing.gd" id="7_yauqa"]
-[ext_resource type="Script" path="res://src/pnj/states/common/wandering.gd" id="8_opsj1"]
 [ext_resource type="Script" path="res://src/pnj/states/villageois/chatting.gd" id="9_4s2d4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
@@ -197,7 +197,7 @@ state = NodePath("Wandering")
 script = ExtResource("6_pt0m2")
 
 [node name="Wandering" type="Node" parent="StateMachine"]
-script = ExtResource("8_opsj1")
+script = ExtResource("7_q2h23")
 
 [node name="Laughing" type="Node" parent="StateMachine"]
 script = ExtResource("7_yauqa")

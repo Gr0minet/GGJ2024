@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ca6tstj48y65e" path="res://assets/sprites/cops/walking/cops_walking_F2.png" id="3_w1uif"]
 [ext_resource type="Texture2D" uid="uid://dbh6yu5o4k3cj" path="res://assets/sprites/cops/sermenting/cops_sermenting_F2.png" id="4_bg7m1"]
 [ext_resource type="Texture2D" uid="uid://d3oq874da0gqf" path="res://assets/sprites/cops/walking/cops_walking_F3.png" id="4_ogq2v"]
-[ext_resource type="Script" path="res://src/pnj/states/common/wandering.gd" id="6_8kbma"]
 [ext_resource type="Texture2D" uid="uid://jeeo6fewx0ph" path="res://assets/sprites/cops/cops_looking_around.png" id="6_qpd4h"]
 [ext_resource type="Script" path="res://src/pnj/states/cops/move_to_serment.gd" id="7_cgtjk"]
 [ext_resource type="Script" path="res://src/pnj/states/cops/sermenting.gd" id="8_2gbhh"]
@@ -18,6 +17,7 @@
 [ext_resource type="Script" path="res://src/pnj/states/cops/looking_around.gd" id="9_ohw4f"]
 [ext_resource type="Script" path="res://src/pnj/states/cops/chasing.gd" id="10_k7o2q"]
 [ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/pnj/cops/line_of_sight_2D.tscn" id="10_n6pnb"]
+[ext_resource type="Script" path="res://src/pnj/states/cops/cops_wandering.gd" id="13_8shbx"]
 [ext_resource type="Script" path="res://src/pnj/states/cops/alert.gd" id="16_6n751"]
 [ext_resource type="Script" path="res://src/pnj/states/cops/glissing.gd" id="20_iaexf"]
 
@@ -263,7 +263,7 @@ state = NodePath("Wandering")
 script = ExtResource("20_iaexf")
 
 [node name="Wandering" type="Node" parent="StateMachine"]
-script = ExtResource("6_8kbma")
+script = ExtResource("13_8shbx")
 
 [node name="MoveToSerment" type="Node" parent="StateMachine"]
 script = ExtResource("7_cgtjk")
