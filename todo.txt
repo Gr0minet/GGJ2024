@@ -97,3 +97,5 @@ Divers:
 	- refactor un peu les noms de fichier
 	- faire en sorte que la line of sight du flic suive le joueur quand il est dans l'état "Alert" (et pas juste une unique fois)
 	- stopper l'animation pooping quand le joueur l'interrompt avant la fin
+	- (un)mute sons et musiques + sauvegarde du choix dans un fichier
+	
