@@ -14,3 +14,8 @@ Code:
 - Grominet
 Music and sound design:
 - Relapse64
+
+Other credits (external assets):
+- Delapouite (from game-icons.net)
+	- sound-on and sound-off icons
+	- speaker and speaker-off icons

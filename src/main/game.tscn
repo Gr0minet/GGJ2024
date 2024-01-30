@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c14u2wv7ttnvt"]
+[gd_scene load_steps=19 format=3 uid="uid://c14u2wv7ttnvt"]
 
 [ext_resource type="PackedScene" uid="uid://bthqcvt6gip76" path="res://src/player/player.tscn" id="1_5etke"]
 [ext_resource type="Script" path="res://src/main/game.gd" id="1_e7evx"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://semp5ou4k0lq" path="res://assets/sprites/UI/progressbar/progressbar_progress.png" id="11_y2uil"]
 [ext_resource type="Texture2D" uid="uid://bhpne74ivckrf" path="res://assets/sprites/reaction/laughing.png" id="12_4vsw2"]
 [ext_resource type="Texture2D" uid="uid://oytairkmwj6f" path="res://assets/sprites/ending/win_frame.png" id="12_fpc31"]
+[ext_resource type="PackedScene" uid="uid://b6rm622v52grs" path="res://src/UI/mute_sounds_container.tscn" id="13_8pvji"]
 [ext_resource type="Texture2D" uid="uid://cc51dcq3xr48u" path="res://assets/sprites/ending/sad_frame.png" id="13_j477t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahfeg"]
@@ -110,6 +111,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_4vsw2")
 expand_mode = 1
+
+[node name="MuteSoundsContainer" parent="HUD" instance=ExtResource("13_8pvji")]
 
 [node name="EndMenu" type="CanvasLayer" parent="." node_paths=PackedStringArray("end_result_label", "button_return_menu", "win_lose_frame")]
 process_mode = 2

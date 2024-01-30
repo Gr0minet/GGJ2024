@@ -21,6 +21,7 @@ Const="*res://src/utils/constants.gd"
 MusicManager="*res://src/sound/music_manager.tscn"
 EventBus="*res://src/utils/event_bus.gd"
 SoundBank="*res://src/sound/sound_bank.tscn"
+PlayerSettings="*res://src/player_settings/player_settings.gd"
 
 [display]
 

@@ -1,7 +1,12 @@
 extends Node
 
-@export var BGM_bus:String = "BGM"
-@export var SE_bus:String = "SE"
+@export var BGM_bus:String = "BGM" :
+	get:
+		return BGM_bus
+	
+@export var SE_bus:String = "SE" :
+	get:
+		return SE_bus
 
 @onready var _music_player : AudioStreamPlayer = $MusicPlayer
 
@@ -12,7 +17,7 @@ var BGM_bus_index = AudioServer.get_bus_index(BGM_bus)
 var SE_bus_index = AudioServer.get_bus_index(SE_bus)
 
 func play_music(stream:AudioStream, fade_in_time:float=0.25) -> void:
-	return # en attendant d'avoir un bouton pour couper la musique
+
 	# If the same music is already playing, don't do anything
 	if _music_player.stream == stream:
 		return
@@ -57,3 +62,10 @@ func FadeOutMusic(duration:float = 1.5) -> void:
 	await _tween.finished
 	_music_player.stop()
 	_fading = false
+
+func mute_sound_effects(muted:bool) -> void:
+	AudioServer.set_bus_mute(SE_bus_index, muted)
+
+func mute_background_music(muted:bool) -> void:
+	print("Mute BGM: %s" % muted)
+	AudioServer.set_bus_mute(BGM_bus_index, muted)

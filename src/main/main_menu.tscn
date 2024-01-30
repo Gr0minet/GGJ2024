@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bt6mkd6yo1x8r"]
+[gd_scene load_steps=13 format=3 uid="uid://bt6mkd6yo1x8r"]
 
 [ext_resource type="Script" path="res://src/main/main_menu.gd" id="1_q4480"]
 [ext_resource type="AudioStream" uid="uid://cvaccuepks7k5" path="res://assets/background_musics/dramatic_accordion.mp3" id="2_0woj3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bra52gfsnrdf1" path="res://assets/sprites/UI/buttons/credits_pressed.png" id="7_25yoc"]
 [ext_resource type="Texture2D" uid="uid://b0y4akgmxowc6" path="res://assets/sprites/UI/buttons/quit_unpressed.png" id="8_428jv"]
 [ext_resource type="Texture2D" uid="uid://5icdm7dncmp8" path="res://assets/sprites/UI/buttons/quit_pressed.png" id="9_6g2bn"]
+[ext_resource type="PackedScene" uid="uid://b6rm622v52grs" path="res://src/UI/mute_sounds_container.tscn" id="11_feh5e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rb3f5"]
 bg_color = Color(0.188235, 0.188235, 0.188235, 1)
@@ -139,3 +140,6 @@ size_flags_vertical = 8
 layout_mode = 2
 texture_normal = ExtResource("8_428jv")
 texture_pressed = ExtResource("9_6g2bn")
+
+[node name="MuteSoundsContainer" parent="." instance=ExtResource("11_feh5e")]
+layout_mode = 1
