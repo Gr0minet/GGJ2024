@@ -8,18 +8,18 @@
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="3_2u6tn"]
 [ext_resource type="Texture2D" uid="uid://clniqvex3bl0p" path="res://assets/sprites/cops/sermenting/cops_sermenting_F1.png" id="3_rj6eu"]
 [ext_resource type="Texture2D" uid="uid://ca6tstj48y65e" path="res://assets/sprites/cops/walking/cops_walking_F2.png" id="3_w1uif"]
-[ext_resource type="Script" path="res://src/pnj/states/idle.gd" id="4_b63qi"]
 [ext_resource type="Texture2D" uid="uid://dbh6yu5o4k3cj" path="res://assets/sprites/cops/sermenting/cops_sermenting_F2.png" id="4_bg7m1"]
 [ext_resource type="Texture2D" uid="uid://d3oq874da0gqf" path="res://assets/sprites/cops/walking/cops_walking_F3.png" id="4_ogq2v"]
-[ext_resource type="Script" path="res://src/pnj/states/wandering.gd" id="6_8kbma"]
+[ext_resource type="Script" path="res://src/pnj/states/common/wandering.gd" id="6_8kbma"]
 [ext_resource type="Texture2D" uid="uid://jeeo6fewx0ph" path="res://assets/sprites/cops/cops_looking_around.png" id="6_qpd4h"]
-[ext_resource type="Script" path="res://src/pnj/states/move_to_serment.gd" id="7_cgtjk"]
-[ext_resource type="Script" path="res://src/pnj/states/sermenting.gd" id="8_2gbhh"]
+[ext_resource type="Script" path="res://src/pnj/states/cops/move_to_serment.gd" id="7_cgtjk"]
+[ext_resource type="Script" path="res://src/pnj/states/cops/sermenting.gd" id="8_2gbhh"]
 [ext_resource type="PackedScene" uid="uid://bb6x3dllvfdpk" path="res://src/player/misc/action_progress_bar.tscn" id="8_j2dms"]
-[ext_resource type="Script" path="res://src/pnj/states/looking_around.gd" id="9_ohw4f"]
-[ext_resource type="Script" path="res://src/pnj/states/chasing.gd" id="10_k7o2q"]
+[ext_resource type="Script" path="res://src/pnj/states/cops/looking_around.gd" id="9_ohw4f"]
+[ext_resource type="Script" path="res://src/pnj/states/cops/chasing.gd" id="10_k7o2q"]
 [ext_resource type="PackedScene" uid="uid://d3ce5h5jebeo8" path="res://src/pnj/cops/line_of_sight_2D.tscn" id="10_n6pnb"]
-[ext_resource type="Script" path="res://src/pnj/states/alert.gd" id="16_6n751"]
+[ext_resource type="Script" path="res://src/pnj/states/cops/alert.gd" id="16_6n751"]
+[ext_resource type="Script" path="res://src/pnj/states/cops/glissing.gd" id="20_iaexf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
 radius = 18.0
@@ -40,7 +40,7 @@ animations = [{
 "texture": ExtResource("3_rj6eu")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"glissing",
 "speed": 5.0
 }, {
 "frames": [{
@@ -223,7 +223,7 @@ texture = ExtResource("2_yvs2k")
 position = Vector2(0, -77)
 scale = Vector2(0.11, 0.11)
 sprite_frames = SubResource("SpriteFrames_rwekc")
-animation = &"looking_around"
+animation = &"wandering"
 speed_scale = 1.5
 
 [node name="LaughingDetector" type="Area2D" parent="."]
@@ -259,8 +259,8 @@ target_position = Vector2(0, 100)
 script = ExtResource("3_2u6tn")
 state = NodePath("Wandering")
 
-[node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("4_b63qi")
+[node name="Glissing" type="Node" parent="StateMachine"]
+script = ExtResource("20_iaexf")
 
 [node name="Wandering" type="Node" parent="StateMachine"]
 script = ExtResource("6_8kbma")

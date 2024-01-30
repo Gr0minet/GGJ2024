@@ -6,3 +6,6 @@ class_name Flic
 
 @export var normal_line_of_sight_color:Color = Color("#6eed4749")
 @export var chase_line_of_sight_color:Color = Color("#ffb6ac49")
+
+func on_walk_on_poop() -> void:
+	state_machine.transition_to("Glissing")

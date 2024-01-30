@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://ckjonnvsucfvf" path="res://assets/sprites/shadow.png" id="3_t06qg"]
 [ext_resource type="SpriteFrames" uid="uid://drt3mrklfafnv" path="res://src/pnj/villageois/sprite_frames/villageois1.tres" id="4_v0kep"]
 [ext_resource type="Script" path="res://src/utils/state_machine/state_machine.gd" id="5_i77nq"]
-[ext_resource type="Script" path="res://src/pnj/states/idle.gd" id="6_qgqvy"]
-[ext_resource type="Script" path="res://src/pnj/states/laughing.gd" id="7_otc4a"]
-[ext_resource type="Script" path="res://src/pnj/states/wandering.gd" id="8_4dtut"]
-[ext_resource type="Script" path="res://src/pnj/states/chatting.gd" id="9_7q2sb"]
+[ext_resource type="Script" path="res://src/pnj/states/villageois/idle.gd" id="6_pt0m2"]
+[ext_resource type="Script" path="res://src/pnj/states/villageois/laughing.gd" id="7_yauqa"]
+[ext_resource type="Script" path="res://src/pnj/states/common/wandering.gd" id="8_opsj1"]
+[ext_resource type="Script" path="res://src/pnj/states/villageois/chatting.gd" id="9_4s2d4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82vvv"]
 radius = 13.0
@@ -194,16 +194,16 @@ script = ExtResource("5_i77nq")
 state = NodePath("Wandering")
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("6_qgqvy")
-
-[node name="Laughing" type="Node" parent="StateMachine"]
-script = ExtResource("7_otc4a")
+script = ExtResource("6_pt0m2")
 
 [node name="Wandering" type="Node" parent="StateMachine"]
-script = ExtResource("8_4dtut")
+script = ExtResource("8_opsj1")
+
+[node name="Laughing" type="Node" parent="StateMachine"]
+script = ExtResource("7_yauqa")
 
 [node name="Chatting" type="Node" parent="StateMachine"]
-script = ExtResource("9_7q2sb")
+script = ExtResource("9_4s2d4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
