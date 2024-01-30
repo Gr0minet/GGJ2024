@@ -14,9 +14,6 @@ var reaction_chatting3_sprite := preload("res://assets/sprites/reaction/chatting
 var reaction_alert_sprite := preload("res://assets/sprites/reaction/alert.png")
 var reaction_looking_around_sprite := preload("res://assets/sprites/reaction/looking_around.png")
 var reaction_sermenting_sprite := preload("res://assets/sprites/reaction/sermenting.png")
-
-func on_walk_on_poop() -> void:
-	state_machine.transition_to("Idle", {Const.MSG_REASON: "poop"})
 	
 func raycast_collide(target_position: Vector2) -> bool:
 	for raycast: RayCast2D in raycasts.get_children():

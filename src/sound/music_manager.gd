@@ -67,5 +67,4 @@ func mute_sound_effects(muted:bool) -> void:
 	AudioServer.set_bus_mute(SE_bus_index, muted)
 
 func mute_background_music(muted:bool) -> void:
-	print("Mute BGM: %s" % muted)
 	AudioServer.set_bus_mute(BGM_bus_index, muted)

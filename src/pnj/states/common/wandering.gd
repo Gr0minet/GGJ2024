@@ -51,8 +51,7 @@ func enter(msg: = {}) -> void:
 		owner.line_of_sight.rotation += rad_to_deg(90)
 
 func exit(_msg: = {}) -> void:
-	if not _timer.is_stopped():
-		_timer.stop()
+	_timer.stop()
 	
 func physics_process(_delta: float) -> void:
 	pnj.move_and_slide()
