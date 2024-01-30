@@ -27,7 +27,6 @@ var se_muted:bool = false :
 
 var _default_config_name:String = "config.cfg"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	if not load_config(_default_config_name):
 		create_config(_default_config_name)
@@ -46,7 +45,8 @@ func load_config(config_name:String) -> bool:
 
 	var err = new_config.load(get_config_path(config_name))
 	if err != OK:
-		push_error("Error loading config file '%s': %s" % [config_name, err])
+		if err != ERR_FILE_NOT_FOUND:
+			push_error("Error loading config file '%s': %s" % [config_name, err])
 		return false
 	else:
 		config = new_config
@@ -69,8 +69,6 @@ func create_config(config_name:String) -> void:
 func save_config(config_name:String="") -> void:
 	if config_name == "":
 		config_name = _default_config_name
-	print("saving config to %s" % get_config_path(config_name))
-	print(config)
 
 	var err = config.save(get_config_path(config_name))
 	if err != OK:
